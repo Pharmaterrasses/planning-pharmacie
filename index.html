@@ -12,22 +12,84 @@
   --teamB:#1a237e;--teamB-light:#d5d9f5;
   --teamBsat:#15803d;--teamBsat-light:#dcfce7;
   --weekend:#e67e22;--weekend-light:#fef0e0;
-  --conge:#0369a1;--conge-light:#e0f2fe;
+  --conge:#0369a1;--conge-light:#dbeafe;
+  --maladie:#b45309;--maladie-light:#fef3c7;
+  --heures-sup:#dc2626;--heures-sup-light:#fecaca;
   --ferie:#16a34a;--ferie-light:#dcfce7;
   --text:#1a1a1a;--text-muted:#6b7280;--border:#e5e0d5;
   --shadow:0 2px 12px rgba(0,0,0,.08);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+body{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
 /* HEADER */
-header{background:linear-gradient(135deg,var(--primary) 0%,#145a48 100%);color:white;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 3px 10px rgba(0,0,0,.2);}
-header h1{font-family:'DM Serif Display',serif;font-size:1.3rem;line-height:1.2;}
-header p{font-size:.75rem;opacity:.7;margin-top:3px;}
-.hdr-right{display:flex;gap:8px;flex-shrink:0;}
+header{
+  background:linear-gradient(135deg,#059669 0%,#10b981 100%);
+  color:white;
+  padding:28px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);
+  border-bottom:3px solid #34d399;
+}
+header h1{
+  font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;
+  font-size:1.5rem;
+  line-height:1.2;
+  font-weight:700;
+  letter-spacing:-0.8px;
+}
+header p{
+  font-size:0.88rem;
+  opacity:0.92;
+  margin-top:6px;
+  font-weight:500;
+}
+.hdr-right{
+  display:flex;
+  gap:10px;
+  flex-shrink:0;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.hdr-right button{
+  white-space:nowrap;
+  font-size:0.88rem;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:600;
+  transition:all 0.2s;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+.hdr-right button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 14px rgba(0,0,0,0.3);
+}
+#user-info{
+  background:rgba(255,255,255,0.95);
+  color:#1f2937;
+  padding:10px 20px;
+  border-radius:10px;
+  font-weight:600;
+  font-size:0.92rem;
+  border:2px solid rgba(255,255,255,0.4);
+  white-space:nowrap;
+  box-shadow:0 2px 12px rgba(0,0,0,0.15);
+}
+#user-info::before{
+  content:'👤 ';
+  font-size:1.1rem;
+}
+#save-indicator{
+  font-weight:700;
+  box-shadow:0 2px 10px rgba(16,185,129,0.4);
+  padding:8px 16px;
+  font-size:0.85rem;
+}
 
 /* BUTTONS */
-.btn{padding:7px 13px;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;transition:all .15s;white-space:nowrap;}
+.btn{padding:7px 13px;border-radius:8px;border:none;cursor:pointer;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.8rem;font-weight:500;transition:all .15s;white-space:nowrap;}
 .btn-white{background:white;color:var(--primary);}.btn-white:hover{background:#eee;}
 .btn-accent{background:var(--accent);color:white;}.btn-accent:hover{background:#d08018;}
 .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text);}.btn-outline:hover{background:#f0f0f0;}
@@ -40,11 +102,11 @@ header p{font-size:.75rem;opacity:.7;margin-top:3px;}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;}
 .card{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);}
-.card h3{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--primary);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.card h3{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1rem;color:var(--primary);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 
 /* TABS */
 .tabs{display:flex;gap:3px;margin-bottom:20px;background:white;padding:5px;border-radius:12px;box-shadow:var(--shadow);flex-wrap:wrap;}
-.tab{padding:7px 14px;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap;}
+.tab{padding:7px 14px;border-radius:8px;border:none;cursor:pointer;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.8rem;font-weight:500;background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap;}
 .tab.active{background:var(--primary);color:white;}
 .tab:hover:not(.active){background:var(--primary-light);color:var(--primary);}
 .panel{display:none;}.panel.active{display:block;}
@@ -59,16 +121,16 @@ header p{font-size:.75rem;opacity:.7;margin-top:3px;}
 .mitem{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:3px;background:var(--bg);font-size:.83rem;}
 .mitem button{background:none;border:none;cursor:pointer;color:#dc2626;font-size:1rem;}
 .add-row{display:flex;gap:7px;}
-.add-row input{flex:1;padding:7px 11px;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;}
+.add-row input{flex:1;padding:7px 11px;border:1px solid var(--border);border-radius:7px;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.82rem;outline:none;}
 .add-row input:focus{border-color:var(--primary);}
 
 /* FORM ELEMENTS */
 input[type=text],input[type=email],input[type=number],select,textarea{
   padding:7px 11px;border:1px solid var(--border);border-radius:7px;
-  font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;width:100%;
+  font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.82rem;outline:none;width:100%;
 }
-input[type=time]{padding:5px 8px;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.8rem;}
-input[type=date]{padding:6px 10px;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.82rem;width:100%;}
+input[type=time]{padding:5px 8px;border:1px solid var(--border);border-radius:7px;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.8rem;}
+input[type=date]{padding:6px 10px;border:1px solid var(--border);border-radius:7px;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.82rem;width:100%;}
 select{margin-top:3px;}
 textarea{resize:vertical;min-height:58px;}
 input:focus,select:focus,textarea:focus{border-color:var(--primary);}
@@ -99,7 +161,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 /* ANNUAL */
 .annual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
 .month-card{background:white;border-radius:11px;overflow:hidden;box-shadow:var(--shadow);}
-.month-hd{background:var(--primary);color:white;padding:8px 12px;font-family:'DM Serif Display',serif;font-size:.9rem;text-align:center;}
+.month-hd{background:var(--primary);color:white;padding:8px 12px;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.9rem;text-align:center;}
 .month-bd{padding:7px;}
 .wdh{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;margin-bottom:2px;}
 .wdl{text-align:center;font-size:.58rem;font-weight:700;color:var(--text-muted);}
@@ -155,14 +217,14 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 .cO{color:#d1d5db;}
 .ecard{background:white;border-radius:11px;padding:15px;box-shadow:var(--shadow);margin-bottom:12px;}
 .elh{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-.elh h4{font-family:'DM Serif Display',serif;font-size:.95rem;}
+.elh h4{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:.95rem;}
 .edr{display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:.8rem;border-bottom:1px solid #f3f4f6;}
 .edr:last-child{border-bottom:none;}.edl{color:var(--text-muted);width:130px;flex-shrink:0;}
 
 /* STATS */
 .stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
 .scard{background:white;border-radius:11px;padding:14px;box-shadow:var(--shadow);text-align:center;}
-.snum{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--primary);line-height:1;margin-bottom:3px;}
+.snum{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1.8rem;color:var(--primary);line-height:1;margin-bottom:3px;}
 .slbl{font-size:.74rem;color:var(--text-muted);}
 
 /* CONGES */
@@ -172,7 +234,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 /* SALAIRE */
 .sal-card{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);margin-bottom:14px;}
 .sal-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);flex-wrap:wrap;}
-.sal-hdr h4{font-family:'DM Serif Display',serif;font-size:1rem;flex:1;}
+.sal-hdr h4{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1rem;flex:1;}
 .sal-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;}
 .sal-field{display:flex;flex-direction:column;gap:4px;}
 .sal-field label{font-size:.73rem;font-weight:600;color:var(--text-muted);}
@@ -181,7 +243,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 .sal-total strong{color:var(--primary);}
 .sbadge{padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700;}
 .sbadge-sup{background:#dcfce7;color:#166534;}
-.sbadge-abs{background:#fee2e2;color:#991b1b;}
+.sbadge-abs{background:#fecaca;color:#991b1b;}
 .sbadge-mal{background:#fef9c3;color:#854d0e;}
 
 /* EMAIL */
@@ -198,22 +260,22 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 .hebdo-table .emp-team{font-size:0.7rem;color:var(--text-muted);margin-top:2px;}
 .hebdo-table .emp-hours{font-size:0.7rem;color:var(--primary);font-weight:700;margin-top:4px;}
 .hebdo-table .day-cell{font-size:0.75rem;line-height:1.6;background:white;}
-.hebdo-table .repos{background:#fee2e2;color:#dc2626;font-weight:700;font-size:0.8rem;}
+.hebdo-table .repos{background:#fecaca;color:#dc2626;font-weight:700;font-size:0.8rem;}
 .hebdo-table .ferie{background:#dcfce7;color:#16a34a;font-weight:700;font-size:0.8rem;}
-.hebdo-table .conge{background:#e0f2fe;color:#0369a1;font-weight:700;font-size:0.8rem;}
+.hebdo-table .conge{background:#dbeafe;color:#0369a1;font-weight:700;font-size:0.8rem;}
 
 
 /* MODAL */
 .mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;}
 .mo.open{display:flex;}
 .md{background:white;border-radius:14px;padding:22px;width:420px;box-shadow:0 10px 40px rgba(0,0,0,.2);max-height:92vh;overflow-y:auto;}
-.md h3{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--primary);margin-bottom:14px;}
+.md h3{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1.05rem;color:var(--primary);margin-bottom:14px;}
 .minfo{background:var(--bg);padding:10px 13px;border-radius:7px;margin-bottom:14px;font-size:.84rem;line-height:1.8;white-space:pre-line;}
 .mfoot{display:flex;justify-content:flex-end;gap:7px;margin-top:10px;}
 
 /* NAV */
 .ynav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
-.ynav h2{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--primary);}
+.ynav h2{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1.25rem;color:var(--primary);}
 .mnav{display:flex;align-items:center;gap:7px;}
 .mnav select{width:auto;margin-top:0;}
 .ptabs{display:flex;gap:3px;background:white;padding:4px;border-radius:9px;box-shadow:var(--shadow);}
@@ -259,7 +321,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
   .hebdo-table .day-cell { font-size: 9px !important; line-height: 1.5 !important; }
   .hebdo-table .repos { background: #fee2e2 !important; color: #dc2626 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .hebdo-table .ferie { background: #dcfce7 !important; color: #16a34a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .hebdo-table .conge { background: #e0f2fe !important; color: #0369a1 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hebdo-table .conge { background: #dbeafe !important; color: #0369a1 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 .print-title { display: none; }
 .print-hebdo-title { display: none; }
@@ -268,36 +330,34 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <body>
 
 <!-- ═══════════════ LOGIN SCREEN ═══════════════ -->
-<div id="login-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#1a5c4a 0%,#10b981 100%);display:flex;align-items:center;justify-content:center;z-index:10000;">
-  <div style="background:white;border-radius:16px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-width:420px;width:90%;">
-    <div style="text-align:center;margin-bottom:32px;">
-      <div style="font-size:4rem;color:#10b981;margin-bottom:16px;">✚</div>
-      <h1 style="font-family:'DM Serif Display',serif;color:#1a5c4a;font-size:1.8rem;margin:0;">Planning Pharmacie</h1>
-      <p style="color:#6b7280;font-size:0.9rem;margin-top:8px;">Connexion sécurisée</p>
+<div id="login-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#059669 0%,#10b981 100%);display:flex;align-items:center;justify-content:center;z-index:10000;">
+  <div style="background:white;border-radius:20px;padding:50px;box-shadow:0 25px 70px rgba(0,0,0,0.4);max-width:480px;width:90%;">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div style="margin-bottom:24px;display:flex;justify-content:center;">
+        <img src="data:image/png;base64,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" alt="Aprium Pharmacie" style="height:120px;filter:drop-shadow(0 4px 12px rgba(16,185,129,0.3));">
+      </div>
+      <h1 style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#1a1a1a;font-size:1.4rem;margin:0;font-weight:700;letter-spacing:-0.5px;">Planning APRIUM</h1>
+      <h2 style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#1a1a1a;font-size:1.6rem;margin:8px 0 0 0;font-weight:800;letter-spacing:-0.8px;">Grande Pharmacie Des Terrasses</h2>
+      <p style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;color:#6b7280;font-size:0.95rem;margin-top:16px;font-weight:500;letter-spacing:0.3px;">Connexion sécurisée</p>
     </div>
     
-    <div id="login-error" style="display:none;background:#fee2e2;border:1px solid #dc2626;color:#dc2626;padding:12px;border-radius:8px;margin-bottom:20px;font-size:0.85rem;"></div>
+    <div id="login-error" style="display:none;background:#fecaca;border:1px solid #dc2626;color:#dc2626;padding:14px;border-radius:10px;margin-bottom:24px;font-size:0.9rem;font-weight:500;"></div>
     
-    <form onsubmit="handleLogin(event)" style="display:flex;flex-direction:column;gap:20px;">
+    <form onsubmit="handleLogin(event)" style="display:flex;flex-direction:column;gap:24px;">
       <div>
-        <label style="display:block;font-weight:600;color:#374151;margin-bottom:8px;font-size:0.9rem;">Nom d'utilisateur</label>
-        <input type="text" id="login-username" required style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'">
+        <label style="display:block;font-weight:700;color:#1f2937;margin-bottom:10px;font-size:0.95rem;letter-spacing:0.2px;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">Nom d'utilisateur</label>
+        <input type="text" id="login-username" required style="width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:1.05rem;transition:all 0.3s;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;" onfocus="this.style.borderColor='#10b981';this.style.boxShadow='0 0 0 3px rgba(16,185,129,0.1)'" onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
       </div>
       
       <div>
-        <label style="display:block;font-weight:600;color:#374151;margin-bottom:8px;font-size:0.9rem;">Mot de passe</label>
-        <input type="password" id="login-password" required style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'">
+        <label style="display:block;font-weight:700;color:#1f2937;margin-bottom:10px;font-size:0.95rem;letter-spacing:0.2px;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;">Mot de passe</label>
+        <input type="password" id="login-password" required style="width:100%;padding:14px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:1.05rem;transition:all 0.3s;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;" onfocus="this.style.borderColor='#10b981';this.style.boxShadow='0 0 0 3px rgba(16,185,129,0.1)'" onblur="this.style.borderColor='#e5e7eb';this.style.boxShadow='none'">
       </div>
       
-      <button type="submit" style="background:#10b981;color:white;padding:14px;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">
+      <button type="submit" style="background:#10b981;color:white;padding:16px;border:none;border-radius:10px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all 0.3s;box-shadow:0 4px 14px rgba(16,185,129,0.4);letter-spacing:0.3px;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;" onmouseover="this.style.background='#059669';this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(16,185,129,0.5)'" onmouseout="this.style.background='#10b981';this.style.transform='translateY(0)';this.style.boxShadow='0 4px 14px rgba(16,185,129,0.4)'">
         🔐 Se connecter
       </button>
     </form>
-    
-    <div style="margin-top:24px;padding-top:24px;border-top:1px solid #e5e7eb;text-align:center;">
-      <p style="color:#6b7280;font-size:0.8rem;">Compte par défaut : <strong>admin</strong> / <strong>admin123</strong></p>
-      <p style="color:#dc2626;font-size:0.75rem;margin-top:8px;">⚠️ Changez le mot de passe après première connexion</p>
-    </div>
   </div>
 </div>
 
@@ -305,17 +365,21 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <div id="main-app" style="display:none;">
 
 <header>
-  <div>
-    <h1><span style="color:#10b981;font-weight:bold;font-size:1.4em">✚</span> Aprium Grande Pharmacie Des Terrasses</h1>
-    <p>Planning des équipes A &amp; B — Année 2026</p>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <img src="data:image/png;base64,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" alt="Aprium Pharmacie" style="height:60px;filter:drop-shadow(0 2px 8px rgba(16,185,129,0.3));">
+    <div>
+      <h1 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1.3rem;margin:0;font-weight:700;color:#1f2937;letter-spacing:-0.5px;">Planning APRIUM</h1>
+      <p style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:1.5rem;margin:4px 0 0 0;font-weight:800;color:#1f2937;letter-spacing:-0.8px;">Grande Pharmacie Des Terrasses</p>
+      <p style="margin:6px 0 0 0;font-size:0.85rem;color:#ef4444;font-weight:700;">Planning des équipes A & B — Année 2026</p>
+    </div>
   </div>
   <div class="hdr-right">
     <span id="save-indicator" style="margin-right:16px;padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:600;background:#dcfce7;color:#16a34a;display:none;">
       ✓ Sauvegardé
     </span>
-    <span id="user-info" style="margin-right:16px;color:#6b7280;font-size:0.85rem;"></span>
+    <button class="btn" style="background:rgba(255,255,255,0.95);color:#1f2937;border:2px solid rgba(255,255,255,0.4);font-weight:600;" onclick="openAccountModal()">👤 Mon Compte</button>
+    <button class="btn btn-outline" onclick="importBackup()" style="padding:8px 16px;font-size:0.85rem;margin-right:8px;background:#3b82f6;color:white;border-color:#2563eb;">📂 Importer</button>
     <button class="btn btn-outline" onclick="exportBackup()" style="padding:8px 16px;font-size:0.85rem;margin-right:8px;background:#fbbf24;color:#000;border-color:#f59e0b;">💾 Sauvegarder</button>
-    <button class="btn btn-outline" onclick="openChangePasswordModal()" style="padding:8px 16px;font-size:0.85rem;margin-right:8px;">🔑 Mot de passe</button>
     <button class="btn btn-outline" onclick="handleLogout()" style="padding:8px 16px;font-size:0.85rem;">🚪 Déconnexion</button>
   </div>
 </header>
@@ -379,7 +443,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ UTILISATEURS (ADMIN ONLY) ═══════════════ -->
 <div id="panel-users" class="panel">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">👥 Gestion des utilisateurs</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;">👥 Gestion des utilisateurs</h2>
     <button class="btn btn-accent" onclick="openAddUserModal()">➕ Nouvel utilisateur</button>
   </div>
   <div class="card">
@@ -400,7 +464,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ SALARIÉS (FICHES) ═══════════════ -->
 <div id="panel-salaries" class="panel">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;"><span style="color:#10b981;">👤</span> Fiches Salariés</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;"><span style="color:#10b981;">👤</span> Fiches Salariés</h2>
     <button class="btn btn-accent" onclick="openAddSalarieModal()">➕ Nouveau salarié</button>
   </div>
   <div id="salaries-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:16px;"></div>
@@ -409,7 +473,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ HORAIRES EMPLOYÉS ═══════════════ -->
 <div id="panel-schedules" class="panel">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">📋 Horaires & Jours par Employé</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;">📋 Horaires & Jours par Employé</h2>
     <button class="btn btn-accent" onclick="saveAllSchedules()">💾 Enregistrer tout</button>
   </div>
   <p class="info-box">Pour chaque employé : cochez ses jours de travail, définissez ses horaires d'entrée/sortie et sa pause (☕) pour chaque jour. Le samedi alterne automatiquement 1 semaine sur 2.</p>
@@ -419,7 +483,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ PLANNING EMPLOYÉS ═══════════════ -->
 <div id="panel-employes" class="panel">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">👥 Planning par Employé</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;">👥 Planning par Employé</h2>
     <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center;">
       <div class="ptabs">
         <button class="tab active" id="ep-week" onclick="setEmpPeriod('week',this)">Semaine</button>
@@ -496,7 +560,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ CONGÉS ═══════════════ -->
 <div id="panel-conges" class="panel">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">🏖️ Congés payés & Arrêts maladie</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;">🏖️ Congés payés & Arrêts maladie</h2>
     <div style="display:flex;gap:8px;">
       <button class="btn btn-accent" onclick="openCongeModal()">+ Nouveau congé</button>
       <button class="btn" style="background:#dc2626;color:white;" onclick="openMaladieModal()">+ Arrêt maladie</button>
@@ -511,7 +575,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ ÉLÉMENTS DE SALAIRE ═══════════════ -->
 <div id="panel-salaire" class="panel">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">💰 Éléments de Salaire</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;">💰 Éléments de Salaire</h2>
     <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center;">
       <select id="sal-month" onchange="renderSalaire()" style="width:auto;margin-top:0;">
         <option value="0">Janvier</option><option value="1">Février</option><option value="2">Mars</option>
@@ -521,6 +585,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
       </select>
       <button class="btn btn-primary" onclick="saveSalaire()">💾 Enregistrer</button>
       <button class="btn btn-accent" onclick="exportSalaireExcel()">📊 Export Excel</button>
+      <button class="btn" style="background:#dc2626;color:white;" onclick="exportSalairePDF()">📄 Export PDF</button>
       <button class="btn" style="background:#ea4335;color:white;" onclick="sendToMarina()">📧 Envoyer à Marina</button>
     </div>
   </div>
@@ -532,7 +597,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 
 <!-- ═══════════════ STATS ═══════════════ -->
 <div id="panel-stats" class="panel">
-  <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;margin-bottom:16px;">📊 Statistiques 2026</h2>
+  <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;margin-bottom:16px;">📊 Statistiques 2026</h2>
   <div class="stats4" id="stats4"></div>
   <div class="grid2">
     <div class="card"><h3>Jours travaillés par employé</h3><ul class="mlist" id="stats-members"></ul></div>
@@ -543,7 +608,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <!-- ═══════════════ EMAIL ═══════════════ -->
 <div id="panel-email" class="panel">
   <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
-    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">📧 Envoi du Planning par Email</h2>
+    <h2 style="font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;color:var(--primary);font-size:1.2rem;">📧 Envoi du Planning par Email</h2>
     <div style="display:flex;gap:7px;">
       <button class="btn btn-accent" onclick="sendAllEmails()">📨 Envoyer à tous</button>
       <button class="btn btn-gray" onclick="printAllPDF()">🖨 PDF tous</button>
@@ -655,7 +720,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
 <div class="mo" id="mo-pdf">
   <div class="md" style="width:680px;max-width:95vw;">
     <h3 id="pdf-title"></h3>
-    <div id="pdf-content" style="background:white;padding:14px;border-radius:8px;border:1px solid var(--border);font-size:.82rem;line-height:1.9;max-height:58vh;overflow-y:auto;white-space:pre-wrap;font-family:'DM Sans',sans-serif;"></div>
+    <div id="pdf-content" style="background:white;padding:14px;border-radius:8px;border:1px solid var(--border);font-size:.82rem;line-height:1.9;max-height:58vh;overflow-y:auto;white-space:pre-wrap;font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;"></div>
     <div class="mfoot">
       <button class="btn btn-outline" onclick="closeMo('mo-pdf')">Fermer</button>
       <button class="btn btn-primary" onclick="doPrint()">🖨 Imprimer / PDF</button>
@@ -776,7 +841,7 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
   <div class="md">
     <h3>🔑 Changer votre mot de passe</h3>
     
-    <div id="pwd-error" style="display:none;background:#fee2e2;border:1px solid #dc2626;color:#dc2626;padding:12px;border-radius:8px;margin-bottom:16px;font-size:0.85rem;"></div>
+    <div id="pwd-error" style="display:none;background:#fecaca;border:1px solid #dc2626;color:#dc2626;padding:12px;border-radius:8px;margin-bottom:16px;font-size:0.85rem;"></div>
     
     <div class="fgrp">
       <label class="lbl">Mot de passe actuel *</label>
@@ -796,6 +861,97 @@ label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block
     <div class="mfoot">
       <button class="btn btn-outline" onclick="closeMo('mo-change-password')">Annuler</button>
       <button class="btn btn-primary" onclick="savePasswordChange()">✅ Changer le mot de passe</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL MON COMPTE ═══ -->
+<div class="mo" id="mo-account">
+  <div class="md" style="max-width:700px;">
+    <h3>👤 Mon Compte</h3>
+    
+    <div style="background:#f0f9ff;border-left:4px solid #0369a1;padding:16px;border-radius:8px;margin-bottom:24px;">
+      <div style="font-size:0.9rem;color:#0c4a6e;"><strong>Connecté en tant que :</strong></div>
+      <div style="font-size:1.2rem;font-weight:700;color:#0369a1;margin-top:4px;" id="account-current-user"></div>
+      <div style="font-size:0.85rem;color:#0369a1;margin-top:4px;" id="account-current-role"></div>
+    </div>
+    
+    <!-- ONGLETS -->
+    <div style="display:flex;gap:8px;margin-bottom:20px;border-bottom:2px solid #e5e7eb;">
+      <button class="tab-account active" onclick="switchAccountTab('profile')" style="padding:12px 20px;border:none;background:none;cursor:pointer;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s;">
+        👤 Mon Profil
+      </button>
+      <button class="tab-account" onclick="switchAccountTab('password')" style="padding:12px 20px;border:none;background:none;cursor:pointer;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s;">
+        🔑 Mot de passe
+      </button>
+      <button class="tab-account" id="users-tab-btn" onclick="switchAccountTab('users')" style="padding:12px 20px;border:none;background:none;cursor:pointer;font-weight:600;border-bottom:3px solid transparent;transition:all 0.2s;display:none;">
+        👥 Utilisateurs
+      </button>
+    </div>
+    
+    <!-- PANEL PROFIL -->
+    <div id="account-panel-profile" class="account-panel">
+      <div class="fgrp">
+        <label class="lbl">Nom complet *</label>
+        <input type="text" id="account-fullname" placeholder="Ex: Jean Dupont">
+      </div>
+      <div class="fgrp">
+        <label class="lbl">Nom d'utilisateur *</label>
+        <input type="text" id="account-username" placeholder="Ex: jdupont" disabled style="background:#f3f4f6;cursor:not-allowed;">
+        <small style="color:#6b7280;font-size:0.75rem;">Le nom d'utilisateur ne peut pas être modifié</small>
+      </div>
+      <div style="margin-top:20px;">
+        <button class="btn btn-primary" onclick="saveAccountProfile()">✅ Enregistrer les modifications</button>
+      </div>
+    </div>
+    
+    <!-- PANEL MOT DE PASSE -->
+    <div id="account-panel-password" class="account-panel" style="display:none;">
+      <div id="account-pwd-error" style="display:none;background:#fecaca;border:1px solid #dc2626;color:#dc2626;padding:12px;border-radius:8px;margin-bottom:16px;font-size:0.85rem;"></div>
+      
+      <div class="fgrp">
+        <label class="lbl">Mot de passe actuel *</label>
+        <input type="password" id="account-pwd-current" placeholder="Votre mot de passe actuel">
+      </div>
+      
+      <div class="fgrp">
+        <label class="lbl">Nouveau mot de passe *</label>
+        <input type="password" id="account-pwd-new" placeholder="Minimum 6 caractères">
+      </div>
+      
+      <div class="fgrp">
+        <label class="lbl">Confirmer le nouveau mot de passe *</label>
+        <input type="password" id="account-pwd-confirm" placeholder="Retapez le nouveau mot de passe">
+      </div>
+      
+      <div style="margin-top:20px;">
+        <button class="btn btn-primary" onclick="saveAccountPassword()">✅ Changer le mot de passe</button>
+      </div>
+    </div>
+    
+    <!-- PANEL UTILISATEURS (ADMIN ONLY) -->
+    <div id="account-panel-users" class="account-panel" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <p style="color:#6b7280;font-size:0.9rem;">Gérer les utilisateurs de l'application</p>
+        <button class="btn btn-accent" onclick="openAddUserModal()">➕ Nouvel utilisateur</button>
+      </div>
+      <div style="max-height:300px;overflow-y:auto;">
+        <table class="hebdo-table" style="font-size:0.85rem;">
+          <thead>
+            <tr>
+              <th>Utilisateur</th>
+              <th>Nom</th>
+              <th>Rôle</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="account-users-list"></tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div class="mfoot" style="margin-top:24px;padding-top:20px;border-top:2px solid #e5e7eb;">
+      <button class="btn btn-outline" onclick="closeMo('mo-account')">Fermer</button>
     </div>
   </div>
 </div>
@@ -821,14 +977,18 @@ const FERIES=[
 let S={
   auth:{
     users:[
-      {username:'admin',password:'admin123',role:'admin',nom:'Administrateur'} // Compte par défaut - À CHANGER !
+      {username:'admin',password:'76225041Cw@',role:'admin',nom:'Administrateur'}
     ],
     currentUser:null,
-    sessionTimeout:7200000 // 2 heures en millisecondes
+    sessionTimeout:7200000
   },
   teamA:['CHIHI','Ilham','Cathy','Aména'],
   teamB:['CHIHI','Céline','Shirley','Soundous'],
-  conges:[],
+  conges:[
+    {id:'1777125182380',member:'Ilham',s:'2026-04-27',e:'2026-05-02',note:'Congé annuel'},
+    {id:'1777125251972',member:'Aména',s:'2026-04-30',e:'2026-05-14',note:'Congé annuel'},
+    {id:'1777125282692',member:'Shirley',s:'2026-05-09',e:'2026-05-15',note:'Congé annuel'}
+  ],
   horaires:{lvO:'08:30',lvC:'20:00',samO:'09:00',samC:'20:00'},
   empSchedules:{
     'Ilham':{days:[0,1,3,5],hours:{0:{o:'08:30',c:'20:00',po:'14:00',pc:'15:00'},1:{o:'08:30',c:'20:00',po:'14:00',pc:'15:00'},2:{o:'08:30',c:'20:00',po:'',pc:''},3:{o:'08:30',c:'20:00',po:'14:00',pc:'15:00'},4:{o:'08:30',c:'20:00',po:'',pc:''},5:{o:'09:00',c:'20:00',po:'',pc:''}}},
@@ -867,7 +1027,7 @@ let S={
   employeeInfo:{ // Informations complètes des salariés
     'Ilham':{nom:'BOUGHRARA',prenom:'Ilham',dateNaissance:'',dateEntree:'20/11/2023',dateSortie:'',adresse:'9 CHEMIN DES CLOSEAUX, 91250 SAINTRY SUR SEINE',email:'',telephone:'',matricule:'00009',numSS:'277069935047931'},
     'Cathy':{nom:'PICHARD',prenom:'Cathy',dateNaissance:'',dateEntree:'15/06/2023',dateSortie:'',adresse:'7 AVENUE HENRI SELLIER, 91130 RIS ORANGIS',email:'',telephone:'',matricule:'00002',numSS:'283129118202712'},
-    'Aména':{nom:'AMRANI',prenom:'Amena',dateNaissance:'',dateEntree:'01/01/2026',dateSortie:'',adresse:'11 RUE DES PRES SAINT MARTIN, 77340 PONTAULT COMBAULT',email:'',telephone:'',matricule:'00020',numSS:'204109910969417'},
+    'Aména':{nom:'AMRANI',prenom:'Aména',dateNaissance:'',dateEntree:'01/01/2026',dateSortie:'',adresse:'11 RUE DES PRES SAINT MARTIN, 77340 PONTAULT COMBAULT',email:'',telephone:'',matricule:'00020',numSS:'204109910969417'},
     'Céline':{nom:'KAMBUR',prenom:'Pinar Celine',dateNaissance:'',dateEntree:'15/06/2023',dateSortie:'',adresse:'2 ROUTE DE JARCY, 91450 ETIOLLES',email:'',telephone:'',matricule:'00006',numSS:'283129920821292'},
     'Shirley':{nom:'BORIUS',prenom:'Shirley',dateNaissance:'',dateEntree:'21/11/2023',dateSortie:'',adresse:'2 SQUARE JEAN JAURES, 91080 COURCOURONNES',email:'',telephone:'',matricule:'00012',numSS:'298089527704817'},
     'Soundous':{nom:'CHIBANE',prenom:'Soundous Nor El Han',dateNaissance:'',dateEntree:'19/09/2024',dateSortie:'',adresse:'8 ALLEE ROSTAND BATIMENT B PORTE 4, 91000 EVRY',email:'',telephone:'',matricule:'00015',numSS:'202089935307476'}
@@ -891,6 +1051,13 @@ function init(){
   if(!hasSession){
     document.getElementById('login-screen').style.display='flex';
     document.getElementById('main-app').style.display='none';
+  }
+  
+  // Définir le mois actuel dans le sélecteur d'éléments de salaire
+  const currentMonth=new Date().getMonth(); // 0-11 (0=janvier, 4=mai)
+  const salMonthSelect=document.getElementById('sal-month');
+  if(salMonthSelect){
+    salMonthSelect.value=currentMonth;
   }
   
   // NE PLUS EFFACER LES DONNÉES !
@@ -1248,7 +1415,7 @@ function renderHebdo(){
   days.forEach((d,i)=>{
     if(i===6)return;
     const dayColor=i===5?(satTeam==='A'?'#c0392b':'#15803d'):'#1f2937';
-    html+=`<th style="color:${dayColor};background:#e5e7eb;font-size:1.1rem;font-weight:700;">${dayNames[i]}<br><span style="font-size:1.3rem;font-weight:900;">${d.getDate()}/${d.getMonth()+1}</span></th>`;
+    html+=`<th style="color:${dayColor};background:#e5e7eb;font-size:1.1rem;font-weight:700;">${dayNames[i]}<br><span style="font-size:1.3rem;font-weight:900;color:#dc2626;">${d.getDate()}/${d.getMonth()+1}</span></th>`;
   });
   html+='</tr></thead><tbody>';
   
@@ -1465,7 +1632,7 @@ function renderCongeList(){
       allItems.push({
         type:'maladie',
         date:m.start,
-        html:`<li class="citem" style="background:#fee2e2;"><div><strong>${m.member}</strong> <span class="badge badge-${t}">Éq.${t}</span><br><small style="color:#dc2626">🤒 Arrêt maladie: ${fmt(m.start)} → ${fmt(m.end)} ${justifIcon} ${m.justified?'Justifié':'Non justifié'}${m.note?' — '+m.note:''}</small></div><button onclick="deleteMaladie(${idx})">🗑</button></li>`
+        html:`<li class="citem" style="background:#fecaca;"><div><strong>${m.member}</strong> <span class="badge badge-${t}">Éq.${t}</span><br><small style="color:#dc2626">🤒 Arrêt maladie: ${fmt(m.start)} → ${fmt(m.end)} ${justifIcon} ${m.justified?'Justifié':'Non justifié'}${m.note?' — '+m.note:''}</small></div><button onclick="deleteMaladie(${idx})">🗑</button></li>`
       });
     });
   }
@@ -1753,11 +1920,11 @@ function renderSalaire(){
   html+='<th>Congés<br>du...au...</th>';
   html+='<th>Nb jours<br>congés</th>';
   html+='<th>Autres<br>Absences</th>';
-  html+='<th style="background:#fee2e2;">Sem.1<br>H.Sup</th>';
-  html+='<th style="background:#fee2e2;">Sem.2<br>H.Sup</th>';
-  html+='<th style="background:#fee2e2;">Sem.3<br>H.Sup</th>';
-  html+='<th style="background:#fee2e2;">Sem.4<br>H.Sup</th>';
-  html+='<th style="background:#fee2e2;">Sem.5<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;">Sem.1<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;">Sem.2<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;">Sem.3<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;">Sem.4<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;">Sem.5<br>H.Sup</th>';
   html+='<th>Primes</th>';
   html+='<th>Acomptes</th>';
   html+='<th style="min-width:250px;">Observations</th>';
@@ -1799,7 +1966,15 @@ function renderSalaire(){
   });
   
   html+='</tbody></table></div>';
-  html+='<div style="margin-top:10px;padding:10px;background:#f0f9ff;border-left:4px solid #0369a1;font-size:0.85rem;"><strong>ℹ️ Info :</strong> Les congés et arrêts maladie sont pré-remplis automatiquement depuis vos saisies. Vous pouvez les modifier si nécessaire.</div>';
+  html+='<div style="margin-top:16px;padding:16px;background:#f9fafb;border-radius:10px;border:2px solid #e5e7eb;">';
+  html+='<div style="font-weight:700;margin-bottom:12px;font-size:0.9rem;">🎨 Légende des couleurs :</div>';
+  html+='<div style="display:flex;gap:20px;flex-wrap:wrap;">';
+  html+='<div style="display:flex;align-items:center;gap:8px;"><div style="width:24px;height:24px;background:#dbeafe;border:2px solid #0369a1;border-radius:4px;"></div><span style="font-size:0.85rem;">Congés payés</span></div>';
+  html+='<div style="display:flex;align-items:center;gap:8px;"><div style="width:24px;height:24px;background:#fef3c7;border:2px solid #f59e0b;border-radius:4px;"></div><span style="font-size:0.85rem;">Arrêts maladie</span></div>';
+  html+='<div style="display:flex;align-items:center;gap:8px;"><div style="width:24px;height:24px;background:#fecaca;border:2px solid #dc2626;border-radius:4px;"></div><span style="font-size:0.85rem;">Heures supplémentaires</span></div>';
+  html+='</div>';
+  html+='<div style="margin-top:12px;font-size:0.8rem;color:#6b7280;"><strong>ℹ️ Info :</strong> Les congés et arrêts maladie sont pré-remplis automatiquement depuis vos saisies.</div>';
+  html+='</div>';
   document.getElementById('sal-table').innerHTML=html;
 }
 
@@ -1810,8 +1985,8 @@ function getCongesForMonth(member,month){
   
   const cgs=S.conges.filter(c=>{
     if(c.member!==member)return false;
-    const start=new Date(c.start);
-    const end=new Date(c.end);
+    const start=new Date(c.s);
+    const end=new Date(c.e);
     return (start<=monthEnd&&end>=monthStart);
   });
   
@@ -1821,15 +1996,15 @@ function getCongesForMonth(member,month){
   let dates=[];
   
   cgs.forEach(c=>{
-    const start=new Date(c.start);
-    const end=new Date(c.end);
+    const start=new Date(c.s);
+    const end=new Date(c.e);
     const clampStart=start<monthStart?monthStart:start;
     const clampEnd=end>monthEnd?monthEnd:end;
     
-    dates.push(clampStart.getDate()+'/'+(clampStart.getMonth()+1));
-    if(clampStart.getTime()!==clampEnd.getTime()){
-      dates.push(clampEnd.getDate()+'/'+(clampEnd.getMonth()+1));
-    }
+    const startDay=String(clampStart.getDate()).padStart(2,'0');
+    const startMonth=String(clampStart.getMonth()+1).padStart(2,'0');
+    const endDay=String(clampEnd.getDate()).padStart(2,'0');
+    const endMonth=String(clampEnd.getMonth()+1).padStart(2,'0');
     
     // Compter les jours ouvrés
     for(let d=new Date(clampStart);d<=clampEnd;d.setDate(d.getDate()+1)){
@@ -1838,12 +2013,18 @@ function getCongesForMonth(member,month){
     }
   });
   
-  const text=dates.length>0?'du '+dates[0]+' au '+dates[dates.length-1]:'';
-  return {text,days:totalDays};
+  // Format: du DD/MM au DD/MM
+  if(cgs.length>0){
+    const firstStart=new Date(cgs[0].s);
+    const lastEnd=new Date(cgs[cgs.length-1].e);
+    const text='du '+String(firstStart.getDate()).padStart(2,'0')+'/'+String(firstStart.getMonth()+1).padStart(2,'0')+' au '+String(lastEnd.getDate()).padStart(2,'0')+'/'+String(lastEnd.getMonth()+1).padStart(2,'0');
+    return {text,days:totalDays};
+  }
+  
+  return {text:'',days:0};
 }
 
 function getMaladiesForMonth(member,month){
-  // Pour l'instant retourne vide - à implémenter avec système d'arrêts maladie
   if(!S.maladies||S.maladies.length===0)return {text:'',days:0};
   
   const monthStart=new Date(2026,month,1);
@@ -1851,26 +2032,20 @@ function getMaladiesForMonth(member,month){
   
   const mal=S.maladies.filter(m=>{
     if(m.member!==member)return false;
-    const start=new Date(m.start);
-    const end=new Date(m.end);
+    const start=new Date(m.s);
+    const end=new Date(m.e);
     return (start<=monthEnd&&end>=monthStart);
   });
   
   if(mal.length===0)return {text:'',days:0};
   
   let totalDays=0;
-  let dates=[];
   
   mal.forEach(m=>{
-    const start=new Date(m.start);
-    const end=new Date(m.end);
+    const start=new Date(m.s);
+    const end=new Date(m.e);
     const clampStart=start<monthStart?monthStart:start;
     const clampEnd=end>monthEnd?monthEnd:end;
-    
-    dates.push(clampStart.getDate()+'/'+(clampStart.getMonth()+1));
-    if(clampStart.getTime()!==clampEnd.getTime()){
-      dates.push(clampEnd.getDate()+'/'+(clampEnd.getMonth()+1));
-    }
     
     // Compter les jours ouvrés
     for(let d=new Date(clampStart);d<=clampEnd;d.setDate(d.getDate()+1)){
@@ -1879,8 +2054,15 @@ function getMaladiesForMonth(member,month){
     }
   });
   
-  const text=dates.length>0?'du '+dates[0]+' au '+dates[dates.length-1]:'';
-  return {text,days:totalDays};
+  // Format: du DD/MM au DD/MM
+  if(mal.length>0){
+    const firstStart=new Date(mal[0].s);
+    const lastEnd=new Date(mal[mal.length-1].e);
+    const text='du '+String(firstStart.getDate()).padStart(2,'0')+'/'+String(firstStart.getMonth()+1).padStart(2,'0')+' au '+String(lastEnd.getDate()).padStart(2,'0')+'/'+String(lastEnd.getMonth()+1).padStart(2,'0');
+    return {text,days:totalDays};
+  }
+  
+  return {text:'',days:0};
 }
 
 function getMonthWeeks(month){
@@ -1999,6 +2181,89 @@ function exportSalaireExcel(){
   alert('✅ Export Excel créé ! Format identique au modèle original.');
 }
 
+function exportSalairePDF(){
+  const month=parseInt(document.getElementById('sal-month').value);
+  const allM=uniqueMembers().filter(m=>m!=='CHIHI');
+  
+  // Créer le contenu HTML du PDF
+  let html='<!DOCTYPE html><html><head><meta charset="utf-8">';
+  html+='<title>Éléments de Salaire '+MONTHS[month]+' 2026</title>';
+  html+='<style>';
+  html+='@page{size:A4 landscape;margin:15mm;}';
+  html+='body{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;font-size:10px;margin:0;padding:20px;}';
+  html+='h1{text-align:center;font-size:16px;margin-bottom:5px;}';
+  html+='h2{text-align:center;font-size:12px;color:#666;margin-bottom:20px;}';
+  html+='table{width:100%;border-collapse:collapse;margin-top:10px;}';
+  html+='th,td{border:1px solid #333;padding:6px;text-align:left;font-size:9px;}';
+  html+='th{background:#4b5563;color:white;font-weight:700;}';
+  html+='.header-info{text-align:center;margin-bottom:15px;font-size:11px;}';
+  html+='.header-info strong{color:#dc2626;}';
+  html+='</style></head><body>';
+  
+  html+='<div class="header-info">';
+  html+='<strong>PHARMACIE CHIHI</strong><br>';
+  html+='13 ALLÉE JACQUARD - 91000 EVRY<br>';
+  html+='Fax: 01 30 43 18 52 • Tél: 01 30 60 03 30';
+  html+='</div>';
+  
+  html+='<h1>ÉLÉMENTS DE SALAIRE</h1>';
+  html+='<h2>'+MONTHS[month].toUpperCase()+' 2026</h2>';
+  
+  html+='<table>';
+  html+='<thead><tr>';
+  html+='<th style="width:120px;">SALARIÉS</th>';
+  html+='<th>Fonction</th>';
+  html+='<th>Maladie<br>du...au...</th>';
+  html+='<th style="width:40px;">Nb j.</th>';
+  html+='<th>Congés<br>du...au...</th>';
+  html+='<th style="width:40px;">Nb j.</th>';
+  html+='<th>Autres<br>Absences</th>';
+  html+='<th style="background:#fecaca;color:#000;width:50px;">Sem.1<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;width:50px;">Sem.2<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;width:50px;">Sem.3<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;width:50px;">Sem.4<br>H.Sup</th>';
+  html+='<th style="background:#fecaca;color:#000;width:50px;">Sem.5<br>H.Sup</th>';
+  html+='<th>Primes</th>';
+  html+='<th>Acomptes</th>';
+  html+='<th style="width:180px;">Observations</th>';
+  html+='</tr></thead><tbody>';
+  
+  allM.forEach(m=>{
+    const fonction=S.functions&&S.functions[m]?S.functions[m]:'';
+    const sd=getSalData(m,month);
+    const congesMonth=getCongesForMonth(m,month);
+    const maladiesMonth=getMaladiesForMonth(m,month);
+    
+    html+='<tr>';
+    html+='<td style="font-weight:700;">'+m+'</td>';
+    html+='<td style="font-size:8px;">'+fonction+'</td>';
+    html+='<td style="background:'+(maladiesMonth.text?'#fef3c7':'white')+';">'+(sd.maladie||maladiesMonth.text||'')+'</td>';
+    html+='<td style="text-align:center;font-weight:700;color:'+(maladiesMonth.days>0?'#dc2626':'#6b7280')+';">'+(maladiesMonth.days>0?maladiesMonth.days:'-')+'</td>';
+    html+='<td style="background:'+(congesMonth.text?'#dbeafe':'white')+';">'+(sd.conges||congesMonth.text||'')+'</td>';
+    html+='<td style="text-align:center;font-weight:700;color:'+(congesMonth.days>0?'#0369a1':'#6b7280')+';">'+(congesMonth.days>0?congesMonth.days:'-')+'</td>';
+    html+='<td>'+(sd.autres||'')+'</td>';
+    html+='<td style="text-align:center;">'+(sd.sem1||'-')+'</td>';
+    html+='<td style="text-align:center;">'+(sd.sem2||'-')+'</td>';
+    html+='<td style="text-align:center;">'+(sd.sem3||'-')+'</td>';
+    html+='<td style="text-align:center;">'+(sd.sem4||'-')+'</td>';
+    html+='<td style="text-align:center;">'+(sd.sem5||'-')+'</td>';
+    html+='<td>'+(sd.primes||'')+'</td>';
+    html+='<td style="text-align:center;">'+(sd.acomptes||'')+'</td>';
+    html+='<td style="font-size:8px;">'+(sd.observations||'')+'</td>';
+    html+='</tr>';
+  });
+  
+  html+='</tbody></table>';
+  html+='<div style="margin-top:20px;text-align:center;font-size:9px;color:#666;">Document généré le '+new Date().toLocaleDateString('fr-FR')+' à '+new Date().toLocaleTimeString('fr-FR')+'</div>';
+  html+='</body></html>';
+  
+  // Ouvrir dans nouvelle fenêtre pour impression
+  const w=window.open('','_blank');
+  w.document.write(html);
+  w.document.close();
+  setTimeout(()=>w.print(),500);
+}
+
 function sendToMarina(){
   const month=parseInt(document.getElementById('sal-month').value);
   const subject=encodeURIComponent('Éléments de salaire '+MONTHS[month]+' 2026 - Pharmacie CHIHI');
@@ -2067,7 +2332,7 @@ function buildMonthText(m,month){
   const off=(first.getDay()||7)-1;
   
   let html='<html><head><meta charset="utf-8"><style>';
-  html+='body{font-family:Arial,sans-serif;background:#f5f2ec;padding:20px;margin:0;}';
+  html+='body{font-family:Copperplate,Copperplate Gothic Light,fantasy,serif;background:#f5f2ec;padding:20px;margin:0;}';
   html+='h1{color:#1a5c4a;text-align:center;font-size:1.3rem;}';
   html+='.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;max-width:900px;margin:20px auto;background:white;padding:10px;border-radius:10px;}';
   html+='.hdr{text-align:center;font-weight:700;font-size:0.8rem;color:#6b7280;padding:8px;border-bottom:2px solid #e5e0d5;}';
@@ -2075,7 +2340,7 @@ function buildMonthText(m,month){
   html+='.day.sun{background:#f9f9f9;}';
   html+='.day.tA{background:#fde8e6;}.day.tB{background:#d5d9f5;}';
   html+='.day.fe{background:#dcfce7;border:2px solid #16a34a;}';
-  html+='.day.cg{background:#e0f2fe;}';
+  html+='.day.cg{background:#dbeafe;}';
   html+='.dn{font-weight:700;font-size:0.9rem;margin-bottom:3px;}';
   html+='.emp{font-size:0.65rem;font-weight:600;margin:1px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}';
   html+='.tag{font-size:0.6rem;font-weight:700;padding:2px 5px;border-radius:3px;display:inline-block;margin:2px 0;color:white;}';
@@ -2233,12 +2498,18 @@ function renderSalaries(){
       </div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
         <span style="font-size:2.5rem;color:#10b981;">👤</span>
-        <div>
+        <div style="flex:1;">
           <h3 style="margin:0;font-size:1.1rem;">${info.prenom||''} ${info.nom||m}</h3>
-          <div style="display:flex;gap:8px;margin-top:4px;">
-            <span class="badge badge-${team}">Éq.${team}</span>
+          <div style="display:flex;gap:8px;margin-top:6px;align-items:center;">
+            <span class="badge badge-${team}" style="font-size:0.8rem;padding:4px 10px;">Équipe ${team}</span>
             <span class="badge" style="background:#6b7280;color:white;font-size:0.7rem;">${fonction}</span>
           </div>
+        </div>
+      </div>
+      <div style="background:${team==='A'?'var(--teamA-light)':'var(--teamB-light)'};padding:12px;border-radius:8px;margin-bottom:12px;border:2px solid ${team==='A'?'var(--teamA)':'var(--teamB)'};">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-weight:700;color:${team==='A'?'var(--teamA)':'var(--teamB)'};font-size:0.9rem;">🔄 Groupe ${team}</span>
+          <button class="btn btn-outline" style="padding:4px 10px;font-size:0.75rem;" onclick="switchEmployeeTeam('${m}')">Changer</button>
         </div>
       </div>
       <div style="display:grid;gap:8px;font-size:0.85rem;">
@@ -2309,6 +2580,29 @@ function saveSalarie(){
     if(equipe==='A'){if(!S.teamA.includes(newKey))S.teamA.push(newKey);}else{if(!S.teamB.includes(newKey))S.teamB.push(newKey);}
   }
   save();closeMo('mo-salarie');renderSalaries();alert('✅ Salarié enregistré !');
+}
+
+function switchEmployeeTeam(member){
+  const currentTeam=S.teamA.includes(member)?'A':'B';
+  const newTeam=currentTeam==='A'?'B':'A';
+  
+  if(confirm(`Voulez-vous vraiment déplacer ${member} de l'Équipe ${currentTeam} vers l'Équipe ${newTeam} ?\n\nCela affectera tous les plannings !`)){
+    // Retirer de l'équipe actuelle
+    S.teamA=S.teamA.filter(m=>m!==member);
+    S.teamB=S.teamB.filter(m=>m!==member);
+    
+    // Ajouter à la nouvelle équipe
+    if(newTeam==='A'){
+      S.teamA.push(member);
+    }else{
+      S.teamB.push(member);
+    }
+    
+    save();
+    renderSalaries();
+    renderAll();
+    alert(`✅ ${member} déplacé vers l'Équipe ${newTeam} !`);
+  }
 }
 
 // ═══════════════════════════════════════════
@@ -2657,6 +2951,52 @@ function savePasswordChange(){
     errorDiv.textContent='❌ Erreur : utilisateur non trouvé';
     errorDiv.style.display='block';
   }
+}
+
+// ═══════════════════════════════════════════
+// ACCOUNT MODAL
+// ═══════════════════════════════════════════
+function openAccountModal(){
+  if(!S.auth.currentUser){alert('Erreur: non connecté');return;}
+  document.getElementById('account-current-user').textContent=S.auth.currentUser.nom;
+  document.getElementById('account-current-role').textContent='Rôle: '+S.auth.currentUser.role;
+  document.getElementById('account-fullname').value=S.auth.currentUser.nom;
+  document.getElementById('account-username').value=S.auth.currentUser.username;
+  if(S.auth.currentUser.role==='admin')document.getElementById('users-tab-btn').style.display='inline-block';
+  switchAccountTab('profile');
+  document.getElementById('mo-account').classList.add('open');
+}
+function switchAccountTab(tab){
+  document.querySelectorAll('.tab-account').forEach(t=>{t.classList.remove('active');t.style.borderBottom='3px solid transparent';t.style.color='#6b7280';});
+  document.querySelectorAll('.account-panel').forEach(p=>p.style.display='none');
+  const activeTab=document.querySelector('.tab-account[onclick*="'+tab+'"]');
+  if(activeTab){activeTab.classList.add('active');activeTab.style.borderBottom='3px solid #10b981';activeTab.style.color='#10b981';}
+  const panel=document.getElementById('account-panel-'+tab);
+  if(panel){panel.style.display='block';if(tab==='users')renderAccountUsers();}
+}
+function saveAccountProfile(){
+  const fullname=document.getElementById('account-fullname').value.trim();
+  if(!fullname){alert('❌ Le nom complet est obligatoire');return;}
+  const userIndex=S.auth.users.findIndex(u=>u.username===S.auth.currentUser.username);
+  if(userIndex!==-1){S.auth.users[userIndex].nom=fullname;S.auth.currentUser.nom=fullname;save();document.getElementById('account-current-user').textContent=fullname;alert('✅ Profil mis à jour !');}
+}
+function saveAccountPassword(){
+  const currentPwd=document.getElementById('account-pwd-current').value;
+  const newPwd=document.getElementById('account-pwd-new').value;
+  const confirmPwd=document.getElementById('account-pwd-confirm').value;
+  const errorDiv=document.getElementById('account-pwd-error');
+  errorDiv.style.display='none';
+  if(!currentPwd||!newPwd||!confirmPwd){errorDiv.textContent='❌ Tous les champs sont obligatoires';errorDiv.style.display='block';return;}
+  if(S.auth.currentUser.password!==currentPwd){errorDiv.textContent='❌ Mot de passe actuel incorrect';errorDiv.style.display='block';return;}
+  if(newPwd.length<6){errorDiv.textContent='❌ Le nouveau mot de passe doit faire au moins 6 caractères';errorDiv.style.display='block';return;}
+  if(newPwd!==confirmPwd){errorDiv.textContent='❌ Les mots de passe ne correspondent pas';errorDiv.style.display='block';return;}
+  const userIndex=S.auth.users.findIndex(u=>u.username===S.auth.currentUser.username);
+  if(userIndex!==-1){S.auth.users[userIndex].password=newPwd;S.auth.currentUser.password=newPwd;save();document.getElementById('account-pwd-current').value='';document.getElementById('account-pwd-new').value='';document.getElementById('account-pwd-confirm').value='';alert('✅ Mot de passe changé avec succès !');}
+}
+function renderAccountUsers(){
+  const tbody=document.getElementById('account-users-list');
+  if(!S.auth.users)S.auth.users=[];
+  tbody.innerHTML=S.auth.users.map((u,idx)=>`<tr><td style="font-weight:700;">${u.username}</td><td>${u.nom}</td><td><span class="badge" style="background:${u.role==='admin'?'#dc2626':'#6b7280'};color:white;">${u.role}</span></td><td><button class="btn btn-outline" style="padding:4px 12px;font-size:0.75rem;" onclick="editUser(${idx})">✏️</button>${u.username!=='admin'?`<button class="btn btn-outline" style="padding:4px 12px;font-size:0.75rem;color:#dc2626;border-color:#dc2626;" onclick="deleteUser(${idx})">🗑️</button>`:''}</td></tr>`).join('');
 }
 
 // ═══════════════════════════════════════════
