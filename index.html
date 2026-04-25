@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planning Aprium Grande Pharmacie Des Terrasses</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f2ec;--primary:#1a5c4a;--primary-light:#e8f5f1;--accent:#e8a020;
+  --teamA:#c0392b;--teamA-light:#fde8e6;
+  --teamB:#1a237e;--teamB-light:#d5d9f5;
+  --teamBsat:#15803d;--teamBsat-light:#dcfce7;
+  --weekend:#e67e22;--weekend-light:#fef0e0;
+  --conge:#0369a1;--conge-light:#e0f2fe;
+  --ferie:#16a34a;--ferie-light:#dcfce7;
+  --text:#1a1a1a;--text-muted:#6b7280;--border:#e5e0d5;
+  --shadow:0 2px 12px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* HEADER */
+header{background:linear-gradient(135deg,var(--primary) 0%,#145a48 100%);color:white;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 3px 10px rgba(0,0,0,.2);}
+header h1{font-family:'DM Serif Display',serif;font-size:1.3rem;line-height:1.2;}
+header p{font-size:.75rem;opacity:.7;margin-top:3px;}
+.hdr-right{display:flex;gap:8px;flex-shrink:0;}
+
+/* BUTTONS */
+.btn{padding:7px 13px;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;transition:all .15s;white-space:nowrap;}
+.btn-white{background:white;color:var(--primary);}.btn-white:hover{background:#eee;}
+.btn-accent{background:var(--accent);color:white;}.btn-accent:hover{background:#d08018;}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text);}.btn-outline:hover{background:#f0f0f0;}
+.btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:#154d3e;}
+.btn-danger{background:#dc2626;color:white;}.btn-danger:hover{background:#b91c1c;}
+.btn-gray{background:#6b7280;color:white;}.btn-gray:hover{background:#4b5563;}
+
+/* LAYOUT */
+.container{max-width:1500px;margin:0 auto;padding:18px 16px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:16px;}
+.card{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);}
+.card h3{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--primary);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+
+/* TABS */
+.tabs{display:flex;gap:3px;margin-bottom:20px;background:white;padding:5px;border-radius:12px;box-shadow:var(--shadow);flex-wrap:wrap;}
+.tab{padding:7px 14px;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;background:transparent;color:var(--text-muted);transition:all .15s;white-space:nowrap;}
+.tab.active{background:var(--primary);color:white;}
+.tab:hover:not(.active){background:var(--primary-light);color:var(--primary);}
+.panel{display:none;}.panel.active{display:block;}
+
+/* BADGES */
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.7rem;font-weight:700;}
+.badge-A{background:var(--teamA-light);color:var(--teamA);}
+.badge-B{background:var(--teamB-light);color:var(--teamB);}
+
+/* LISTS */
+.mlist{list-style:none;margin-bottom:10px;}
+.mitem{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border-radius:7px;margin-bottom:3px;background:var(--bg);font-size:.83rem;}
+.mitem button{background:none;border:none;cursor:pointer;color:#dc2626;font-size:1rem;}
+.add-row{display:flex;gap:7px;}
+.add-row input{flex:1;padding:7px 11px;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;}
+.add-row input:focus{border-color:var(--primary);}
+
+/* FORM ELEMENTS */
+input[type=text],input[type=email],input[type=number],select,textarea{
+  padding:7px 11px;border:1px solid var(--border);border-radius:7px;
+  font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;width:100%;
+}
+input[type=time]{padding:5px 8px;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.8rem;}
+input[type=date]{padding:6px 10px;border:1px solid var(--border);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:.82rem;width:100%;}
+select{margin-top:3px;}
+textarea{resize:vertical;min-height:58px;}
+input:focus,select:focus,textarea:focus{border-color:var(--primary);}
+label.lbl{font-size:.78rem;font-weight:600;color:var(--text-muted);display:block;margin-bottom:3px;}
+.fgrp{margin-bottom:11px;}
+.note-box{font-size:.76rem;color:var(--text-muted);background:var(--weekend-light);padding:8px 10px;border-radius:7px;border-left:3px solid var(--weekend);margin-top:8px;}
+.info-box{font-size:.8rem;background:var(--primary-light);padding:10px 14px;border-radius:8px;border-left:3px solid var(--primary);margin-bottom:16px;color:var(--text-muted);}
+
+/* SCHEDULE EDITOR */
+.emp-sched-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.emp-sched-card{background:white;border-radius:11px;padding:16px;box-shadow:var(--shadow);border:2px solid transparent;transition:border-color .2s;}
+.emp-sched-card:hover{border-color:var(--primary-light);}
+.emp-sched-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.emp-sched-name{font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:7px;}
+.dsr{display:grid;grid-template-columns:40px 1fr;gap:6px;align-items:start;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #f3f4f6;}
+.dsr:last-child{border-bottom:none;}
+.dtb{padding:5px 4px;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-size:.7rem;font-weight:700;text-align:center;background:white;color:var(--text-muted);transition:all .15s;width:100%;margin-top:3px;}
+.dtb.on-A{border-color:var(--teamA);background:var(--teamA-light);color:var(--teamA);}
+.dtb.on-B{border-color:var(--teamB);background:var(--teamB-light);color:var(--teamB);}
+.dtb.on-A.sam,.dtb.on-B.sam{border-color:var(--weekend);background:var(--weekend-light);color:var(--weekend);}
+.ti{display:flex;align-items:center;gap:4px;font-size:.73rem;color:var(--text-muted);flex-wrap:wrap;margin-bottom:3px;}
+.ti input[type=time]{width:80px;font-size:.72rem;padding:3px 6px;}
+.ti .ti-lbl{font-size:.67rem;font-weight:600;color:var(--text-muted);width:38px;flex-shrink:0;}
+.pause-row{display:flex;align-items:center;gap:4px;font-size:.71rem;color:#b45309;flex-wrap:wrap;}
+.pause-row input[type=time]{width:76px;font-size:.71rem;padding:3px 6px;border-color:#fef3c7;}
+.plbl{font-size:.68rem;font-weight:700;color:#b45309;background:#fef3c7;padding:1px 6px;border-radius:4px;flex-shrink:0;}
+
+/* ANNUAL */
+.annual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.month-card{background:white;border-radius:11px;overflow:hidden;box-shadow:var(--shadow);}
+.month-hd{background:var(--primary);color:white;padding:8px 12px;font-family:'DM Serif Display',serif;font-size:.9rem;text-align:center;}
+.month-bd{padding:7px;}
+.wdh{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;margin-bottom:2px;}
+.wdl{text-align:center;font-size:.58rem;font-weight:700;color:var(--text-muted);}
+.wdl.s{color:var(--weekend);}
+.dcal{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;}
+.dc{aspect-ratio:1;border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;border:1px solid transparent;transition:border-color .1s;}
+.dc:hover{border-color:var(--primary);}
+.dc.emp{cursor:default;}.dc.emp:hover{border-color:transparent;}
+.dc.sun{color:#ccc;cursor:default;}
+.dc.tA{background:var(--teamA-light);color:var(--teamA);font-weight:700;}
+.dc.tB{background:var(--teamB-light);color:var(--teamB);font-weight:700;}
+.dc.sA{background:linear-gradient(135deg,var(--teamA-light) 50%,var(--weekend-light) 50%);color:var(--teamA);font-weight:700;}
+.dc.sB{background:linear-gradient(135deg,var(--teamBsat-light) 50%,var(--weekend-light) 50%);color:var(--teamBsat);font-weight:700;}
+.dc.cg{background:var(--conge-light)!important;color:var(--conge)!important;}
+.dc.fe{background:var(--ferie-light)!important;border:1px solid var(--ferie)!important;}
+.dn{font-size:.68rem;line-height:1;}.dt{font-size:.5rem;line-height:1;}
+.legend{display:flex;gap:12px;flex-wrap:wrap;background:white;padding:9px 14px;border-radius:9px;box-shadow:var(--shadow);margin-bottom:14px;}
+.li{display:flex;align-items:center;gap:5px;font-size:.76rem;color:var(--text-muted);}
+.ld{width:12px;height:12px;border-radius:3px;}
+
+/* MONTHLY */
+.mth-hdr{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px;}
+.mh{text-align:center;font-size:.73rem;font-weight:700;color:var(--text-muted);padding:5px;}
+.mh.s{color:var(--weekend);}
+.mgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.mc{min-height:100px;border:1px solid var(--border);border-radius:7px;padding:5px;font-size:.74rem;cursor:pointer;transition:border-color .15s;}
+.mc:hover{border-color:var(--primary);}
+.mc.emp{background:transparent;border-color:transparent;cursor:default;}.mc.emp:hover{border-color:transparent;}
+.mc.tA{background:var(--teamA-light);}.mc.tB{background:var(--teamB-light);}
+.mc.sun{background:#f9f9f9;cursor:default;}.mc.sun:hover{border-color:var(--border);}
+.mc.cg{background:var(--conge-light)!important;}.mc.fe{background:var(--ferie-light)!important;border:2px solid var(--ferie);}
+.mn{font-weight:700;font-size:.86rem;margin-bottom:3px;}
+.mtag{font-size:.67rem;font-weight:700;padding:1px 5px;border-radius:3px;display:inline-block;margin-bottom:2px;}
+.tgA{background:var(--teamA);color:white;}.tgB{background:var(--teamB);color:white;}
+.tgS{background:var(--weekend);color:white;}.tgC{background:var(--conge);color:white;}
+.tgF{background:var(--ferie);color:white;}
+.tgSatA{background:var(--teamA);color:white;border-radius:3px;padding:1px 5px;font-size:.67rem;font-weight:700;display:inline-block;margin-bottom:2px;}
+.tgSatB{background:var(--teamBsat);color:white;border-radius:3px;padding:1px 5px;font-size:.67rem;font-weight:700;display:inline-block;margin-bottom:2px;}
+
+/* EMPLOYEES VIEW */
+.emp-wrap{overflow-x:auto;}
+.etable{width:100%;border-collapse:collapse;background:white;border-radius:11px;overflow:hidden;box-shadow:var(--shadow);font-size:.77rem;}
+.etable th{background:var(--primary);color:white;padding:8px 5px;text-align:center;font-size:.71rem;white-space:nowrap;}
+.etable th.nth{text-align:left;padding-left:12px;min-width:130px;}
+.etable td{padding:6px 5px;text-align:center;border-bottom:1px solid var(--border);vertical-align:middle;}
+.etable td.ntd{text-align:left;padding-left:12px;font-weight:600;white-space:nowrap;}
+.etable tr:last-child td{border-bottom:none;}.etable tr:hover td{background:#fafafa;}
+.cA{background:var(--teamA-light);color:var(--teamA);font-weight:700;border-radius:3px;padding:2px 4px;}
+.cB{background:var(--teamB-light);color:var(--teamB);font-weight:700;border-radius:3px;padding:2px 4px;}
+.cS{background:var(--weekend-light);color:var(--weekend);font-weight:700;border-radius:3px;padding:2px 4px;}
+.cC{background:var(--conge-light);color:var(--conge);font-weight:700;border-radius:3px;padding:2px 4px;}
+.cF{background:var(--ferie-light);color:#92400e;font-weight:700;border-radius:3px;padding:2px 4px;}
+.cO{color:#d1d5db;}
+.ecard{background:white;border-radius:11px;padding:15px;box-shadow:var(--shadow);margin-bottom:12px;}
+.elh{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+.elh h4{font-family:'DM Serif Display',serif;font-size:.95rem;}
+.edr{display:flex;align-items:center;justify-content:space-between;padding:4px 0;font-size:.8rem;border-bottom:1px solid #f3f4f6;}
+.edr:last-child{border-bottom:none;}.edl{color:var(--text-muted);width:130px;flex-shrink:0;}
+
+/* STATS */
+.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px;}
+.scard{background:white;border-radius:11px;padding:14px;box-shadow:var(--shadow);text-align:center;}
+.snum{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--primary);line-height:1;margin-bottom:3px;}
+.slbl{font-size:.74rem;color:var(--text-muted);}
+
+/* CONGES */
+.citem{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border-radius:7px;background:var(--bg);margin-bottom:5px;font-size:.82rem;}
+.citem button{background:none;border:none;cursor:pointer;color:#dc2626;font-size:1rem;}
+
+/* SALAIRE */
+.sal-card{background:white;border-radius:12px;padding:18px;box-shadow:var(--shadow);margin-bottom:14px;}
+.sal-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--border);flex-wrap:wrap;}
+.sal-hdr h4{font-family:'DM Serif Display',serif;font-size:1rem;flex:1;}
+.sal-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;}
+.sal-field{display:flex;flex-direction:column;gap:4px;}
+.sal-field label{font-size:.73rem;font-weight:600;color:var(--text-muted);}
+.sal-total{background:var(--bg);padding:8px 12px;border-radius:7px;font-size:.8rem;display:flex;gap:14px;flex-wrap:wrap;}
+.sal-total span{color:var(--text-muted);}
+.sal-total strong{color:var(--primary);}
+.sbadge{padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700;}
+.sbadge-sup{background:#dcfce7;color:#166534;}
+.sbadge-abs{background:#fee2e2;color:#991b1b;}
+.sbadge-mal{background:#fef9c3;color:#854d0e;}
+
+/* EMAIL */
+.email-card{background:white;border-radius:11px;padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;}
+.email-card .etitle{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;}
+.email-card .ebtn-row{display:flex;gap:6px;}
+
+/* HEBDO TABLE */
+.hebdo-table{width:100%;border-collapse:collapse;font-size:0.75rem;}
+.hebdo-table th{background:var(--primary);color:white;padding:10px 8px;text-align:center;font-weight:700;border:1px solid var(--border);}
+.hebdo-table td{padding:10px 8px;border:1px solid var(--border);text-align:center;vertical-align:middle;}
+.hebdo-table .emp-cell{background:#f8f9fa;font-weight:700;text-align:left;padding:10px;}
+.hebdo-table .emp-name{font-size:0.85rem;color:var(--text);}
+.hebdo-table .emp-team{font-size:0.7rem;color:var(--text-muted);margin-top:2px;}
+.hebdo-table .emp-hours{font-size:0.7rem;color:var(--primary);font-weight:700;margin-top:4px;}
+.hebdo-table .day-cell{font-size:0.75rem;line-height:1.6;background:white;}
+.hebdo-table .repos{background:#fee2e2;color:#dc2626;font-weight:700;font-size:0.8rem;}
+.hebdo-table .ferie{background:#dcfce7;color:#16a34a;font-weight:700;font-size:0.8rem;}
+.hebdo-table .conge{background:#e0f2fe;color:#0369a1;font-weight:700;font-size:0.8rem;}
+
+
+/* MODAL */
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;}
+.mo.open{display:flex;}
+.md{background:white;border-radius:14px;padding:22px;width:420px;box-shadow:0 10px 40px rgba(0,0,0,.2);max-height:92vh;overflow-y:auto;}
+.md h3{font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--primary);margin-bottom:14px;}
+.minfo{background:var(--bg);padding:10px 13px;border-radius:7px;margin-bottom:14px;font-size:.84rem;line-height:1.8;white-space:pre-line;}
+.mfoot{display:flex;justify-content:flex-end;gap:7px;margin-top:10px;}
+
+/* NAV */
+.ynav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.ynav h2{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--primary);}
+.mnav{display:flex;align-items:center;gap:7px;}
+.mnav select{width:auto;margin-top:0;}
+.ptabs{display:flex;gap:3px;background:white;padding:4px;border-radius:9px;box-shadow:var(--shadow);}
+
+@media(max-width:900px){
+  .annual-grid{grid-template-columns:repeat(2,1fr);}
+  .grid2,.grid3{grid-template-columns:1fr;}
+  .stats4{grid-template-columns:repeat(2,1fr);}
+  .emp-sched-grid{grid-template-columns:1fr;}
+  .sal-fields{grid-template-columns:1fr 1fr;}
+}
+
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  body { background: white !important; font-size: 9px; }
+  header { display: none !important; }
+  .tabs { display: none !important; }
+  .ynav { display: none !important; }
+  .panel { display: none !important; }
+  .panel.active { display: block !important; }
+  .container { padding: 0 !important; max-width: 100% !important; }
+  .card { box-shadow: none !important; border: none !important; padding: 0 !important; }
+  button, .btn { display: none !important; }
+  
+  /* Monthly print styles */
+  .mgrid { grid-template-columns: repeat(7,1fr) !important; gap: 2px !important; }
+  .mc { min-height: 70px !important; padding: 3px !important; font-size: 7px !important; border: 1px solid #ccc !important; }
+  .mn { font-size: 10px !important; }
+  .mth-hdr { margin-bottom: 2px !important; }
+  .mh { font-size: 8px !important; padding: 2px !important; }
+  .mtag, .tgSatA, .tgSatB { font-size: 6px !important; padding: 1px 3px !important; }
+  .print-title { display: block !important; text-align: center; font-family: 'DM Serif Display', serif; font-size: 20px; color: #1a5c4a; margin-bottom: 10px; font-weight: bold; }
+  
+  /* Hebdo print styles - one week per page A4 landscape */
+  .print-hebdo-title { display: block !important; text-align: center; font-family: 'DM Serif Display', serif; font-size: 18px; color: #1a5c4a; margin-bottom: 12px; font-weight: bold; }
+  .hebdo-table { font-size: 9px !important; width: 100% !important; page-break-after: always; }
+  .hebdo-table th { padding: 8px 5px !important; font-size: 10px !important; background: #1a5c4a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hebdo-table td { padding: 8px 5px !important; font-size: 9px !important; }
+  .hebdo-table .emp-cell { padding: 8px !important; background: #f8f9fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hebdo-table .emp-name { font-size: 10px !important; }
+  .hebdo-table .emp-team { font-size: 8px !important; }
+  .hebdo-table .emp-hours { font-size: 8px !important; }
+  .hebdo-table .day-cell { font-size: 9px !important; line-height: 1.5 !important; }
+  .hebdo-table .repos { background: #fee2e2 !important; color: #dc2626 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hebdo-table .ferie { background: #dcfce7 !important; color: #16a34a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hebdo-table .conge { background: #e0f2fe !important; color: #0369a1 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+.print-title { display: none; }
+.print-hebdo-title { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ LOGIN SCREEN ═══════════════ -->
+<div id="login-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#1a5c4a 0%,#10b981 100%);display:flex;align-items:center;justify-content:center;z-index:10000;">
+  <div style="background:white;border-radius:16px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,0.3);max-width:420px;width:90%;">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div style="font-size:4rem;color:#10b981;margin-bottom:16px;">✚</div>
+      <h1 style="font-family:'DM Serif Display',serif;color:#1a5c4a;font-size:1.8rem;margin:0;">Planning Pharmacie</h1>
+      <p style="color:#6b7280;font-size:0.9rem;margin-top:8px;">Connexion sécurisée</p>
+    </div>
+    
+    <div id="login-error" style="display:none;background:#fee2e2;border:1px solid #dc2626;color:#dc2626;padding:12px;border-radius:8px;margin-bottom:20px;font-size:0.85rem;"></div>
+    
+    <form onsubmit="handleLogin(event)" style="display:flex;flex-direction:column;gap:20px;">
+      <div>
+        <label style="display:block;font-weight:600;color:#374151;margin-bottom:8px;font-size:0.9rem;">Nom d'utilisateur</label>
+        <input type="text" id="login-username" required style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'">
+      </div>
+      
+      <div>
+        <label style="display:block;font-weight:600;color:#374151;margin-bottom:8px;font-size:0.9rem;">Mot de passe</label>
+        <input type="password" id="login-password" required style="width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;font-size:1rem;transition:all 0.3s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#e5e7eb'">
+      </div>
+      
+      <button type="submit" style="background:#10b981;color:white;padding:14px;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">
+        🔐 Se connecter
+      </button>
+    </form>
+    
+    <div style="margin-top:24px;padding-top:24px;border-top:1px solid #e5e7eb;text-align:center;">
+      <p style="color:#6b7280;font-size:0.8rem;">Compte par défaut : <strong>admin</strong> / <strong>admin123</strong></p>
+      <p style="color:#dc2626;font-size:0.75rem;margin-top:8px;">⚠️ Changez le mot de passe après première connexion</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ MAIN APP (hidden until login) ═══════════════ -->
+<div id="main-app" style="display:none;">
+
+<header>
+  <div>
+    <h1><span style="color:#10b981;font-weight:bold;font-size:1.4em">✚</span> Aprium Grande Pharmacie Des Terrasses</h1>
+    <p>Planning des équipes A &amp; B — Année 2026</p>
+  </div>
+  <div class="hdr-right">
+    <span id="save-indicator" style="margin-right:16px;padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:600;background:#dcfce7;color:#16a34a;display:none;">
+      ✓ Sauvegardé
+    </span>
+    <span id="user-info" style="margin-right:16px;color:#6b7280;font-size:0.85rem;"></span>
+    <button class="btn btn-outline" onclick="exportBackup()" style="padding:8px 16px;font-size:0.85rem;margin-right:8px;background:#fbbf24;color:#000;border-color:#f59e0b;">💾 Sauvegarder</button>
+    <button class="btn btn-outline" onclick="openChangePasswordModal()" style="padding:8px 16px;font-size:0.85rem;margin-right:8px;">🔑 Mot de passe</button>
+    <button class="btn btn-outline" onclick="handleLogout()" style="padding:8px 16px;font-size:0.85rem;">🚪 Déconnexion</button>
+  </div>
+</header>
+
+<div class="container">
+<div class="tabs" id="main-tabs">
+  <button class="tab active" onclick="showPanel('config',this)">⚙️ Config</button>
+  <button class="tab" id="tab-users" onclick="showPanel('users',this)" style="display:none;">👥 Utilisateurs</button>
+  <button class="tab" onclick="showPanel('salaries',this)"><span style="color:#10b981;">👤</span> Salariés</button>
+  <button class="tab" onclick="showPanel('schedules',this)">📋 Horaires</button>
+  <button class="tab" onclick="showPanel('employes',this)">👥 Planning</button>
+  <button class="tab" onclick="showPanel('annual',this)">📅 Annuel</button>
+  <button class="tab" onclick="showPanel('monthly',this)">🗓 Mensuel</button>
+  <button class="tab" onclick="showPanel('hebdo',this)">📋 Hebdo</button>
+  <button class="tab" onclick="showPanel('conges',this)">🏖️ Congés payés</button>
+  <button class="tab" onclick="showPanel('salaire',this)">💰 Éléments de salaire</button>
+  <button class="tab" onclick="showPanel('stats',this)">📊 Stats</button>
+  <button class="tab" onclick="showPanel('email',this)">📧 Email</button>
+</div>
+
+<!-- ═══════════════ CONFIG ═══════════════ -->
+<div id="panel-config" class="panel active">
+  <div class="grid2">
+    <div class="card">
+      <h3><span class="badge badge-A">Équipe A</span> Membres</h3>
+      <ul class="mlist" id="listA"></ul>
+      <div class="add-row"><input type="text" id="inputA" placeholder="Nom du membre..." onkeydown="if(event.key==='Enter')addMember('A')"><button class="btn btn-primary" onclick="addMember('A')">+</button></div>
+    </div>
+    <div class="card">
+      <h3><span class="badge badge-B">Équipe B</span> Membres</h3>
+      <ul class="mlist" id="listB"></ul>
+      <div class="add-row"><input type="text" id="inputB" placeholder="Nom du membre..." onkeydown="if(event.key==='Enter')addMember('B')"><button class="btn btn-primary" onclick="addMember('B')">+</button></div>
+    </div>
+    <div class="card">
+      <h3>🕐 Horaires d'ouverture (défaut)</h3>
+      <p style="font-size:.77rem;color:var(--text-muted);margin-bottom:12px;">Appliqués si aucun horaire individuel n'est défini.</p>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.83rem;"><label style="width:70px;color:var(--text-muted);font-weight:600;">Lun–Ven</label><input type="time" id="o-lv" value="08:30"> à <input type="time" id="c-lv" value="20:00"></div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:.83rem;"><label style="width:70px;color:var(--text-muted);font-weight:600;">Samedi</label><input type="time" id="o-sam" value="09:00"> à <input type="time" id="c-sam" value="20:00"></div>
+      <button class="btn btn-primary" onclick="saveHoraires()">💾 Enregistrer</button>
+    </div>
+    <div class="card">
+      <h3>📌 Jours fériés 2026</h3>
+      <ul class="mlist" id="ferie-list"></ul>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;padding:20px;background:#fef3c7;border:2px solid #f59e0b;border-radius:12px;">
+    <h3 style="margin:0 0 12px 0;color:#92400e;">💾 Sauvegarde de vos données</h3>
+    <p style="font-size:0.85rem;color:#78350f;margin-bottom:16px;">
+      ✅ <strong>Auto-sauvegarde activée</strong> : vos données sont sauvegardées automatiquement toutes les 30 secondes<br>
+      💡 <strong>Conseil</strong> : Créez une sauvegarde manuelle chaque jour avec le bouton ci-dessus
+    </p>
+    <button class="btn" style="padding:12px 24px;font-size:1rem;background:#10b981;color:white;border:none;" onclick="save();alert('✅ Données sauvegardées manuellement !')">
+      💾 Sauvegarder maintenant
+    </button>
+  </div>
+  <div style="text-align:center;margin-top:4px;">
+    <button class="btn btn-accent" style="padding:11px 28px;font-size:.92rem;" onclick="generatePlanning()">🔄 Générer / Mettre à jour le planning</button>
+  </div>
+</div>
+
+<!-- ═══════════════ UTILISATEURS (ADMIN ONLY) ═══════════════ -->
+<div id="panel-users" class="panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">👥 Gestion des utilisateurs</h2>
+    <button class="btn btn-accent" onclick="openAddUserModal()">➕ Nouvel utilisateur</button>
+  </div>
+  <div class="card">
+    <table class="hebdo-table" style="font-size:0.9rem;">
+      <thead>
+        <tr>
+          <th>Utilisateur</th>
+          <th>Nom complet</th>
+          <th>Rôle</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="users-list"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════ SALARIÉS (FICHES) ═══════════════ -->
+<div id="panel-salaries" class="panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;"><span style="color:#10b981;">👤</span> Fiches Salariés</h2>
+    <button class="btn btn-accent" onclick="openAddSalarieModal()">➕ Nouveau salarié</button>
+  </div>
+  <div id="salaries-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:16px;"></div>
+</div>
+
+<!-- ═══════════════ HORAIRES EMPLOYÉS ═══════════════ -->
+<div id="panel-schedules" class="panel">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">📋 Horaires & Jours par Employé</h2>
+    <button class="btn btn-accent" onclick="saveAllSchedules()">💾 Enregistrer tout</button>
+  </div>
+  <p class="info-box">Pour chaque employé : cochez ses jours de travail, définissez ses horaires d'entrée/sortie et sa pause (☕) pour chaque jour. Le samedi alterne automatiquement 1 semaine sur 2.</p>
+  <div class="emp-sched-grid" id="emp-sched-grid"></div>
+</div>
+
+<!-- ═══════════════ PLANNING EMPLOYÉS ═══════════════ -->
+<div id="panel-employes" class="panel">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">👥 Planning par Employé</h2>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center;">
+      <div class="ptabs">
+        <button class="tab active" id="ep-week" onclick="setEmpPeriod('week',this)">Semaine</button>
+        <button class="tab" id="ep-month" onclick="setEmpPeriod('month',this)">Mois</button>
+        <button class="tab" id="ep-year" onclick="setEmpPeriod('year',this)">Année</button>
+      </div>
+      <div class="ptabs">
+        <button class="tab active" id="ev-table" onclick="setEmpView('table',this)">📊 Tableau</button>
+        <button class="tab" id="ev-list" onclick="setEmpView('list',this)">📋 Fiches</button>
+      </div>
+      <div id="emp-nav" style="display:flex;gap:6px;align-items:center;">
+        <button class="btn btn-outline" onclick="empPrev()">◀</button>
+        <span id="emp-nav-lbl" style="font-weight:700;font-size:.86rem;min-width:175px;text-align:center;"></span>
+        <button class="btn btn-outline" onclick="empNext()">▶</button>
+      </div>
+    </div>
+  </div>
+  <div id="emp-content"></div>
+</div>
+
+<!-- ═══════════════ ANNUEL ═══════════════ -->
+<div id="panel-annual" class="panel">
+  <div class="ynav">
+    <h2>Planning Annuel 2026</h2>
+    <div class="legend">
+      <div class="li"><div class="ld" style="background:var(--teamA-light);border:2px solid var(--teamA)"></div>Équipe A</div>
+      <div class="li"><div class="ld" style="background:var(--teamB-light);border:2px solid var(--teamB)"></div>Équipe B</div>
+      <div class="li"><div class="ld" style="background:linear-gradient(135deg,var(--teamA-light) 50%,var(--weekend-light) 50%);border:2px solid var(--teamA)"></div>Samedi Éq.A</div>
+      <div class="li"><div class="ld" style="background:linear-gradient(135deg,var(--teamBsat-light) 50%,var(--weekend-light) 50%);border:2px solid var(--teamBsat)"></div>Samedi Éq.B</div>
+      <div class="li"><div class="ld" style="background:var(--conge-light);border:2px solid var(--conge)"></div>Congé</div>
+      <div class="li"><div class="ld" style="background:white;border:2px solid var(--ferie)"></div>Férié</div>
+    </div>
+  </div>
+  <div class="annual-grid" id="annual-grid"></div>
+</div>
+
+<!-- ═══════════════ MENSUEL ═══════════════ -->
+<div id="panel-monthly" class="panel">
+  <div class="print-title" id="print-monthly-title" style="color:#10b981;">✚ <span style="color:#1a5c4a;">Aprium Grande Pharmacie Des Terrasses — Planning Mensuel 2026</span></div>
+  <div class="ynav">
+    <div class="mnav">
+      <button class="btn btn-outline" onclick="prevMonth()">◀</button>
+      <select id="month-sel" onchange="renderMonthly()">
+        <option value="0">Janvier</option><option value="1">Février</option><option value="2">Mars</option>
+        <option value="3">Avril</option><option value="4">Mai</option><option value="5">Juin</option>
+        <option value="6">Juillet</option><option value="7">Août</option><option value="8">Septembre</option>
+        <option value="9">Octobre</option><option value="10">Novembre</option><option value="11">Décembre</option>
+      </select>
+      <button class="btn btn-outline" onclick="nextMonth()">▶</button>
+    </div>
+    <button class="btn btn-accent" onclick="openCongeModal()">+ Congé</button>
+    <button class="btn btn-primary" onclick="window.print()">🖨 Imprimer</button>
+  </div>
+  <div class="mth-hdr" id="mth-hdr"></div>
+  <div class="mgrid" id="mgrid"></div>
+</div>
+
+<!-- ═══════════════ HEBDO ═══════════════ -->
+<div id="panel-hebdo" class="panel">
+  <div class="print-hebdo-title" id="print-hebdo-title" style="color:#10b981;">✚ <span style="color:#1a5c4a;">Aprium Grande Pharmacie Des Terrasses — Planning Hebdomadaire 2026</span></div>
+  <div class="ynav">
+    <div class="mnav">
+      <button class="btn btn-outline" onclick="prevWeek()">◀ Semaine précédente</button>
+      <select id="week-sel" onchange="renderHebdo()"></select>
+      <button class="btn btn-outline" onclick="nextWeek()">Semaine suivante ▶</button>
+    </div>
+    <button class="btn btn-primary" onclick="window.print()">🖨 Imprimer</button>
+  </div>
+  <div class="card">
+    <div id="hebdo-table"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ CONGÉS ═══════════════ -->
+<div id="panel-conges" class="panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">🏖️ Congés payés & Arrêts maladie</h2>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-accent" onclick="openCongeModal()">+ Nouveau congé</button>
+      <button class="btn" style="background:#dc2626;color:white;" onclick="openMaladieModal()">+ Arrêt maladie</button>
+    </div>
+  </div>
+  <div class="card">
+    <ul class="mlist" id="conge-full"></ul>
+    <p id="no-conge" style="color:var(--text-muted);font-size:.84rem;text-align:center;padding:18px;">Aucun congé ou arrêt enregistré.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ ÉLÉMENTS DE SALAIRE ═══════════════ -->
+<div id="panel-salaire" class="panel">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">💰 Éléments de Salaire</h2>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;align-items:center;">
+      <select id="sal-month" onchange="renderSalaire()" style="width:auto;margin-top:0;">
+        <option value="0">Janvier</option><option value="1">Février</option><option value="2">Mars</option>
+        <option value="3">Avril</option><option value="4">Mai</option><option value="5">Juin</option>
+        <option value="6">Juillet</option><option value="7">Août</option><option value="8">Septembre</option>
+        <option value="9">Octobre</option><option value="10">Novembre</option><option value="11">Décembre</option>
+      </select>
+      <button class="btn btn-primary" onclick="saveSalaire()">💾 Enregistrer</button>
+      <button class="btn btn-accent" onclick="exportSalaireExcel()">📊 Export Excel</button>
+      <button class="btn" style="background:#ea4335;color:white;" onclick="sendToMarina()">📧 Envoyer à Marina</button>
+    </div>
+  </div>
+  <div class="card" style="background:#f0f9ff;border-left:4px solid #0369a1;padding:12px;margin-bottom:16px;">
+    <p style="margin:0;font-size:0.85rem;color:#0369a1;"><strong>📮 Comptable :</strong> Marina · marina@jtm.fr</p>
+  </div>
+  <div id="sal-table"></div>
+</div>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<div id="panel-stats" class="panel">
+  <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;margin-bottom:16px;">📊 Statistiques 2026</h2>
+  <div class="stats4" id="stats4"></div>
+  <div class="grid2">
+    <div class="card"><h3>Jours travaillés par employé</h3><ul class="mlist" id="stats-members"></ul></div>
+    <div class="card"><h3>Samedis par équipe</h3><div id="stats-sam"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ EMAIL ═══════════════ -->
+<div id="panel-email" class="panel">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+    <h2 style="font-family:'DM Serif Display',serif;color:var(--primary);font-size:1.2rem;">📧 Envoi du Planning par Email</h2>
+    <div style="display:flex;gap:7px;">
+      <button class="btn btn-accent" onclick="sendAllEmails()">📨 Envoyer à tous</button>
+      <button class="btn btn-gray" onclick="printAllPDF()">🖨 PDF tous</button>
+    </div>
+  </div>
+  <p class="info-box">Saisissez l'adresse Gmail de chaque employé. Le bouton 📧 ouvre Gmail avec le planning mensuel pré-rempli. Le bouton 🖨 génère un PDF imprimable.</p>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px;background:white;padding:12px 16px;border-radius:10px;box-shadow:var(--shadow);">
+    <label class="lbl" style="margin:0;white-space:nowrap;">Mois à envoyer :</label>
+    <select id="email-month" style="width:auto;margin-top:0;">
+      <option value="0">Janvier</option><option value="1">Février</option><option value="2">Mars</option>
+      <option value="3">Avril</option><option value="4">Mai</option><option value="5">Juin</option>
+      <option value="6">Juillet</option><option value="7">Août</option><option value="8">Septembre</option>
+      <option value="9">Octobre</option><option value="10">Novembre</option><option value="11">Décembre</option>
+    </select>
+  </div>
+  <div class="grid2" id="email-grid"></div>
+</div>
+
+</div><!-- end container -->
+
+<!-- ═══ MODAL JOUR ═══ -->
+<div class="mo" id="mo-day">
+  <div class="md">
+    <h3 id="mo-day-title"></h3>
+    <div class="minfo" id="mo-day-info"></div>
+    <div id="mo-day-body"></div>
+    <div class="mfoot"><button class="btn btn-outline" onclick="closeMo('mo-day')">Fermer</button></div>
+  </div>
+</div>
+
+<!-- ═══ MODAL CONGÉ ═══ -->
+<div class="mo" id="mo-conge">
+  <div class="md">
+    <h3>🏖️ Ajouter un congé</h3>
+    <div class="fgrp"><label class="lbl">Employé</label><select id="cg-member"></select></div>
+    <div class="fgrp"><label class="lbl">Date de début</label><input type="date" id="cg-start" min="2026-01-01" max="2026-12-31"></div>
+    <div class="fgrp"><label class="lbl">Date de fin</label><input type="date" id="cg-end" min="2026-01-01" max="2026-12-31"></div>
+    <div class="fgrp"><label class="lbl">Note (optionnel)</label><input type="text" id="cg-note" placeholder="Ex: Congé annuel..."></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-conge')">Annuler</button>
+      <button class="btn btn-primary" onclick="saveConge()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL MALADIE ═══ -->
+<div class="mo" id="mo-maladie">
+  <div class="md">
+    <h3>🤒 Ajouter un arrêt maladie</h3>
+    <div class="fgrp"><label class="lbl">Employé</label><select id="mal-member"></select></div>
+    <div class="fgrp"><label class="lbl">Date de début</label><input type="date" id="mal-start" min="2026-01-01" max="2026-12-31"></div>
+    <div class="fgrp"><label class="lbl">Date de fin</label><input type="date" id="mal-end" min="2026-01-01" max="2026-12-31"></div>
+    <div class="fgrp"><label class="lbl">Justifié</label><select id="mal-justified"><option value="true">Oui (arrêt transmis)</option><option value="false">Non</option></select></div>
+    <div class="fgrp"><label class="lbl">Note (optionnel)</label><input type="text" id="mal-note" placeholder="Ex: Grippe..."></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-maladie')">Annuler</button>
+      <button class="btn btn-primary" onclick="saveMaladie()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL SALARIÉ ═══ -->
+<div class="mo" id="mo-salarie">
+  <div class="md" style="max-width:600px;">
+    <h3 id="salarie-modal-title"><span style="color:#10b981;">👤</span> Nouveau salarié</h3>
+    <input type="hidden" id="sal-key" value="">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp"><label class="lbl">Nom *</label><input type="text" id="sal-nom" placeholder="DUPONT"></div>
+      <div class="fgrp"><label class="lbl">Prénom *</label><input type="text" id="sal-prenom" placeholder="Marie"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp"><label class="lbl">Date de naissance</label><input type="date" id="sal-datenaissance"></div>
+      <div class="fgrp"><label class="lbl">Fonction/Poste *</label>
+        <select id="sal-fonction">
+          <option value="Titulaire">Titulaire</option>
+          <option value="Préparatrice en pharmacie">Préparatrice en pharmacie</option>
+          <option value="Apprenti(e)">Apprenti(e)</option>
+          <option value="Intérimaire">Intérimaire</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp"><label class="lbl">Date d'entrée *</label><input type="date" id="sal-dateentree"></div>
+      <div class="fgrp"><label class="lbl">Date de sortie</label><input type="date" id="sal-datesortie"></div>
+    </div>
+    <div class="fgrp"><label class="lbl">Adresse postale</label><input type="text" id="sal-adresse" placeholder="12 Rue de la Paix, 75000 Paris"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp"><label class="lbl">Email</label><input type="email" id="sal-email" placeholder="marie.dupont@email.com"></div>
+      <div class="fgrp"><label class="lbl">Téléphone</label><input type="tel" id="sal-telephone" placeholder="06 12 34 56 78"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp"><label class="lbl">Matricule</label><input type="text" id="sal-matricule" placeholder="00001"></div>
+      <div class="fgrp"><label class="lbl">N° Sécurité Sociale</label><input type="text" id="sal-numss" placeholder="1 85 01 75 116 001 23"></div>
+    </div>
+    <div class="fgrp"><label class="lbl">Équipe</label>
+      <select id="sal-equipe">
+        <option value="A">Équipe A (Samedis semaines paires)</option>
+        <option value="B">Équipe B (Samedis semaines impaires)</option>
+      </select>
+    </div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-salarie')">Annuler</button>
+      <button class="btn btn-primary" onclick="saveSalarie()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL PDF ═══ -->
+<div class="mo" id="mo-pdf">
+  <div class="md" style="width:680px;max-width:95vw;">
+    <h3 id="pdf-title"></h3>
+    <div id="pdf-content" style="background:white;padding:14px;border-radius:8px;border:1px solid var(--border);font-size:.82rem;line-height:1.9;max-height:58vh;overflow-y:auto;white-space:pre-wrap;font-family:'DM Sans',sans-serif;"></div>
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-pdf')">Fermer</button>
+      <button class="btn btn-primary" onclick="doPrint()">🖨 Imprimer / PDF</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL HEURES EXCEPTIONNELLES ═══ -->
+<div class="mo" id="mo-exceptional">
+  <div class="md" style="max-width:550px;">
+    <h3>⏰ Heures exceptionnelles</h3>
+    <p style="font-size:0.85rem;color:#6b7280;margin-bottom:16px;">
+      <strong>Date :</strong> <span id="exc-date-display"></span><br>
+      <strong>Employé concerné :</strong> <span id="exc-employee-display"></span>
+    </p>
+    <input type="hidden" id="exc-date" value="">
+    <input type="hidden" id="exc-employee" value="">
+    
+    <div class="fgrp">
+      <label class="lbl">Qui travaille ce jour-là ? *</label>
+      <select id="exc-person" onchange="toggleInterimFields()">
+        <option value="">-- Choisir --</option>
+        <optgroup label="Salariés" id="exc-employees-list"></optgroup>
+        <option value="INTERIM">➕ Intérimaire (nouvelle personne)</option>
+      </select>
+    </div>
+    
+    <div id="interim-fields" style="display:none;">
+      <div class="fgrp">
+        <label class="lbl">Nom de l'intérimaire *</label>
+        <input type="text" id="exc-interim-name" placeholder="Ex: Marie DURAND">
+      </div>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp">
+        <label class="lbl">Heure de début *</label>
+        <input type="time" id="exc-debut" value="09:00">
+      </div>
+      <div class="fgrp">
+        <label class="lbl">Heure de fin *</label>
+        <input type="time" id="exc-fin" value="20:00">
+      </div>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="fgrp">
+        <label class="lbl">Pause début (optionnel)</label>
+        <input type="time" id="exc-pause-debut">
+      </div>
+      <div class="fgrp">
+        <label class="lbl">Pause fin (optionnel)</label>
+        <input type="time" id="exc-pause-fin">
+      </div>
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Type</label>
+      <select id="exc-type">
+        <option value="remplacement">Remplacement (congé/maladie)</option>
+        <option value="renfort">Renfort (surcroît d'activité)</option>
+        <option value="heures_sup">Heures supplémentaires</option>
+      </select>
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Motif (optionnel)</label>
+      <input type="text" id="exc-motif" placeholder="Ex: Remplace Ilham en congé">
+    </div>
+    
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-exceptional')">Annuler</button>
+      <button class="btn btn-primary" onclick="saveExceptionalHours()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL UTILISATEUR ═══ -->
+<div class="mo" id="mo-user">
+  <div class="md">
+    <h3 id="user-modal-title">👤 Nouvel utilisateur</h3>
+    <input type="hidden" id="user-edit-index" value="">
+    
+    <div class="fgrp">
+      <label class="lbl">Nom d'utilisateur *</label>
+      <input type="text" id="user-username" placeholder="Ex: marie.dupont">
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Nom complet *</label>
+      <input type="text" id="user-fullname" placeholder="Ex: Marie Dupont">
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Mot de passe *</label>
+      <input type="password" id="user-password" placeholder="Minimum 6 caractères">
+      <small style="color:#6b7280;font-size:0.75rem;">L'utilisateur pourra le changer après connexion</small>
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Rôle *</label>
+      <select id="user-role">
+        <option value="admin">Administrateur (accès complet)</option>
+        <option value="user">Utilisateur (lecture/modification)</option>
+        <option value="viewer">Lecteur (lecture seule)</option>
+      </select>
+    </div>
+    
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-user')">Annuler</button>
+      <button class="btn btn-primary" onclick="saveUser()">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MODAL CHANGER MOT DE PASSE ═══ -->
+<div class="mo" id="mo-change-password">
+  <div class="md">
+    <h3>🔑 Changer votre mot de passe</h3>
+    
+    <div id="pwd-error" style="display:none;background:#fee2e2;border:1px solid #dc2626;color:#dc2626;padding:12px;border-radius:8px;margin-bottom:16px;font-size:0.85rem;"></div>
+    
+    <div class="fgrp">
+      <label class="lbl">Mot de passe actuel *</label>
+      <input type="password" id="pwd-current" placeholder="Votre mot de passe actuel">
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Nouveau mot de passe *</label>
+      <input type="password" id="pwd-new" placeholder="Minimum 6 caractères">
+    </div>
+    
+    <div class="fgrp">
+      <label class="lbl">Confirmer le nouveau mot de passe *</label>
+      <input type="password" id="pwd-confirm" placeholder="Retapez le nouveau mot de passe">
+    </div>
+    
+    <div class="mfoot">
+      <button class="btn btn-outline" onclick="closeMo('mo-change-password')">Annuler</button>
+      <button class="btn btn-primary" onclick="savePasswordChange()">✅ Changer le mot de passe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// CONSTANTS
+// ═══════════════════════════════════════════
+const MONTHS=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const DLABELS=['Lun','Mar','Mer','Jeu','Ven','Sam'];
+const DNAMES=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const FERIES=[
+  {d:'2026-01-01',l:"Jour de l'an"},{d:'2026-04-06',l:'Lundi de Pâques'},
+  {d:'2026-05-01',l:'Fête du Travail'},{d:'2026-05-08',l:'Victoire 1945'},
+  {d:'2026-05-14',l:'Ascension'},{d:'2026-05-25',l:'Lundi de Pentecôte'},
+  {d:'2026-07-14',l:'Fête Nationale'},{d:'2026-08-15',l:'Assomption'},
+  {d:'2026-11-01',l:'Toussaint'},{d:'2026-11-11',l:'Armistice'},{d:'2026-12-25',l:'Noël'},
+];
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let S={
+  auth:{
+    users:[
+      {username:'admin',password:'admin123',role:'admin',nom:'Administrateur'} // Compte par défaut - À CHANGER !
+    ],
+    currentUser:null,
+    sessionTimeout:7200000 // 2 heures en millisecondes
+  },
+  teamA:['CHIHI','Ilham','Cathy','Aména'],
+  teamB:['CHIHI','Céline','Shirley','Soundous'],
+  conges:[],
+  horaires:{lvO:'08:30',lvC:'20:00',samO:'09:00',samC:'20:00'},
+  empSchedules:{
+    'Ilham':{days:[0,1,3,5],hours:{0:{o:'08:30',c:'20:00',po:'14:00',pc:'15:00'},1:{o:'08:30',c:'20:00',po:'14:00',pc:'15:00'},2:{o:'08:30',c:'20:00',po:'',pc:''},3:{o:'08:30',c:'20:00',po:'14:00',pc:'15:00'},4:{o:'08:30',c:'20:00',po:'',pc:''},5:{o:'09:00',c:'20:00',po:'',pc:''}}},
+    'Céline':{days:[0,1,3,5],hours:{0:{o:'08:30',c:'15:45',po:'12:30',pc:'13:00'},1:{o:'08:30',c:'15:45',po:'12:30',pc:'13:00'},2:{o:'08:30',c:'15:45',po:'',pc:''},3:{o:'08:30',c:'15:45',po:'12:30',pc:'13:00'},4:{o:'08:30',c:'15:45',po:'',pc:''},5:{o:'09:00',c:'18:00',po:'12:30',pc:'13:00'}}},
+    'Cathy':{days:[1,2,4,5],hours:{0:{o:'09:00',c:'20:00',po:'',pc:''},1:{o:'09:00',c:'20:00',po:'13:00',pc:'14:00'},2:{o:'09:00',c:'20:00',po:'13:00',pc:'14:00'},3:{o:'09:00',c:'20:00',po:'',pc:''},4:{o:'09:00',c:'20:00',po:'13:00',pc:'14:00'},5:{o:'09:00',c:'20:00',po:'',pc:''}}},
+    'Aména':{days:[0,1,3,5],hours:{0:{o:'14:45',c:'20:00',po:'',pc:''},1:{o:'14:45',c:'20:00',po:'',pc:''},2:{o:'14:45',c:'20:00',po:'',pc:''},3:{o:'14:45',c:'20:00',po:'',pc:''},4:{o:'14:45',c:'20:00',po:'',pc:''},5:{o:'09:00',c:'20:00',po:'13:00',pc:'13:30'}}},
+    'Shirley':{days:[0,2,4,5],hours:{0:{o:'08:30',c:'20:00',po:'14:00',pc:'14:30'},1:{o:'08:30',c:'20:00',po:'',pc:''},2:{o:'08:30',c:'20:00',po:'14:00',pc:'14:30'},3:{o:'08:30',c:'20:00',po:'',pc:''},4:{o:'08:30',c:'20:00',po:'14:00',pc:'14:30'},5:{o:'09:00',c:'20:00',po:'14:00',pc:'14:30'}}},
+    'Soundous':{days:[2,3,4,5],hours:{0:{o:'08:30',c:'20:00',po:'',pc:''},1:{o:'08:30',c:'20:00',po:'',pc:''},2:{o:'08:30',c:'20:00',po:'14:30',pc:'15:00'},3:{o:'15:00',c:'20:00',po:'',pc:''},4:{o:'08:30',c:'20:00',po:'14:30',pc:'15:00'},5:{o:'09:00',c:'20:00',po:'14:30',pc:'15:00'}}}
+  },
+  emails:{},       // { "Marie": "marie@gmail.com" }
+  functions:{      // Fonction/poste de chaque employé
+    'CHIHI':'Titulaire',
+    'Ilham':'Préparatrice en pharmacie',
+    'Cathy':'Préparatrice en pharmacie',
+    'Aména':'Préparatrice en pharmacie',
+    'Céline':'Préparatrice en pharmacie',
+    'Shirley':'Préparatrice en pharmacie',
+    'Soundous':'Apprenti(e)'
+  },
+  contractHours:{ // Heures contractuelles mensuelles
+    'Ilham':158.17,
+    'Cathy':151.67,
+    'Aména':86.67,
+    'Céline':108.33,
+    'Shirley':165.75,
+    'Soundous':0 // À définir selon école/fac
+  },
+  congesPayes:{ // Congés payés disponibles (N-1 + N)
+    'Ilham':{n1Acquis:30,n1Pris:0,n1Solde:30,nAcquis:25,nPris:0,nSolde:25,total:55},
+    'Cathy':{n1Acquis:44,n1Pris:19,n1Solde:25,nAcquis:25,nPris:0,nSolde:25,total:50},
+    'Aména':{n1Acquis:7.5,n1Pris:0,n1Solde:7.5,nAcquis:0,nPris:0,nSolde:0,total:7.5},
+    'Céline':{n1Acquis:43,n1Pris:19,n1Solde:24,nAcquis:25,nPris:0,nSolde:25,total:49},
+    'Shirley':{n1Acquis:30,n1Pris:24,n1Solde:6,nAcquis:25,nPris:0,nSolde:25,total:31},
+    'Soundous':{n1Acquis:21,n1Pris:0,n1Solde:21,nAcquis:25,nPris:1,nSolde:24,total:45}
+  },
+  employeeInfo:{ // Informations complètes des salariés
+    'Ilham':{nom:'BOUGHRARA',prenom:'Ilham',dateNaissance:'',dateEntree:'20/11/2023',dateSortie:'',adresse:'9 CHEMIN DES CLOSEAUX, 91250 SAINTRY SUR SEINE',email:'',telephone:'',matricule:'00009',numSS:'277069935047931'},
+    'Cathy':{nom:'PICHARD',prenom:'Cathy',dateNaissance:'',dateEntree:'15/06/2023',dateSortie:'',adresse:'7 AVENUE HENRI SELLIER, 91130 RIS ORANGIS',email:'',telephone:'',matricule:'00002',numSS:'283129118202712'},
+    'Aména':{nom:'AMRANI',prenom:'Amena',dateNaissance:'',dateEntree:'01/01/2026',dateSortie:'',adresse:'11 RUE DES PRES SAINT MARTIN, 77340 PONTAULT COMBAULT',email:'',telephone:'',matricule:'00020',numSS:'204109910969417'},
+    'Céline':{nom:'KAMBUR',prenom:'Pinar Celine',dateNaissance:'',dateEntree:'15/06/2023',dateSortie:'',adresse:'2 ROUTE DE JARCY, 91450 ETIOLLES',email:'',telephone:'',matricule:'00006',numSS:'283129920821292'},
+    'Shirley':{nom:'BORIUS',prenom:'Shirley',dateNaissance:'',dateEntree:'21/11/2023',dateSortie:'',adresse:'2 SQUARE JEAN JAURES, 91080 COURCOURONNES',email:'',telephone:'',matricule:'00012',numSS:'298089527704817'},
+    'Soundous':{nom:'CHIBANE',prenom:'Soundous Nor El Han',dateNaissance:'',dateEntree:'19/09/2024',dateSortie:'',adresse:'8 ALLEE ROSTAND BATIMENT B PORTE 4, 91000 EVRY',email:'',telephone:'',matricule:'00015',numSS:'202089935307476'}
+  },
+  exceptionalHours:[], // Heures exceptionnelles : {date,person,isInterim,interimName,debut,fin,pauseDebut,pauseFin,type,motif}
+  maladies:[],     // { member, start, end, justified }
+  salaire:{}       // { "Marie__0": { supH, absJ, absReason, malJ, malStart, malEnd, arretDoc, primePanier, primeAstreinte, comment } }
+};
+
+let empPeriod='week', empView='table', empOffset=0;
+let currentPrintText='', currentPrintTitle='';
+
+// ═══════════════════════════════════════════
+// INIT & SAVE
+// ═══════════════════════════════════════════
+function init(){
+  // Vérifier la session d'abord
+  const hasSession=checkSession();
+  
+  // Si pas de session, rester sur écran login
+  if(!hasSession){
+    document.getElementById('login-screen').style.display='flex';
+    document.getElementById('main-app').style.display='none';
+  }
+  
+  // NE PLUS EFFACER LES DONNÉES !
+  ensureSchedules();
+  renderAll();
+  
+  // Démarrer sauvegarde automatique toutes les 30 secondes
+  setInterval(()=>{
+    if(S.auth.currentUser){
+      save();
+      console.log('Auto-save: '+new Date().toLocaleTimeString());
+    }
+  },30000);
+}
+
+function save(){
+  localStorage.setItem('pharma26_v4',JSON.stringify(S));
+  showSaveIndicator();
+}
+
+function showSaveIndicator(){
+  const indicator=document.getElementById('save-indicator');
+  if(!indicator)return;
+  
+  // Afficher "Sauvegardé"
+  indicator.style.display='inline-block';
+  indicator.style.background='#dcfce7';
+  indicator.style.color='#16a34a';
+  indicator.innerHTML='✓ Sauvegardé';
+  
+  // Masquer après 2 secondes
+  setTimeout(()=>{
+    indicator.style.display='none';
+  },2000);
+}
+function renderAll(){renderMembers();renderFeries();renderScheduleEditor();generatePlanning();}
+
+// ═══════════════════════════════════════════
+// MEMBERS
+// ═══════════════════════════════════════════
+function renderMembers(){
+  ['A','B'].forEach(t=>{
+    document.getElementById('list'+t).innerHTML=S['team'+t].map((m,i)=>{
+      const style=getEmployeeStyle(m);
+      if(m==='CHIHI'){
+        return `<li class="mitem"><span>${style.emoji} <span style="color:${style.color};font-weight:700">${m}</span> <span class="badge" style="background:${style.color};color:#fff">Titulaire - Éq.A+B</span></span><button onclick="removeMember('${t}',${i})">✕</button></li>`;
+      }
+      return `<li class="mitem"><span>${style.emoji} <span style="color:${style.color};font-weight:700">${m}</span> <span class="badge badge-${t}">Éq.${t}</span></span><button onclick="removeMember('${t}',${i})">✕</button></li>`;
+    }).join('');
+  });
+  refreshSelects();
+}
+function addMember(t){
+  const inp=document.getElementById('input'+t),n=inp.value.trim();if(!n)return;
+  S['team'+t].push(n);inp.value='';ensureSchedules();save();renderAll();
+}
+function removeMember(t,i){
+  const name=S['team'+t][i];S['team'+t].splice(i,1);delete S.empSchedules[name];save();renderAll();
+}
+function refreshSelects(){
+  const all=uniqueMembersWithTeam();
+  const opts=all.map(({m,t})=>`<option value="${m}">${m} (Éq.${t})</option>`).join('');
+  ['cg-member'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=opts;});
+}
+
+// ═══════════════════════════════════════════
+// FERIES
+// ═══════════════════════════════════════════
+function renderFeries(){
+  document.getElementById('ferie-list').innerHTML=FERIES.map(f=>
+    `<li class="mitem"><span>📌 ${f.l}</span><span style="font-size:.75rem;color:var(--text-muted)">${fmt(f.d)}</span></li>`).join('');
+}
+const isFerie=d=>FERIES.some(f=>f.d===d);
+const ferieLabel=d=>(FERIES.find(f=>f.d===d)||{l:''}).l;
+
+// ═══════════════════════════════════════════
+// SCHEDULES
+// ═══════════════════════════════════════════
+function ensureSchedules(){
+  const all=uniqueMembers();
+  all.forEach(m=>{
+    if(!S.empSchedules[m]) S.empSchedules[m]={
+      days:[0,1,2,3,4],
+      hours:{0:{o:S.horaires.lvO,c:S.horaires.lvC,po:'',pc:''},1:{o:S.horaires.lvO,c:S.horaires.lvC,po:'',pc:''},
+             2:{o:S.horaires.lvO,c:S.horaires.lvC,po:'',pc:''},3:{o:S.horaires.lvO,c:S.horaires.lvC,po:'',pc:''},
+             4:{o:S.horaires.lvO,c:S.horaires.lvC,po:'',pc:''},5:{o:S.horaires.samO,c:S.horaires.samC,po:'',pc:''}}
+    };
+  });
+}
+
+function renderScheduleEditor(){
+  const grid=document.getElementById('emp-sched-grid');if(!grid)return;
+  const allM=uniqueMembersWithTeam();
+  grid.innerHTML=allM.map(({m,t})=>{
+    const sc=S.empSchedules[m]||{days:[],hours:{}};
+    const mk=m.replace(/\s/g,'_');
+    const rows=DLABELS.map((dl,i)=>{
+      const on=sc.days.includes(i),h=sc.hours[i]||{o:'08:30',c:'20:00',po:'',pc:''};
+      const dis=on?'':'disabled style="opacity:.35"';
+      return `<div class="dsr">
+        <button class="dtb ${on?'on-'+t:''} ${i===5?'sam':''}" onclick="toggleDay('${m}',${i},this,'${t}')">${dl}</button>
+        <div>
+          <div class="ti">
+            <span class="ti-lbl">Arrivée</span>
+            <input type="time" id="h-${mk}-${i}-o" value="${h.o||'08:30'}" ${dis} onchange="saveHour('${m}',${i})">
+            <span>→</span>
+            <input type="time" id="h-${mk}-${i}-c" value="${h.c||'20:00'}" ${dis} onchange="saveHour('${m}',${i})">
+          </div>
+          <div class="pause-row">
+            <span class="plbl">☕ Pause</span>
+            <input type="time" id="h-${mk}-${i}-po" value="${h.po||''}" ${dis} onchange="saveHour('${m}',${i})">
+            <span>→</span>
+            <input type="time" id="h-${mk}-${i}-pc" value="${h.pc||''}" ${dis} onchange="saveHour('${m}',${i})">
+            <span style="font-size:.66rem;color:var(--text-muted);">(optionnel)</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    const nd=sc.days.filter(d=>d!==5).length,hs=sc.days.includes(5);
+    return `<div class="emp-sched-card">
+      <div class="emp-sched-hdr">
+        <div class="emp-sched-name"><span style="color:#10b981;">👤</span> <strong>${m}</strong> <span class="badge badge-${t}">Éq.${t}</span></div>
+        <span style="font-size:.73rem;color:var(--text-muted)">${nd}j/sem${hs?' + Sam':''}</span>
+      </div>${rows}
+    </div>`;
+  }).join('');
+}
+
+function toggleDay(member,dayIdx,btn,team){
+  const sc=S.empSchedules[member]||(S.empSchedules[member]={days:[],hours:{}});
+  const pos=sc.days.indexOf(dayIdx),mk=member.replace(/\s/g,'_');
+  const inputs=['o','c','po','pc'].map(k=>document.getElementById(`h-${mk}-${dayIdx}-${k}`));
+  if(pos===-1){
+    sc.days.push(dayIdx);btn.className=`dtb on-${team} ${dayIdx===5?'sam':''}`;
+    inputs.forEach(el=>{if(el){el.disabled=false;el.style.opacity='1';}});
+  }else{
+    sc.days.splice(pos,1);btn.className=`dtb ${dayIdx===5?'sam':''}`;
+    inputs.forEach(el=>{if(el){el.disabled=true;el.style.opacity='.35';}});
+  }
+  save();generatePlanning();
+}
+
+function saveHour(member,dayIdx){
+  const sc=S.empSchedules[member]||(S.empSchedules[member]={days:[],hours:{}});
+  const mk=member.replace(/\s/g,'_');
+  const g=k=>document.getElementById(`h-${mk}-${dayIdx}-${k}`);
+  const o=g('o'),c=g('c'),po=g('po'),pc=g('pc');
+  if(o&&c) sc.hours[dayIdx]={o:o.value,c:c.value,po:po?po.value:'',pc:pc?pc.value:''};
+  save();
+}
+
+function saveAllSchedules(){
+  const all=uniqueMembers();
+  all.forEach(m=>{
+    const mk=m.replace(/\s/g,'_');
+    DLABELS.forEach((_,i)=>{
+      const g=k=>document.getElementById(`h-${mk}-${i}-${k}`);
+      const o=g('o');if(o&&!o.disabled){
+        S.empSchedules[m].hours[i]={o:o.value,c:g('c').value,po:g('po')?g('po').value:'',pc:g('pc')?g('pc').value:''};
+      }
+    });
+  });
+  save();generatePlanning();alert('Horaires et pauses enregistrés ✅');
+}
+
+function getMemberH(member,dayIdx,withPause=false){
+  const sc=S.empSchedules[member],h=sc&&sc.hours[dayIdx];
+  const isSat=dayIdx===5;
+  const o=h?h.o:(isSat?S.horaires.samO:S.horaires.lvO);
+  const c=h?h.c:(isSat?S.horaires.samC:S.horaires.lvC);
+  const po=h?h.po:'',pc=h?h.pc:'';
+  if(withPause&&po&&pc) return `${o}–${c} (☕ ${po}–${pc})`;
+  return `${o}–${c}`;
+}
+
+// ═══════════════════════════════════════════
+// PLANNING LOGIC
+// ═══════════════════════════════════════════
+function ds(y,m,d){return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;}
+function fmt(s){const[y,m,d]=s.split('-');return `${d}/${m}/${y}`;}
+// Retourne tous les membres sans doublons (ex: CHIHI présent dans les 2 équipes)
+function uniqueMembers(){return[...new Set([...S.teamA,...S.teamB])];}
+function uniqueMembersWithTeam(){
+  const seen=new Set();
+  return [...S.teamA.map(m=>({m,t:'A'})),...S.teamB.map(m=>({m,t:'B'}))].filter(({m})=>{
+    if(seen.has(m))return false;seen.add(m);return true;
+  });
+}
+function getEmployeeStyle(name){
+  const styles={
+    'CHIHI':{emoji:'👔',color:'#000000'},
+    'Ilham':{emoji:'👩‍⚕️',color:'#ec4899'},
+    'Cathy':{emoji:'💊',color:'#a855f7'},
+    'Aména':{emoji:'🩺',color:'#06b6d4'},
+    'Céline':{emoji:'👩‍🔬',color:'#60a5fa'},
+    'Shirley':{emoji:'💉',color:'#34d399'},
+    'Soundous':{emoji:'🧪',color:'#fb923c'}
+  };
+  return styles[name]||{emoji:'<span style="color:#10b981;">👤</span>',color:'#374151'};
+}
+function isoWeek(dt){
+  const d=new Date(dt);d.setHours(0,0,0,0);d.setDate(d.getDate()+3-(d.getDay()+6)%7);
+  const w1=new Date(d.getFullYear(),0,4);
+  return 1+Math.round(((d-w1)/86400000-3+(w1.getDay()+6)%7)/7);
+}
+function memberWorksOnDate(member,str){
+  if(member==='CHIHI')return true; // Le titulaire est toujours présent
+  const dt=new Date(str),dow=dt.getDay();if(dow===0)return false;
+  const dayIdx=dow-1,wk=isoWeek(dt);
+  const sc=S.empSchedules[member];
+  if(!sc||!sc.days.includes(dayIdx))return false;
+  if(dayIdx===5){
+    // Groupe B = semaines impaires, Groupe A = semaines paires
+    const isB=S.teamB.includes(member);
+    return isB ? wk%2===1 : wk%2===0;
+  }
+  return true;
+}
+function congesFor(str){return S.conges.filter(c=>str>=c.s&&str<=c.e);}
+function teamForDate(str){
+  const dt=new Date(str),dow=dt.getDay();if(dow===0)return null;
+  const aWorks=S.teamA.some(m=>memberWorksOnDate(m,str));
+  const bWorks=S.teamB.some(m=>memberWorksOnDate(m,str));
+  if(aWorks&&bWorks)return 'A'; // les deux équipes travaillent en semaine → pas d'étiquette AB
+  if(aWorks)return 'A';
+  if(bWorks)return 'B';
+  return null;
+}
+
+function generatePlanning(){save();renderAnnual();renderMonthly();renderStats();renderCongeList();}
+
+// ═══════════════════════════════════════════
+// ANNUAL VIEW
+// ═══════════════════════════════════════════
+function renderAnnual(){
+  const g=document.getElementById('annual-grid');g.innerHTML='';
+  for(let m=0;m<12;m++)g.appendChild(buildMonth(m));
+}
+function buildMonth(month){
+  const card=document.createElement('div');card.className='month-card';
+  const first=new Date(2026,month,1),last=new Date(2026,month+1,0).getDate(),off=(first.getDay()||7)-1;
+  let h=`<div class="month-hd">${MONTHS[month]}</div><div class="month-bd">`;
+  h+=`<div class="wdh">${['L','M','M','J','V','S','D'].map((d,i)=>`<div class="wdl ${i===5?'s':''}">${d}</div>`).join('')}</div><div class="dcal">`;
+  for(let i=0;i<off;i++)h+=`<div class="dc emp"></div>`;
+  for(let d=1;d<=last;d++){
+    const str=ds(2026,month,d),dow=new Date(2026,month,d).getDay(),isSun=dow===0,isSat=dow===6;
+    const team=isSun?null:teamForDate(str),cgs=congesFor(str),fe=isFerie(str);
+    let cls='dc';
+    if(isSun)cls+=' sun';
+    else if(cgs.length)cls+=' cg';
+    else if(isSat){
+      const satGroup=isoWeek(str)%2===1?'B':'A';
+      cls+=satGroup==='A'?' sA':' sB';
+    }
+    else if(team==='A')cls+=' tA';
+    else if(team==='B')cls+=' tB';
+    if(fe)cls+=' fe';
+    const satLbl=isSat&&!isSun?`<span class="dt">${isoWeek(str)%2===1?'B':'A'}</span>`:'';
+    h+=`<div class="${cls}" onclick="openDay('${str}')"><span class="dn">${d}</span>${isSat?satLbl:''}</div>`;
+  }
+  const ed=new Date(2026,month,last).getDay(),rem=ed===0?0:7-ed;
+  for(let i=0;i<rem;i++)h+=`<div class="dc emp"></div>`;
+  h+='</div></div>';card.innerHTML=h;return card;
+}
+
+// ═══════════════════════════════════════════
+// MONTHLY VIEW
+// ═══════════════════════════════════════════
+function renderMonthly(){
+  const month=parseInt(document.getElementById('month-sel').value);
+  document.getElementById('print-monthly-title').innerHTML='<span style="color:#10b981;font-size:1.4em;">✚</span> <span style="color:#1a5c4a;">Aprium Grande Pharmacie Des Terrasses — Planning '+MONTHS[month]+' 2026</span>';
+  document.getElementById('mth-hdr').innerHTML=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'].map((d,i)=>`<div class="mh ${i===5?'s':''}">${d}</div>`).join('');
+  const first=new Date(2026,month,1),last=new Date(2026,month+1,0).getDate(),off=(first.getDay()||7)-1;
+  let h='';
+  for(let i=0;i<off;i++)h+=`<div class="mc emp"></div>`;
+  for(let d=1;d<=last;d++){
+    const str=ds(2026,month,d),dow=new Date(2026,month,d).getDay(),isSun=dow===0,isSat=dow===6;
+    const team=isSun?null:teamForDate(str),cgs=congesFor(str),fe=isFerie(str);
+    let cls='mc';
+    if(isSun)cls+=' sun';else if(cgs.length)cls+=' cg';
+    else if(team==='A'||team==='AB')cls+=' tA';else if(team==='B')cls+=' tB';
+    if(fe)cls+=' fe';
+    const workingRaw=[...S.teamA,...S.teamB].filter(m=>memberWorksOnDate(m,str)&&!isFerie(str));
+    const working=[...new Map(workingRaw.map(m=>[m,m])).values()]; // dédoublonnage
+    const satGroup=isoWeek(str)%2===1?'B':'A';
+    const workingNames=working.map(m=>{
+      const inC=cgs.some(c=>c.member===m);
+      if(inC)return '';
+      const style=getEmployeeStyle(m);
+      return `<div style="font-size:.62rem;font-weight:600;color:${style.color};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${style.emoji} ${m}</div>`;
+    }).join('');
+    h+=`<div class="${cls}" onclick="openDay('${str}')">
+      <div class="mn">${d}</div>
+      ${fe?`<span class="mtag tgF">📌 Férié</span>`:''}
+      ${isSat&&!isSun&&!fe&&working.length?`<span class="tgSat${satGroup}">Éq.${satGroup}</span>`:''}
+      ${!isSun&&!fe?workingNames:''}
+      ${cgs.map(c=>{const st=getEmployeeStyle(c.member);return `<span class="mtag tgC">🏖️ ${st.emoji} ${c.member.split(' ')[0]}</span>`;}).join('')}
+    </div>`;
+  }
+  const ed=new Date(2026,month,last).getDay(),rem=ed===0?0:7-ed;
+  for(let i=0;i<rem;i++)h+=`<div class="mc emp"></div>`;
+  document.getElementById('mgrid').innerHTML=h;
+}
+function prevMonth(){const s=document.getElementById('month-sel');if(s.value>0){s.value--;renderMonthly();}}
+function nextMonth(){const s=document.getElementById('month-sel');if(s.value<11){s.value++;renderMonthly();}}
+
+// ═══════════════════════════════════════════
+// HEBDO VIEW
+// ═══════════════════════════════════════════
+let currentWeek=0;
+function initHebdo(){
+  const sel=document.getElementById('week-sel');
+  sel.innerHTML='';
+  for(let w=0;w<52;w++){
+    const startDate=getWeekStart(w);
+    const endDate=new Date(startDate);
+    endDate.setDate(endDate.getDate()+6);
+    sel.innerHTML+=`<option value="${w}">Semaine ${w+1} (${startDate.getDate()}/${startDate.getMonth()+1} - ${endDate.getDate()}/${endDate.getMonth()+1})</option>`;
+  }
+  sel.value=currentWeek;
+  renderHebdo();
+}
+function getWeekStart(weekNum){
+  const jan4=new Date(2026,0,4);
+  const day1=jan4.getDay()||7;
+  const isoWeek1=new Date(jan4);
+  isoWeek1.setDate(jan4.getDate()-(day1-1));
+  const target=new Date(isoWeek1);
+  target.setDate(isoWeek1.getDate()+(weekNum*7));
+  return target;
+}
+function renderHebdo(){
+  currentWeek=parseInt(document.getElementById('week-sel').value);
+  const startDate=getWeekStart(currentWeek);
+  const days=[];
+  for(let i=0;i<7;i++){
+    const d=new Date(startDate);
+    d.setDate(startDate.getDate()+i);
+    days.push(d);
+  }
+  
+  // Determine which team works on Saturday
+  const satDate=days[5]; // Saturday
+  const satDateStr=ds(satDate.getFullYear(),satDate.getMonth(),satDate.getDate());
+  const satWeekNum=isoWeek(satDateStr);
+  const satTeam=satWeekNum%2===1?'B':'A';
+  
+  // Update print title
+  document.getElementById('print-hebdo-title').innerHTML='<span style="color:#10b981;font-size:1.4em;">✚</span> <span style="color:#1a5c4a;">Aprium Grande Pharmacie Des Terrasses — Planning Semaine '+(currentWeek+1)+' (Équipe '+satTeam+') 2026</span>';
+  
+  let html='<table class="hebdo-table"><thead><tr>';
+  html+='<th style="width:180px;background:#4b5563;color:white;"><div style="font-size:1.4rem;font-weight:900;">SEMAINE '+(currentWeek+1)+'</div>';
+  html+='<div style="font-size:1.8rem;font-weight:900;color:#dc2626;margin-top:8px;text-shadow:0 2px 4px rgba(0,0,0,0.2);">ÉQUIPE '+satTeam+'</div></th>';
+  const dayNames=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+  days.forEach((d,i)=>{
+    if(i===6)return;
+    const dayColor=i===5?(satTeam==='A'?'#c0392b':'#15803d'):'#1f2937';
+    html+=`<th style="color:${dayColor};background:#e5e7eb;font-size:1.1rem;font-weight:700;">${dayNames[i]}<br><span style="font-size:1.3rem;font-weight:900;">${d.getDate()}/${d.getMonth()+1}</span></th>`;
+  });
+  html+='</tr></thead><tbody>';
+  
+  const allMembers=uniqueMembersWithTeam();
+  allMembers.forEach(({m,t})=>{
+    const style=getEmployeeStyle(m);
+    const weekHours=calculateWeekHours(m,days);
+    html+=`<tr><td class="emp-cell">`;
+    html+=`<div class="emp-name">${style.emoji} ${m}</div>`;
+    html+=`<div class="emp-team">Équipe ${t}</div>`;
+    html+=`<div class="emp-hours">${weekHours.toFixed(1)} Heures</div>`;
+    html+=`</td>`;
+    
+    for(let i=0;i<6;i++){
+      const dateStr=ds(days[i].getFullYear(),days[i].getMonth(),days[i].getDate());
+      const dow=days[i].getDay();
+      if(dow===0){html+='<td class="repos">DIMANCHE</td>';continue;}
+      
+      const fe=isFerie(dateStr);
+      const inCg=congesFor(dateStr).some(c=>c.member===m);
+      const works=memberWorksOnDate(m,dateStr);
+      
+      // Vérifier s'il y a des heures exceptionnelles ce jour-là pour cet employé
+      const exceptHours=getExceptionalHours(dateStr,m);
+      
+      if(fe){html+='<td class="ferie" onclick="openExceptionalModal(\''+dateStr+'\',\''+m+'\')"><strong>📌 FÉRIÉ</strong><div style="font-size:0.7rem;margin-top:4px;color:#059669;">Cliquez pour ajouter</div></td>';}
+      else if(inCg){html+='<td class="conge" onclick="openExceptionalModal(\''+dateStr+'\',\''+m+'\')"><strong>🏖️ CONGÉ</strong><div style="font-size:0.7rem;margin-top:4px;color:#059669;">Cliquez pour ajouter</div></td>';}
+      else if(!works){html+='<td class="repos" onclick="openExceptionalModal(\''+dateStr+'\',\''+m+'\')"><strong style="color:#dc2626;">REPOS</strong><div style="font-size:0.7rem;margin-top:4px;color:#059669;">Cliquez pour ajouter</div></td>';}
+      else{
+        const dayIdx=dow-1;
+        const sc=S.empSchedules[m];
+        if(sc&&sc.hours[dayIdx]){
+          const h=sc.hours[dayIdx];
+          html+=`<td class="day-cell" onclick="openExceptionalModal('${dateStr}','${m}')" style="cursor:pointer;">`;
+          html+='<strong>'+h.o+'</strong><br>';
+          if(h.po&&h.pc){
+            const pauseMins=calculateMinutes(h.po,h.pc);
+            html+=`<span style="color:#f59e0b;font-weight:700;">${pauseMins} MIN PAUSE</span><br>`;
+          }else{
+            html+='<span style="color:#eab308;font-weight:700;font-size:0.7rem;">SANS PAUSE</span><br>';
+          }
+          html+='<strong>'+h.c+'</strong>';
+          if(exceptHours.length>0){
+            html+='<div style="margin-top:6px;padding-top:6px;border-top:1px solid #fbbf24;background:#fef3c7;margin:-4px;padding:4px;border-radius:4px;">';
+            html+='<strong style="color:#b45309;font-size:0.75rem;">+ HEURES SUPP</strong>';
+            html+='</div>';
+          }
+          html+=`</td>`;
+        }else{
+          html+=`<td onclick="openExceptionalModal('${dateStr}','${m}')" style="cursor:pointer;">-</td>`;
+        }
+      }
+    }
+    html+='</tr>';
+  });
+  
+  html+='</tbody></table>';
+  document.getElementById('hebdo-table').innerHTML=html;
+}
+function calculateMinutes(start,end){
+  const[sh,sm]=start.split(':').map(Number);
+  const[eh,em]=end.split(':').map(Number);
+  return(eh*60+em)-(sh*60+sm);
+}
+function calculateWeekHours(member,days){
+  let total=0;
+  for(let i=0;i<6;i++){
+    const d=days[i];
+    const dateStr=ds(d.getFullYear(),d.getMonth(),d.getDate());
+    const dow=d.getDay();
+    if(dow===0||isFerie(dateStr)||congesFor(dateStr).some(c=>c.member===member)||!memberWorksOnDate(member,dateStr))continue;
+    const dayIdx=dow-1;
+    const sc=S.empSchedules[member];
+    if(sc&&sc.hours[dayIdx]){
+      const h=sc.hours[dayIdx];
+      if(!h.o||!h.c)continue;
+      const[oh,om]=h.o.split(':').map(Number);
+      const[ch,cm]=h.c.split(':').map(Number);
+      let mins=(ch*60+cm)-(oh*60+om);
+      if(h.po&&h.pc){
+        const[poh,pom]=h.po.split(':').map(Number);
+        const[pch,pcm]=h.pc.split(':').map(Number);
+        mins-=(pch*60+pcm)-(poh*60+pom);
+      }
+      total+=mins/60;
+    }
+  }
+  return total;
+}
+function prevWeek(){const s=document.getElementById('week-sel');if(s.value>0){s.value--;renderHebdo();}}
+function nextWeek(){const s=document.getElementById('week-sel');if(s.value<51){s.value++;renderHebdo();}}
+
+
+// ═══════════════════════════════════════════
+// DAY MODAL
+// ═══════════════════════════════════════════
+function openDay(str){
+  const dt=new Date(str),dow=dt.getDay(),isSun=dow===0,isSat=dow===6,dayIdx=dow-1;
+  const cgs=congesFor(str),fe=isFerie(str);
+  document.getElementById('mo-day-title').textContent=`${DNAMES[dow]} ${fmt(str)}`;
+  let info='';
+  if(isSun) info='🚫 Pharmacie fermée (dimanche)';
+  else if(fe) info=`📌 Jour férié : ${ferieLabel(str)}\n🚫 Pharmacie fermée`;
+  else{
+    const allM=uniqueMembersWithTeam();
+    const working=allM.filter(({m})=>memberWorksOnDate(m,str));
+    const absent=allM.filter(({m})=>!memberWorksOnDate(m,str));
+    if(working.length){
+      info+='✅ Présents :\n';
+      working.forEach(({m,t})=>{
+        const h=getMemberH(m,dayIdx,true);
+        const inC=cgs.some(c=>c.member===m);
+        info+=`  • ${m} [Éq.${t}]  ⏰ ${h}${inC?' 🏖️ congé':''}\n`;
+      });
+    }
+    if(absent.length){
+      info+='\n🔴 Repos / Absent :\n';
+      absent.forEach(({m,t})=>{info+=`  • ${m} [Éq.${t}]\n`;});
+    }
+    if(cgs.length) info+=`\n🏖️ Congés :\n`+cgs.map(c=>`  • ${c.member}${c.note?' ('+c.note+')':''}`).join('\n');
+  }
+  document.getElementById('mo-day-info').textContent=info;
+  let body='';
+  if(!isSun&&!fe){
+    body=`<button class="btn btn-accent" style="width:100%;margin-bottom:7px;" onclick="closeMo('mo-day');openCongeModalDate('${str}')">🏖️ Ajouter un congé</button>`;
+    cgs.forEach(c=>{body+=`<button class="btn btn-danger" style="width:100%;margin-bottom:4px;" onclick="deleteConge('${c.id}')">✕ Supprimer congé de ${c.member}</button>`;});
+  }
+  document.getElementById('mo-day-body').innerHTML=body;
+  document.getElementById('mo-day').classList.add('open');
+}
+function closeMo(id){document.getElementById(id).classList.remove('open');}
+
+// ═══════════════════════════════════════════
+// CONGÉS
+// ═══════════════════════════════════════════
+function openCongeModal(){refreshSelects();document.getElementById('cg-start').value='2026-01-01';document.getElementById('cg-end').value='2026-01-01';document.getElementById('cg-note').value='';document.getElementById('mo-conge').classList.add('open');}
+function openCongeModalDate(str){refreshSelects();document.getElementById('cg-start').value=str;document.getElementById('cg-end').value=str;document.getElementById('cg-note').value='';document.getElementById('mo-conge').classList.add('open');}
+function openMaladieModal(){refreshSelects();document.getElementById('mal-member').innerHTML=document.getElementById('cg-member').innerHTML;document.getElementById('mal-start').value='2026-01-01';document.getElementById('mal-end').value='2026-01-01';document.getElementById('mal-note').value='';document.getElementById('mo-maladie').classList.add('open');}
+function saveMaladie(){
+  if(!S.maladies)S.maladies=[];
+  const member=document.getElementById('mal-member').value;
+  const start=document.getElementById('mal-start').value;
+  const end=document.getElementById('mal-end').value;
+  const justified=document.getElementById('mal-justified').value==='true';
+  const note=document.getElementById('mal-note').value;
+  if(!member||!start||!end){alert('Veuillez remplir tous les champs');return;}
+  S.maladies.push({member,start,end,justified,note});
+  save();closeMo('mo-maladie');renderCongeList();
+}
+function saveConge(){
+  const member=document.getElementById('cg-member').value,s=document.getElementById('cg-start').value,e=document.getElementById('cg-end').value,note=document.getElementById('cg-note').value.trim();
+  if(!member||!s||!e||s>e){alert('Veuillez remplir tous les champs.');return;}
+  
+  // Calculer nombre de jours (sans dimanches)
+  const start=new Date(s);
+  const end=new Date(e);
+  let nbJours=0;
+  for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
+    if(d.getDay()!==0)nbJours++;
+  }
+  
+  // Vérifier solde CP disponible
+  const cp=S.congesPayes&&S.congesPayes[member]?S.congesPayes[member]:{total:0};
+  const dejaPris=calculateCongesPris(member);
+  const restant=cp.total-dejaPris;
+  
+  if(nbJours>restant){
+    const confirmer=confirm(`⚠️ ATTENTION !\n\n${member} demande ${nbJours} jours de congé.\nSolde CP disponible: ${restant.toFixed(1)} jours\n\nDépassement de ${(nbJours-restant).toFixed(1)} jours !\n\nVoulez-vous quand même enregistrer ce congé ?`);
+    if(!confirmer)return;
+  }
+  
+  S.conges.push({id:Date.now().toString(),member,s,e,note});save();closeMo('mo-conge');generatePlanning();
+}
+function deleteConge(id){S.conges=S.conges.filter(c=>c.id!==id);save();closeMo('mo-day');generatePlanning();}
+function deleteCongeById(id){if(!confirm('Supprimer ce congé ?'))return;S.conges=S.conges.filter(c=>c.id!==id);save();generatePlanning();}
+function renderCongeList(){
+  const ul=document.getElementById('conge-full'),np=document.getElementById('no-conge');
+  
+  // Afficher solde CP de chaque employé en haut
+  let cpSummary='<div style="background:#f0f9ff;border:2px solid #0369a1;border-radius:8px;padding:12px;margin-bottom:16px;"><h4 style="margin:0 0 10px 0;color:#0369a1;">💼 Solde Congés Payés</h4><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">';
+  
+  uniqueMembers().filter(m=>m!=='CHIHI').forEach(m=>{
+    const cp=S.congesPayes&&S.congesPayes[m]?S.congesPayes[m]:{total:0};
+    const congesPris=calculateCongesPris(m);
+    const restant=cp.total-congesPris;
+    const color=restant<5?'#dc2626':restant<15?'#f59e0b':'#16a34a';
+    cpSummary+=`<div style="background:white;padding:8px;border-radius:6px;border-left:4px solid ${color};">`;
+    cpSummary+=`<div style="font-weight:700;font-size:0.85rem;">${m}</div>`;
+    cpSummary+=`<div style="font-size:0.75rem;color:#6b7280;">Acquis: ${cp.total}j · Pris: ${congesPris}j</div>`;
+    cpSummary+=`<div style="font-weight:700;font-size:0.9rem;color:${color};margin-top:4px;">Restant: ${restant.toFixed(1)}j</div>`;
+    cpSummary+=`</div>`;
+  });
+  cpSummary+='</div></div>';
+  
+  const allItems=[];
+  
+  // Ajouter congés
+  if(S.conges){
+    S.conges.forEach(c=>{
+      const t=S.teamA.includes(c.member)?'A':'B';
+      allItems.push({
+        type:'conge',
+        date:c.s,
+        html:`<li class="citem"><div><strong>${c.member}</strong> <span class="badge badge-${t}">Éq.${t}</span><br><small style="color:var(--text-muted)">🏖️ Congé: ${fmt(c.s)} → ${fmt(c.e)}${c.note?' — '+c.note:''}</small></div><button onclick="deleteCongeById('${c.id}')">🗑</button></li>`
+      });
+    });
+  }
+  
+  // Ajouter maladies
+  if(S.maladies){
+    S.maladies.forEach((m,idx)=>{
+      const t=S.teamA.includes(m.member)?'A':'B';
+      const justifIcon=m.justified?'✅':'⚠️';
+      allItems.push({
+        type:'maladie',
+        date:m.start,
+        html:`<li class="citem" style="background:#fee2e2;"><div><strong>${m.member}</strong> <span class="badge badge-${t}">Éq.${t}</span><br><small style="color:#dc2626">🤒 Arrêt maladie: ${fmt(m.start)} → ${fmt(m.end)} ${justifIcon} ${m.justified?'Justifié':'Non justifié'}${m.note?' — '+m.note:''}</small></div><button onclick="deleteMaladie(${idx})">🗑</button></li>`
+      });
+    });
+  }
+  
+  if(!allItems.length){
+    ul.innerHTML=cpSummary;
+    np.style.display='block';
+    return;
+  }
+  
+  np.style.display='none';
+  allItems.sort((a,b)=>a.date.localeCompare(b.date));
+  ul.innerHTML=cpSummary+'<h4 style="margin:16px 0 8px 0;color:#1a5c4a;">📋 Liste des absences</h4>'+allItems.map(i=>i.html).join('');
+}
+
+function calculateCongesPris(member){
+  // Calcule le nombre de jours de congés pris (sans dimanches)
+  if(!S.conges)return 0;
+  let total=0;
+  S.conges.filter(c=>c.member===member).forEach(c=>{
+    const start=new Date(c.s);
+    const end=new Date(c.e);
+    for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){
+      if(d.getDay()!==0)total++; // Exclure dimanche
+    }
+  });
+  return total;
+}
+
+function deleteMaladie(idx){if(!confirm('Supprimer cet arrêt maladie ?'))return;S.maladies.splice(idx,1);save();renderCongeList();}
+
+// ═══════════════════════════════════════════
+// HORAIRES GLOBAUX
+// ═══════════════════════════════════════════
+function saveHoraires(){
+  S.horaires={lvO:document.getElementById('o-lv').value,lvC:document.getElementById('c-lv').value,samO:document.getElementById('o-sam').value,samC:document.getElementById('c-sam').value};
+  save();alert('Horaires par défaut enregistrés !');
+}
+
+// ═══════════════════════════════════════════
+// EMPLOYEES PANEL
+// ═══════════════════════════════════════════
+function setEmpPeriod(p,btn){
+  empPeriod=p;empOffset=0;
+  ['ep-week','ep-month','ep-year'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  document.getElementById('ep-'+p).classList.add('active');
+  document.getElementById('emp-nav').style.display=p==='year'?'none':'flex';
+  renderEmployes();
+}
+function setEmpView(v){
+  empView=v;
+  ['ev-table','ev-list'].forEach(id=>document.getElementById(id).classList.remove('active'));
+  document.getElementById('ev-'+v).classList.add('active');
+  renderEmployes();
+}
+function empPrev(){empOffset--;renderEmployes();}
+function empNext(){empOffset++;renderEmployes();}
+
+function editHourCell(member,dayIdx){
+  const sc=S.empSchedules[member];
+  if(!sc){alert('Aucun horaire configuré pour '+member);return;}
+  const h=sc.hours[dayIdx]||{o:'',c:'',po:'',pc:''};
+  const dayNames=['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+  
+  const newO=prompt(`${member} - ${dayNames[dayIdx]}\n\nHeure de DÉBUT (ex: 08:30):`,h.o||'');
+  if(newO===null)return;
+  
+  const newC=prompt(`${member} - ${dayNames[dayIdx]}\n\nHeure de FIN (ex: 20:00):`,h.c||'');
+  if(newC===null)return;
+  
+  const newPO=prompt(`${member} - ${dayNames[dayIdx]}\n\nDébut PAUSE (ex: 14:00) ou laisser vide:`,h.po||'');
+  if(newPO===null)return;
+  
+  let newPC='';
+  if(newPO){
+    newPC=prompt(`${member} - ${dayNames[dayIdx]}\n\nFin PAUSE (ex: 15:00):`,h.pc||'');
+    if(newPC===null)return;
+  }
+  
+  sc.hours[dayIdx]={o:newO,c:newC,po:newPO,pc:newPC};
+  save();
+  renderEmployes();
+  alert('✅ Horaires mis à jour !');
+}
+
+function getWeekDays(offset){
+  const base=new Date(2026,0,5);base.setDate(base.getDate()+offset*7);
+  const days=[];for(let i=0;i<6;i++){const d=new Date(base);d.setDate(base.getDate()+i);if(d.getFullYear()===2026)days.push(d);}
+  return days;
+}
+function getMonthDays(mo){
+  const m=((mo%12)+12)%12,last=new Date(2026,m+1,0).getDate(),days=[];
+  for(let d=1;d<=last;d++){const dt=new Date(2026,m,d);if(dt.getDay()!==0)days.push(dt);}
+  return days;
+}
+function toDStr(dt){return ds(dt.getFullYear(),dt.getMonth(),dt.getDate());}
+
+function renderEmployes(){
+  const allM=uniqueMembersWithTeam().map(({m,t})=>({n:m,t}));
+  const DL=['','Lun','Mar','Mer','Jeu','Ven','Sam'];
+  let dates=[],navLbl='';
+  if(empPeriod==='week'){
+    dates=getWeekDays(empOffset);
+    if(dates.length){const f=dates[0],l=dates[dates.length-1];navLbl=`Semaine du ${f.getDate()}/${f.getMonth()+1} au ${l.getDate()}/${l.getMonth()+1}/2026`;}
+  }else if(empPeriod==='month'){
+    const mo=((empOffset%12)+12)%12;dates=getMonthDays(mo);navLbl=MONTHS[mo]+' 2026';
+  }else navLbl='Année 2026';
+  const nl=document.getElementById('emp-nav-lbl');if(nl)nl.textContent=navLbl;
+
+  let html='';
+  if(empPeriod==='year'){
+    if(empView==='table'){
+      html=`<div class="emp-wrap"><table class="etable"><thead><tr>
+        <th class="nth">Employé</th><th>Éq.</th><th>Jours/sem</th>
+        ${MONTHS.map(m=>`<th>${m.substring(0,3)}</th>`).join('')}<th>Total</th>
+      </tr></thead><tbody>`;
+      allM.forEach(({n,t})=>{
+        let mc=Array(12).fill(0),tot=0;
+        for(let mo=0;mo<12;mo++){const last=new Date(2026,mo+1,0).getDate();for(let d=1;d<=last;d++){const str=ds(2026,mo,d);if(memberWorksOnDate(n,str)&&!isFerie(str)&&!congesFor(str).some(c=>c.member===n)){mc[mo]++;tot++;}}}
+        const sc=S.empSchedules[n];
+        const dl=sc?`${sc.days.filter(d=>d!==5).length}j${sc.days.includes(5)?'+Sam':''}`:'-';
+        html+=`<tr><td class="ntd"><span style="color:#10b981;">👤</span> ${n}</td><td><span class="badge badge-${t}">Éq.${t}</span></td><td style="font-size:.73rem;color:var(--text-muted)">${dl}</td>
+          ${mc.map(c=>`<td>${c?`<span class="c${t}">${c}</span>`:'<span style="color:#ddd">—</span>'}</td>`).join('')}
+          <td><strong>${tot}</strong></td></tr>`;
+      });
+      html+='</tbody></table></div>';
+    }else{
+      html='<div class="grid2">';
+      allM.forEach(({n,t})=>{
+        let tw=0,ts=0,tc=0;
+        for(let mo=0;mo<12;mo++){const last=new Date(2026,mo+1,0).getDate();for(let d=1;d<=last;d++){const str=ds(2026,mo,d),dow=new Date(2026,mo,d).getDay();if(dow===0)continue;if(memberWorksOnDate(n,str)){if(congesFor(str).some(c=>c.member===n))tc++;else if(dow===6)ts++;else tw++;}}}
+        const sc=S.empSchedules[n];
+        const dl=sc?sc.days.filter(d=>d!==5).map(d=>DLABELS[d]).join(', '):'—';
+        html+=`<div class="ecard"><div class="elh"><span style="font-size:1.2rem"><span style="color:#10b981;">👤</span></span><div><h4>${n}</h4><span class="badge badge-${t}">Équipe ${t}</span></div></div>
+          <div class="edr"><span class="edl">Jours habituels</span><span style="font-size:.78rem">${dl}${sc&&sc.days.includes(5)?' + Sam (1/2)':''}</span></div>
+          <div class="edr"><span class="edl">Présences 2026</span><strong style="color:var(--team${t})">${tw}</strong></div>
+          <div class="edr"><span class="edl">Samedis</span><strong style="color:var(--weekend)">${ts}</strong></div>
+          <div class="edr"><span class="edl">Congés</span><strong style="color:var(--conge)">${tc}</strong></div>
+          <div class="edr"><span class="edl">Total présences</span><strong>${tw+ts}</strong></div>
+        </div>`;
+      });
+      html+='</div>';
+    }
+  }else{
+    const isWeek=empPeriod==='week';
+    if(empView==='table'){
+      html=`<div class="emp-wrap"><table class="etable"><thead><tr>
+        <th class="nth">Employé</th><th>Éq.</th>
+        ${dates.map(dt=>{const str=toDStr(dt),fe=isFerie(str);return `<th style="${fe?'background:var(--ferie);':''}">
+          ${DL[dt.getDay()]}<br><span style="font-weight:400;font-size:.66rem">${dt.getDate()}/${dt.getMonth()+1}</span></th>`;}).join('')}
+        <th>Total</th></tr></thead><tbody>`;
+      allM.forEach(({n,t})=>{
+        let cnt=0;
+        html+=`<tr><td class="ntd"><span style="color:#10b981;">👤</span> ${n}</td><td><span class="badge badge-${t}">Éq.${t}</span></td>`;
+        dates.forEach(dt=>{
+          const str=toDStr(dt),dow=dt.getDay(),dayIdx=dow-1,isSat=dow===6,fe=isFerie(str);
+          if(fe){html+=`<td class="cF">📌</td>`;return;}
+          if(congesFor(str).some(c=>c.member===n)){html+=`<td class="cC">🏖️</td>`;return;}
+          if(!memberWorksOnDate(n,str)){html+=`<td class="cO">—</td>`;return;}
+          cnt++;
+          const h=getMemberH(n,dayIdx);
+          html+=`<td class="c${isSat?'S':t}" onclick="editHourCell('${n}',${dayIdx})" style="cursor:pointer;" title="Cliquer pour modifier">${isWeek?`<span style="font-size:.68rem">${h}</span>`:'✓'}</td>`;
+        });
+        html+=`<td><strong>${cnt}</strong></td></tr>`;
+      });
+      html+='</tbody></table></div>';
+    }else{
+      html='<div class="grid2">';
+      allM.forEach(({n,t})=>{
+        const wDays=dates.filter(dt=>!isFerie(toDStr(dt))&&memberWorksOnDate(n,toDStr(dt))&&!congesFor(toDStr(dt)).some(c=>c.member===n));
+        const cgDays=dates.filter(dt=>congesFor(toDStr(dt)).some(c=>c.member===n));
+        html+=`<div class="ecard"><div class="elh"><span style="font-size:1.2rem"><span style="color:#10b981;">👤</span></span><div><h4>${n}</h4><span class="badge badge-${t}">Équipe ${t}</span></div></div>`;
+        if(!wDays.length)html+=`<p style="font-size:.8rem;color:var(--text-muted);padding:4px 0;">Aucun jour travaillé.</p>`;
+        else wDays.forEach(dt=>{
+          const dow=dt.getDay(),dayIdx=dow-1,isSat=dow===6,h=getMemberH(n,dayIdx,true);
+          html+=`<div class="edr"><span class="edl">${DL[dow]} ${dt.getDate()}/${dt.getMonth()+1}</span>
+            <span style="font-weight:600;font-size:.78rem;color:${isSat?'var(--weekend)':'var(--team'+t+')'}">${isSat?'🗓':'✅'} ${h}</span></div>`;
+        });
+        if(cgDays.length)html+=`<div class="edr"><span class="edl" style="color:var(--conge)">🏖️ Congés</span><span style="color:var(--conge);font-weight:700">${cgDays.length} j</span></div>`;
+        html+='</div>';
+      });
+      html+='</div>';
+    }
+  }
+  document.getElementById('emp-content').innerHTML=html;
+}
+
+// ═══════════════════════════════════════════
+// STATS
+// ═══════════════════════════════════════════
+function renderStats(){
+  let tA=0,tB=0,tSA=0,tSB=0;const md={};
+  uniqueMembers().forEach(m=>md[m]=0);
+  for(let mo=0;mo<12;mo++){
+    const last=new Date(2026,mo+1,0).getDate();
+    for(let d=1;d<=last;d++){
+      const str=ds(2026,mo,d),dow=new Date(2026,mo,d).getDay();
+      if(dow===0||isFerie(str))continue;
+      const isSat=dow===6;
+      let dayTeamA=false,dayTeamB=false;
+      uniqueMembers().forEach(m=>{
+        if(!memberWorksOnDate(m,str)||congesFor(str).some(c=>c.member===m))return;
+        md[m]++;
+        const t=S.teamA.includes(m)?'A':'B';
+        if(t==='A')dayTeamA=true;else dayTeamB=true;
+      });
+      // Comptage par jour (pas par employé)
+      if(isSat){
+        const wk=isoWeek(str);
+        if(wk%2===0)tSA++;else tSB++;
+      }else{
+        if(dayTeamA)tA++;
+        if(dayTeamB)tB++;
+      }
+    }
+  }
+  document.getElementById('stats4').innerHTML=`
+    <div class="scard"><div class="snum" style="color:var(--teamA)">${tA}</div><div class="slbl">Jours Équipe A</div></div>
+    <div class="scard"><div class="snum" style="color:var(--teamB)">${tB}</div><div class="slbl">Jours Équipe B</div></div>
+    <div class="scard"><div class="snum" style="color:var(--weekend)">${tSA+tSB}</div><div class="slbl">Samedis travaillés</div></div>
+    <div class="scard"><div class="snum" style="color:var(--conge)">${S.conges.length}</div><div class="slbl">Congés enregistrés</div></div>`;
+  const mh={};uniqueMembers().forEach(m=>mh[m]=0); // heures par membre
+  for(let mo=0;mo<12;mo++){
+    const last=new Date(2026,mo+1,0).getDate();
+    for(let d=1;d<=last;d++){
+      const str=ds(2026,mo,d),dow=new Date(2026,mo,d).getDay();
+      if(dow===0||isFerie(str))continue;
+      uniqueMembers().forEach(m=>{
+        if(m==='CHIHI')return; // Pas de calcul d'heures pour le titulaire
+        if(!memberWorksOnDate(m,str)||congesFor(str).some(c=>c.member===m))return;
+        const sc=S.empSchedules[m];
+        if(!sc)return;
+        const dayIdx=dow-1;
+        const hrs=sc.hours[dayIdx];
+        if(!hrs||!hrs.o||!hrs.c)return;
+        // Calcul heures: fin - début - pause
+        const [oh,om]=hrs.o.split(':').map(Number);
+        const [ch,cm]=hrs.c.split(':').map(Number);
+        let total=(ch*60+cm)-(oh*60+om);
+        if(hrs.po&&hrs.pc){
+          const[poh,pom]=hrs.po.split(':').map(Number);
+          const[pch,pcm]=hrs.pc.split(':').map(Number);
+          total-=(pch*60+pcm)-(poh*60+pom);
+        }
+        mh[m]+=total/60;
+      });
+    }
+  }
+  document.getElementById('stats-members').innerHTML=uniqueMembers().map(m=>{
+    const t=S.teamA.includes(m)?'A':'B';
+    const sc=S.empSchedules[m];const dl=sc?`${sc.days.filter(d=>d!==5).length}j/sem${sc.days.includes(5)?'+Sam':''}`:'-';
+    const style=getEmployeeStyle(m);
+    const fonction=S.functions&&S.functions[m]?S.functions[m]:'Non défini';
+    if(m==='CHIHI'){
+      return `<li class="mitem"><span>${style.emoji} <span style="color:${style.color};font-weight:700">${m}</span> <span class="badge" style="background:${style.color};color:#fff">Titulaire</span></span><strong>${md[m]}j · Toujours présent</strong></li>`;
+    }
+    const heures=mh[m]?mh[m].toFixed(1)+'h':'0h';
+    return `<li class="mitem"><span>${style.emoji} <span style="color:${style.color};font-weight:700">${m}</span> <span class="badge badge-${t}">Éq.${t}</span> <small style="color:var(--text-muted)">${fonction}</small></span><strong>${md[m]}j · ${heures}</strong></li>`;
+  }).join('');
+  document.getElementById('stats-sam').innerHTML=`
+    <div class="mitem"><span>Équipe A</span><strong style="color:var(--teamA)">${tSA} samedis</strong></div>
+    <div class="mitem"><span>Équipe B</span><strong style="color:var(--teamB)">${tSB} samedis</strong></div>`;
+}
+
+// ═══════════════════════════════════════════
+// SALAIRES
+// ═══════════════════════════════════════════
+function salKey(m,mo){return `${m}__${mo}`;}
+function getSalData(m,mo){
+  if(!S.salaire)S.salaire={};
+  const k=salKey(m,mo);
+  if(!S.salaire[k])S.salaire[k]={supH:'',absJ:'',absReason:'',malJ:'',malStart:'',malEnd:'',arretDoc:'non',primePanier:'',primeAstreinte:'',comment:''};
+  return S.salaire[k];
+}
+function renderSalaire(){
+  if(!S.salaire)S.salaire={};
+  const month=parseInt(document.getElementById('sal-month').value);
+  const allM=uniqueMembers().filter(m=>m!=='CHIHI'); // Exclure CHIHI
+  
+  let html='<div style="overflow-x:auto;"><table class="hebdo-table" style="font-size:0.8rem;"><thead><tr>';
+  html+='<th style="min-width:150px;">SALARIÉS</th>';
+  html+='<th>Fonction</th>';
+  html+='<th>Maladie<br>du...au...</th>';
+  html+='<th>Nb jours<br>maladie</th>';
+  html+='<th>Congés<br>du...au...</th>';
+  html+='<th>Nb jours<br>congés</th>';
+  html+='<th>Autres<br>Absences</th>';
+  html+='<th style="background:#fee2e2;">Sem.1<br>H.Sup</th>';
+  html+='<th style="background:#fee2e2;">Sem.2<br>H.Sup</th>';
+  html+='<th style="background:#fee2e2;">Sem.3<br>H.Sup</th>';
+  html+='<th style="background:#fee2e2;">Sem.4<br>H.Sup</th>';
+  html+='<th style="background:#fee2e2;">Sem.5<br>H.Sup</th>';
+  html+='<th>Primes</th>';
+  html+='<th>Acomptes</th>';
+  html+='<th style="min-width:250px;">Observations</th>';
+  html+='</tr></thead><tbody>';
+  
+  allM.forEach(m=>{
+    const fonction=S.functions&&S.functions[m]?S.functions[m]:'';
+    const mk=m.replace(/\s/g,'_')+'__'+month;
+    const sd=getSalData(m,month);
+    
+    // AUTO-SYNC: Calculer congés du mois
+    const congesMonth=getCongesForMonth(m,month);
+    const congesText=congesMonth.text;
+    const congesJours=congesMonth.days;
+    
+    // AUTO-SYNC: Calculer maladies du mois (à implémenter avec un système similaire aux congés)
+    const maladiesMonth=getMaladiesForMonth(m,month);
+    const maladiesText=maladiesMonth.text;
+    const maladiesJours=maladiesMonth.days;
+    
+    html+=`<tr>`;
+    html+=`<td style="font-weight:700;">${m}</td>`;
+    html+=`<td style="font-size:0.7rem;">${fonction}</td>`;
+    html+=`<td><input type="text" id="${mk}-maladie" value="${sd.maladie||maladiesText}" style="width:120px;font-size:0.75rem;background:${maladiesText?'#fef3c7':'white'};" placeholder="du...au..." onchange="autoSaveSal('${m}',${month})"></td>`;
+    html+=`<td style="font-weight:700;color:${maladiesJours>0?'#dc2626':'#6b7280'};">${maladiesJours>0?maladiesJours+'j':'-'}</td>`;
+    html+=`<td><input type="text" id="${mk}-conges" value="${sd.conges||congesText}" style="width:120px;font-size:0.75rem;background:${congesText?'#dbeafe':'white'};" placeholder="du...au..." onchange="autoSaveSal('${m}',${month})"></td>`;
+    html+=`<td style="font-weight:700;color:${congesJours>0?'#0369a1':'#6b7280'};">${congesJours>0?congesJours+'j':'-'}</td>`;
+    html+=`<td><input type="text" id="${mk}-autres" value="${sd.autres||''}" style="width:100%;font-size:0.75rem;" onchange="autoSaveSal('${m}',${month})"></td>`;
+    
+    // 5 semaines - saisie manuelle
+    for(let w=1;w<=5;w++){
+      html+=`<td><input type="number" id="${mk}-sem${w}" value="${sd['sem'+w]||''}" style="width:60px;font-size:0.75rem;" step="0.5" placeholder="0" onchange="autoSaveSal('${m}',${month})"></td>`;
+    }
+    
+    html+=`<td><input type="text" id="${mk}-primes" value="${sd.primes||''}" style="width:100px;font-size:0.75rem;" onchange="autoSaveSal('${m}',${month})"></td>`;
+    html+=`<td><input type="number" id="${mk}-acomptes" value="${sd.acomptes||''}" style="width:80px;font-size:0.75rem;" onchange="autoSaveSal('${m}',${month})"></td>`;
+    html+=`<td><textarea id="${mk}-observations" style="width:100%;min-height:50px;font-size:0.75rem;resize:vertical;" onchange="autoSaveSal('${m}',${month})">${sd.observations||''}</textarea></td>`;
+    html+=`</tr>`;
+  });
+  
+  html+='</tbody></table></div>';
+  html+='<div style="margin-top:10px;padding:10px;background:#f0f9ff;border-left:4px solid #0369a1;font-size:0.85rem;"><strong>ℹ️ Info :</strong> Les congés et arrêts maladie sont pré-remplis automatiquement depuis vos saisies. Vous pouvez les modifier si nécessaire.</div>';
+  document.getElementById('sal-table').innerHTML=html;
+}
+
+function getCongesForMonth(member,month){
+  // Récupère tous les congés de ce membre pour ce mois
+  const monthStart=new Date(2026,month,1);
+  const monthEnd=new Date(2026,month+1,0);
+  
+  const cgs=S.conges.filter(c=>{
+    if(c.member!==member)return false;
+    const start=new Date(c.start);
+    const end=new Date(c.end);
+    return (start<=monthEnd&&end>=monthStart);
+  });
+  
+  if(cgs.length===0)return {text:'',days:0};
+  
+  let totalDays=0;
+  let dates=[];
+  
+  cgs.forEach(c=>{
+    const start=new Date(c.start);
+    const end=new Date(c.end);
+    const clampStart=start<monthStart?monthStart:start;
+    const clampEnd=end>monthEnd?monthEnd:end;
+    
+    dates.push(clampStart.getDate()+'/'+(clampStart.getMonth()+1));
+    if(clampStart.getTime()!==clampEnd.getTime()){
+      dates.push(clampEnd.getDate()+'/'+(clampEnd.getMonth()+1));
+    }
+    
+    // Compter les jours ouvrés
+    for(let d=new Date(clampStart);d<=clampEnd;d.setDate(d.getDate()+1)){
+      const dow=d.getDay();
+      if(dow!==0)totalDays++; // Exclure dimanche
+    }
+  });
+  
+  const text=dates.length>0?'du '+dates[0]+' au '+dates[dates.length-1]:'';
+  return {text,days:totalDays};
+}
+
+function getMaladiesForMonth(member,month){
+  // Pour l'instant retourne vide - à implémenter avec système d'arrêts maladie
+  if(!S.maladies||S.maladies.length===0)return {text:'',days:0};
+  
+  const monthStart=new Date(2026,month,1);
+  const monthEnd=new Date(2026,month+1,0);
+  
+  const mal=S.maladies.filter(m=>{
+    if(m.member!==member)return false;
+    const start=new Date(m.start);
+    const end=new Date(m.end);
+    return (start<=monthEnd&&end>=monthStart);
+  });
+  
+  if(mal.length===0)return {text:'',days:0};
+  
+  let totalDays=0;
+  let dates=[];
+  
+  mal.forEach(m=>{
+    const start=new Date(m.start);
+    const end=new Date(m.end);
+    const clampStart=start<monthStart?monthStart:start;
+    const clampEnd=end>monthEnd?monthEnd:end;
+    
+    dates.push(clampStart.getDate()+'/'+(clampStart.getMonth()+1));
+    if(clampStart.getTime()!==clampEnd.getTime()){
+      dates.push(clampEnd.getDate()+'/'+(clampEnd.getMonth()+1));
+    }
+    
+    // Compter les jours ouvrés
+    for(let d=new Date(clampStart);d<=clampEnd;d.setDate(d.getDate()+1)){
+      const dow=d.getDay();
+      if(dow!==0)totalDays++;
+    }
+  });
+  
+  const text=dates.length>0?'du '+dates[0]+' au '+dates[dates.length-1]:'';
+  return {text,days:totalDays};
+}
+
+function getMonthWeeks(month){
+  // Retourne les 4 semaines du mois (lun-dim)
+  const firstDay=new Date(2026,month,1);
+  const lastDay=new Date(2026,month+1,0);
+  const weeks=[];
+  let current=new Date(firstDay);
+  
+  // Aller au premier lundi
+  while(current.getDay()!==1&&current<=lastDay){
+    current.setDate(current.getDate()+1);
+  }
+  
+  for(let w=0;w<4;w++){
+    const weekStart=new Date(current);
+    const weekEnd=new Date(current);
+    weekEnd.setDate(weekEnd.getDate()+6);
+    weeks.push({start:weekStart,end:weekEnd});
+    current.setDate(current.getDate()+7);
+  }
+  
+  return weeks;
+}
+
+function calculateMonthWeekHours(member,month,weeks){
+  const hours=[0,0,0,0];
+  
+  weeks.forEach((week,idx)=>{
+    for(let d=new Date(week.start);d<=week.end;d.setDate(d.getDate()+1)){
+      if(d.getMonth()!==month)continue;
+      const dateStr=ds(d.getFullYear(),d.getMonth(),d.getDate());
+      const dow=d.getDay();
+      if(dow===0||isFerie(dateStr)||congesFor(dateStr).some(c=>c.member===member)||!memberWorksOnDate(member,dateStr))continue;
+      
+      const dayIdx=dow-1;
+      const sc=S.empSchedules[member];
+      if(sc&&sc.hours[dayIdx]){
+        const h=sc.hours[dayIdx];
+        if(!h.o||!h.c)continue;
+        const[oh,om]=h.o.split(':').map(Number);
+        const[ch,cm]=h.c.split(':').map(Number);
+        let mins=(ch*60+cm)-(oh*60+om);
+        if(h.po&&h.pc){
+          const[poh,pom]=h.po.split(':').map(Number);
+          const[pch,pcm]=h.pc.split(':').map(Number);
+          mins-=(pch*60+pcm)-(poh*60+pom);
+        }
+        hours[idx]+=mins/60;
+      }
+    }
+  });
+  
+  return hours;
+}
+
+function autoSaveSal(m,month){
+  if(!S.salaire)S.salaire={};
+  const mk=m.replace(/\s/g,'_')+'__'+month;
+  const fields=['maladie','conges','autres','sem1','sem2','sem3','sem4','sem5','primes','acomptes','observations'];
+  const obj={};
+  fields.forEach(f=>{
+    const el=document.getElementById(`${mk}-${f}`);
+    if(el)obj[f]=el.value;
+  });
+  S.salaire[salKey(m,month)]=obj;
+  save();
+}
+function saveSalaire(){
+  const month=parseInt(document.getElementById('sal-month').value);
+  uniqueMembers().forEach(m=>autoSaveSal(m,month));
+  alert('✅ Éléments de salaire enregistrés !');
+}
+
+function exportSalaireExcel(){
+  const month=parseInt(document.getElementById('sal-month').value);
+  const allM=uniqueMembers().filter(m=>m!=='CHIHI');
+  
+  let csv='ELEMENTS NECESSAIRES A L\'ETABLISSEMENT DE LA PAIE DE:,,,,,'+new Date(2026,month,1).toLocaleDateString('fr-FR')+',,,,,,,,,\n';
+  csv+=',,,,,,,,,,,,,,\n';
+  csv+=',,,,,,,,,,,,,,\n';
+  csv+='NOM DE LA SOCIETE : ,PHARMACIE CHIHI,,,,,,,A diffuser par fax au :  01 30 43 18 52,,,,,,\n';
+  csv+=',,,,,,,,,             par téléphone au : 01 30 60 03 30,,,,,\n';
+  csv+=',,,,,,,,,,,,,,\n';
+  csv+=',,,,,,,,,,,,,,\n';
+  csv+=',,Absences,,Heures complémentaires pour temps partiel,,         Heures suplémentaires,,,,Primes,Carte Orange,Acomptes,Observations,Notes INTERNE\n';
+  csv+='    SALARIES,Maladie du…au…,congés du….au…,Autres,limité a 10% durée contractuelle,Au dela (majoré),semaine 1,semaine 2,semaine 3,semaine 4,,,,,\n';
+  
+  allM.forEach(m=>{
+    const sd=getSalData(m,month);
+    
+    const ligne=[
+      m,
+      sd.maladie||'',
+      sd.conges||'',
+      sd.autres||'',
+      '', // H.comp ≤10%
+      '', // H.comp >10%
+      sd.sem1||'0',
+      sd.sem2||'0',
+      sd.sem3||'0',
+      sd.sem4||'0',
+      sd.primes||'',
+      '', // Carte Orange
+      sd.acomptes||'',
+      sd.observations||'',
+      '' // Notes INTERNE
+    ];
+    csv+=ligne.join(',')+'\n';
+  });
+  
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'}));
+  a.download='ELEMENTS_DE_SALAIRES_'+MONTHS[month].toUpperCase()+'_2026.csv';
+  a.click();
+  alert('✅ Export Excel créé ! Format identique au modèle original.');
+}
+
+function sendToMarina(){
+  const month=parseInt(document.getElementById('sal-month').value);
+  const subject=encodeURIComponent('Éléments de salaire '+MONTHS[month]+' 2026 - Pharmacie CHIHI');
+  const body=encodeURIComponent('Bonjour Marina,\n\nVeuillez trouver ci-joint les éléments de salaire pour le mois de '+MONTHS[month]+' 2026.\n\nCordialement,\nPharmaci e CHIHI');
+  const email='marina@jtm.fr';
+  
+  // Sauvegarder avant envoi
+  saveSalaire();
+  
+  // Ouvrir Gmail
+  window.open('https://mail.google.com/mail/?view=cm&to='+encodeURIComponent(email)+'&su='+subject+'&body='+body,'_blank');
+  
+  alert('📧 Gmail ouvert ! N\'oubliez pas de joindre le fichier Excel exporté.');
+}
+function exportSalaireCSV(){
+  const month=parseInt(document.getElementById('sal-month').value);
+  const allM=uniqueMembersWithTeam();
+  let csv=`Aprium Grande Pharmacie Des Terrasses — Éléments de salaire ${MONTHS[month]} 2026\n\n`;
+  csv+='Employé,Équipe,Jours planifiés,H.sup,Absences(j),Motif,Maladie(j),Début arrêt,Fin arrêt,Arrêt transmis,Panier,Astreinte,Commentaire\n';
+  const last=new Date(2026,month+1,0).getDate();
+  allM.forEach(({m,t})=>{
+    let c=0;for(let d=1;d<=last;d++){const str=ds(2026,month,d);if(memberWorksOnDate(m,str)&&!isFerie(str)&&!congesFor(str).some(x=>x.member===m))c++;}
+    const sd=getSalData(m,month);
+    csv+=`"${m}","${t}","${c}","${sd.supH||0}","${sd.absJ||0}","${sd.absReason||''}","${sd.malJ||0}","${sd.malStart||''}","${sd.malEnd||''}","${sd.arretDoc||'non'}","${sd.primePanier||0}","${sd.primeAstreinte||0}","${(sd.comment||'').replace(/"/g,"'")}"\n`;
+  });
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'}));
+  a.download=`salaires-aprium-${MONTHS[month].toLowerCase()}-2026.csv`;a.click();
+}
+function printSalaire(){
+  const month=parseInt(document.getElementById('sal-month').value);
+  const allM=uniqueMembersWithTeam();
+  const last=new Date(2026,month+1,0).getDate();
+  let rows='';
+  allM.forEach(({m,t})=>{
+    let c=0;for(let d=1;d<=last;d++){const str=ds(2026,month,d);if(memberWorksOnDate(m,str)&&!isFerie(str)&&!congesFor(str).some(x=>x.member===m))c++;}
+    const sd=getSalData(m,month);
+    rows+=`<tr><td><strong>${m}</strong></td><td>Éq.${t}</td><td>${c}</td><td>${sd.supH||'—'}</td><td>${sd.absJ||'—'}</td><td>${sd.absReason||'—'}</td><td>${sd.malJ||'—'}</td><td>${sd.malStart?fmt(sd.malStart):'—'}</td><td>${sd.malEnd?fmt(sd.malEnd):'—'}</td><td>${sd.arretDoc||'non'}</td><td>${sd.primePanier||'—'}</td><td>${sd.primeAstreinte||'—'}</td><td style="max-width:160px;font-size:.78rem;">${sd.comment||'—'}</td></tr>`;
+  });
+  openPrintWindow(`Éléments salaire ${MONTHS[month]} 2026`,
+    `<table style="width:100%;border-collapse:collapse;font-size:.76rem;">
+    <thead><tr style="background:#1a5c4a;color:white;">${['Employé','Équipe','Jours','H.sup','Abs.j','Motif','Mal.j','Début','Fin','Transmis','Panier','Astreinte','Commentaire'].map(h=>`<th style="padding:6px 7px;text-align:left;">${h}</th>`).join('')}</tr></thead>
+    <tbody>${rows}</tbody></table>`);
+}
+
+// ═══════════════════════════════════════════
+// EMAIL
+// ═══════════════════════════════════════════
+function renderEmailPanel(){
+  if(!S.emails)S.emails={};
+  const allM=uniqueMembersWithTeam();
+  document.getElementById('email-grid').innerHTML=allM.map(({m,t})=>`
+    <div class="email-card">
+      <div class="etitle"><span><span style="color:#10b981;">👤</span></span><strong>${m}</strong><span class="badge badge-${t}">Éq.${t}</span></div>
+      <input type="email" id="em-${m.replace(/\s/g,'_')}" placeholder="adresse@gmail.com" value="${S.emails[m]||''}"
+        onchange="S.emails['${m}']=this.value;save();">
+      <div class="ebtn-row">
+        <button class="btn btn-primary" style="flex:1;" onclick="sendEmailTo('${m}')">📧 Gmail</button>
+        <button class="btn btn-outline" style="flex:1;" onclick="showPDF('${m}')">🖨 PDF</button>
+      </div>
+    </div>`).join('');
+}
+function buildMonthText(m,month){
+  // Version HTML du planning mensuel complet (comme la vue mensuelle)
+  const last=new Date(2026,month+1,0).getDate();
+  const first=new Date(2026,month,1);
+  const off=(first.getDay()||7)-1;
+  
+  let html='<html><head><meta charset="utf-8"><style>';
+  html+='body{font-family:Arial,sans-serif;background:#f5f2ec;padding:20px;margin:0;}';
+  html+='h1{color:#1a5c4a;text-align:center;font-size:1.3rem;}';
+  html+='.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;max-width:900px;margin:20px auto;background:white;padding:10px;border-radius:10px;}';
+  html+='.hdr{text-align:center;font-weight:700;font-size:0.8rem;color:#6b7280;padding:8px;border-bottom:2px solid #e5e0d5;}';
+  html+='.day{min-height:80px;border:1px solid #e5e0d5;border-radius:5px;padding:5px;font-size:0.7rem;background:white;}';
+  html+='.day.sun{background:#f9f9f9;}';
+  html+='.day.tA{background:#fde8e6;}.day.tB{background:#d5d9f5;}';
+  html+='.day.fe{background:#dcfce7;border:2px solid #16a34a;}';
+  html+='.day.cg{background:#e0f2fe;}';
+  html+='.dn{font-weight:700;font-size:0.9rem;margin-bottom:3px;}';
+  html+='.emp{font-size:0.65rem;font-weight:600;margin:1px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}';
+  html+='.tag{font-size:0.6rem;font-weight:700;padding:2px 5px;border-radius:3px;display:inline-block;margin:2px 0;color:white;}';
+  html+='.tgF{background:#16a34a;}.tgC{background:#0369a1;}.tgSatA{background:#c0392b;}.tgSatB{background:#15803d;}';
+  html+='</style></head><body>';
+  
+  html+='<h1>✚ Planning '+MONTHS[month]+' 2026 — Aprium Grande Pharmacie Des Terrasses</h1>';
+  html+='<div class="cal">';
+  
+  // Headers
+  ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'].forEach(d=>html+='<div class="hdr">'+d+'</div>');
+  
+  // Empty cells before month start
+  for(let i=0;i<off;i++)html+='<div class="day" style="background:transparent;border:none;"></div>';
+  
+  // Days
+  for(let d=1;d<=last;d++){
+    const str=ds(2026,month,d);
+    const dow=new Date(2026,month,d).getDay();
+    const isSun=dow===0,isSat=dow===6;
+    const team=isSun?null:teamForDate(str);
+    const cgs=congesFor(str);
+    const fe=isFerie(str);
+    const working=[...S.teamA,...S.teamB].filter(mx=>memberWorksOnDate(mx,str)&&!isFerie(str));
+    const workingUnique=[...new Map(working.map(mx=>[mx,mx])).values()];
+    const satGroup=isoWeek(str)%2===1?'B':'A';
+    
+    let cls='day';
+    if(isSun)cls+=' sun';
+    else if(cgs.length)cls+=' cg';
+    else if(team==='A'||team==='AB')cls+=' tA';
+    else if(team==='B')cls+=' tB';
+    if(fe)cls+=' fe';
+    
+    html+='<div class="'+cls+'">';
+    html+='<div class="dn">'+d+'</div>';
+    if(fe)html+='<span class="tag tgF">📌 Férié</span>';
+    if(isSat&&!isSun&&!fe&&workingUnique.length)html+='<span class="tag tgSat'+satGroup+'">Éq.'+satGroup+'</span>';
+    
+    workingUnique.forEach(emp=>{
+      const inC=cgs.some(c=>c.member===emp);
+      if(!inC){
+        const style=getEmployeeStyle(emp);
+        html+='<div class="emp" style="color:'+style.color+'">'+style.emoji+' '+emp+'</div>';
+      }
+    });
+    
+    cgs.forEach(c=>{
+      const style=getEmployeeStyle(c.member);
+      html+='<span class="tag tgC">🏖️ '+style.emoji+' '+c.member.split(' ')[0]+'</span>';
+    });
+    
+    html+='</div>';
+  }
+  
+  html+='</div></body></html>';
+  return html;
+}
+function sendEmailTo(m){
+  alert('Fonction email retirée.\n\nPour envoyer le planning:\n1. Allez dans l\'onglet Mensuel\n2. Cliquez sur Imprimer\n3. Sauvegardez en PDF (Ctrl+P > Enregistrer PDF)\n4. Envoyez le PDF par email manuellement');
+}
+function sendAllEmails(){
+  alert('Fonction email retirée.\n\nPour envoyer le planning:\n1. Allez dans l\'onglet Mensuel\n2. Cliquez sur Imprimer\n3. Sauvegardez en PDF (Ctrl+P > Enregistrer PDF)\n4. Envoyez le PDF par email manuellement');
+}
+function showPDF(m){
+  alert('Utilisez plutôt:\n1. Onglet Mensuel > Bouton Imprimer\n2. Sauvegardez en PDF\n\nLe planning complet s\'imprimera avec tous les employés.');
+}
+function doPrint(){
+  openPrintWindow(currentPrintTitle,`<pre style="font-family:'Segoe UI',sans-serif;font-size:.9rem;line-height:1.9;white-space:pre-wrap;">${currentPrintText}</pre>`);
+}
+function printAllPDF(){
+  const all=uniqueMembers();
+  const month=parseInt(document.getElementById('email-month').value);
+  const content=all.map(m=>`<div style="page-break-after:always;"><h2 style="color:#1a5c4a;font-size:1rem;margin-bottom:10px;"><span style="color:#10b981;">👤</span> ${m}</h2><pre style="font-family:'Segoe UI',sans-serif;font-size:.85rem;line-height:1.9;white-space:pre-wrap;">${buildMonthText(m,month)}</pre></div>`).join('');
+  openPrintWindow(`Planning ${MONTHS[month]} 2026 — Tous les employés`,content);
+}
+function openPrintWindow(title,content){
+  const win=window.open('','_blank');
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${title}</title>
+    <style>body{font-family:'Segoe UI',sans-serif;padding:32px;max-width:900px;margin:0 auto;color:#1a1a1a;}
+    h1{font-size:1.1rem;color:#1a5c4a;margin-bottom:4px;}p{font-size:.78rem;color:#6b7280;margin-bottom:16px;}
+    @media print{body{padding:16px;}}</style></head><body>
+    <h1><span style="color:#10b981;font-weight:bold;font-size:1.4em">✚</span> Aprium Grande Pharmacie Des Terrasses</h1>
+    <p>${title} — Document confidentiel</p>
+    ${content}
+    <script>window.onload=()=>window.print();<\/script></body></html>`);
+  win.document.close();
+}
+
+// ═══════════════════════════════════════════
+// TABS
+// ═══════════════════════════════════════════
+function showPanel(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#main-tabs .tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+  if(id==='monthly')renderMonthly();
+  if(id==='hebdo')initHebdo();
+  if(id==='stats')renderStats();
+  if(id==='conges')renderCongeList();
+  if(id==='employes')renderEmployes();
+  if(id==='schedules')renderScheduleEditor();
+  if(id==='salaire')renderSalaire();
+  if(id==='email')renderEmailPanel();
+  if(id==='salaries')renderSalaries();
+  if(id==='users')renderUsers();
+}
+
+// ═══════════════════════════════════════════
+// EXPORT CSV
+// ═══════════════════════════════════════════
+function exportCSV(){
+  let csv='Date,Jour,Employés présents,Horaires,Congés,Férié\n';
+  for(let mo=0;mo<12;mo++){
+    const last=new Date(2026,mo+1,0).getDate();
+    for(let d=1;d<=last;d++){
+      const str=ds(2026,mo,d),dow=new Date(2026,mo,d).getDay(),dayIdx=dow-1;
+      const fe=isFerie(str)?ferieLabel(str):'';
+      const all=uniqueMembers();
+      const working=all.filter(m=>memberWorksOnDate(m,str));
+      const members=working.map(m=>`${m}(${getMemberH(m,dayIdx)})`).join(';');
+      const cgs=congesFor(str).map(c=>c.member).join(';');
+      csv+=`${str},${DNAMES[dow]},"${members}","${cgs}","${fe}"\n`;
+    }
+  }
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'}));
+  a.download='planning-aprium-2026.csv';a.click();
+}
+
+// ═══════════════════════════════════════════
+// SALARIÉS (FICHES COMPLÈTES)
+// ═══════════════════════════════════════════
+function renderSalaries(){
+  if(!S.employeeInfo)S.employeeInfo={};
+  const grid=document.getElementById('salaries-grid');
+  const allM=uniqueMembers();
+  
+  if(allM.length===0){
+    grid.innerHTML='<p style="text-align:center;color:#6b7280;padding:40px;">Aucun salarié enregistré.</p>';
+    return;
+  }
+  
+  grid.innerHTML=allM.map(m=>{
+    const info=S.employeeInfo[m]||{};
+    const fonction=S.functions&&S.functions[m]?S.functions[m]:'';
+    const team=S.teamA.includes(m)?'A':'B';
+    const cp=S.congesPayes&&S.congesPayes[m]?S.congesPayes[m]:{total:0};
+    const cpPris=calculateCongesPris(m);
+    const cpRestant=cp.total-cpPris;
+    
+    return `<div class="card" style="position:relative;">
+      <div style="position:absolute;top:12px;right:12px;">
+        <button class="btn btn-outline" style="padding:6px 12px;font-size:0.8rem;" onclick="editSalarie('${m}')">✏️ Modifier</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span style="font-size:2.5rem;color:#10b981;">👤</span>
+        <div>
+          <h3 style="margin:0;font-size:1.1rem;">${info.prenom||''} ${info.nom||m}</h3>
+          <div style="display:flex;gap:8px;margin-top:4px;">
+            <span class="badge badge-${team}">Éq.${team}</span>
+            <span class="badge" style="background:#6b7280;color:white;font-size:0.7rem;">${fonction}</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;gap:8px;font-size:0.85rem;">
+        ${info.dateNaissance?`<div><strong>📅 Naissance:</strong> ${info.dateNaissance}</div>`:''}
+        ${info.dateEntree?`<div><strong>🚪 Entrée:</strong> ${info.dateEntree}</div>`:''}
+        ${info.dateSortie?`<div><strong>🚪 Sortie:</strong> ${info.dateSortie}</div>`:''}
+        ${info.adresse?`<div><strong>🏠 Adresse:</strong> ${info.adresse}</div>`:''}
+        ${info.email?`<div><strong>📧 Email:</strong> <a href="mailto:${info.email}">${info.email}</a></div>`:''}
+        ${info.telephone?`<div><strong>📞 Tél:</strong> ${info.telephone}</div>`:''}
+        ${info.matricule?`<div><strong>🔢 Matricule:</strong> ${info.matricule}</div>`:''}
+        ${info.numSS?`<div><strong>🆔 N°SS:</strong> ${info.numSS}</div>`:''}
+      </div>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;display:flex;justify-content:space-between;">
+        <span style="font-size:0.85rem;color:#6b7280;">CP restants</span>
+        <span style="font-weight:700;color:${cpRestant<5?'#dc2626':cpRestant<15?'#f59e0b':'#16a34a'};">${cpRestant.toFixed(1)}j</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+function openAddSalarieModal(){
+  document.getElementById('salarie-modal-title').innerHTML='<span style="color:#10b981;">👤</span> Nouveau salarié';
+  ['sal-key','sal-nom','sal-prenom','sal-datenaissance','sal-dateentree','sal-datesortie','sal-adresse','sal-email','sal-telephone','sal-matricule','sal-numss'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('sal-fonction').value='Préparatrice en pharmacie';
+  document.getElementById('sal-equipe').value='A';
+  document.getElementById('mo-salarie').classList.add('open');
+}
+function editSalarie(key){
+  const info=S.employeeInfo&&S.employeeInfo[key]?S.employeeInfo[key]:{};
+  const fonction=S.functions&&S.functions[key]?S.functions[key]:'';
+  const team=S.teamA.includes(key)?'A':'B';
+  document.getElementById('salarie-modal-title').innerHTML='<span style="color:#10b981;">👤</span> Modifier '+key;
+  document.getElementById('sal-key').value=key;
+  document.getElementById('sal-nom').value=info.nom||'';
+  document.getElementById('sal-prenom').value=info.prenom||'';
+  document.getElementById('sal-datenaissance').value=info.dateNaissance||'';
+  document.getElementById('sal-fonction').value=fonction;
+  document.getElementById('sal-dateentree').value=info.dateEntree||'';
+  document.getElementById('sal-datesortie').value=info.dateSortie||'';
+  document.getElementById('sal-adresse').value=info.adresse||'';
+  document.getElementById('sal-email').value=info.email||'';
+  document.getElementById('sal-telephone').value=info.telephone||'';
+  document.getElementById('sal-matricule').value=info.matricule||'';
+  document.getElementById('sal-numss').value=info.numSS||'';
+  document.getElementById('sal-equipe').value=team;
+  document.getElementById('mo-salarie').classList.add('open');
+}
+function saveSalarie(){
+  const oldKey=document.getElementById('sal-key').value;
+  const nom=document.getElementById('sal-nom').value.trim();
+  const prenom=document.getElementById('sal-prenom').value.trim();
+  const fonction=document.getElementById('sal-fonction').value;
+  const equipe=document.getElementById('sal-equipe').value;
+  if(!nom||!prenom){alert('Nom et prénom obligatoires');return;}
+  const newKey=prenom;
+  if(!S.employeeInfo)S.employeeInfo={};
+  S.employeeInfo[newKey]={nom,prenom,dateNaissance:document.getElementById('sal-datenaissance').value,dateEntree:document.getElementById('sal-dateentree').value,dateSortie:document.getElementById('sal-datesortie').value,adresse:document.getElementById('sal-adresse').value.trim(),email:document.getElementById('sal-email').value.trim(),telephone:document.getElementById('sal-telephone').value.trim(),matricule:document.getElementById('sal-matricule').value.trim(),numSS:document.getElementById('sal-numss').value.trim()};
+  if(!S.functions)S.functions={};
+  S.functions[newKey]=fonction;
+  if(!oldKey){
+    if(equipe==='A'){if(!S.teamA.includes(newKey))S.teamA.push(newKey);}else{if(!S.teamB.includes(newKey))S.teamB.push(newKey);}
+    if(!S.congesPayes)S.congesPayes={};
+    S.congesPayes[newKey]={n1Acquis:0,n1Pris:0,n1Solde:0,nAcquis:25,nPris:0,nSolde:25,total:25};
+    if(!S.empSchedules)S.empSchedules={};
+    S.empSchedules[newKey]={days:[],hours:{}};
+  }else{
+    S.teamA=S.teamA.filter(m=>m!==newKey);
+    S.teamB=S.teamB.filter(m=>m!==newKey);
+    if(equipe==='A'){if(!S.teamA.includes(newKey))S.teamA.push(newKey);}else{if(!S.teamB.includes(newKey))S.teamB.push(newKey);}
+  }
+  save();closeMo('mo-salarie');renderSalaries();alert('✅ Salarié enregistré !');
+}
+
+// ═══════════════════════════════════════════
+// HEURES EXCEPTIONNELLES & INTÉRIMAIRES
+// ═══════════════════════════════════════════
+function getExceptionalHours(date,person){
+  if(!S.exceptionalHours)S.exceptionalHours=[];
+  return S.exceptionalHours.filter(e=>e.date===date&&e.person===person);
+}
+
+function openExceptionalModal(date,employee){
+  document.getElementById('exc-date').value=date;
+  document.getElementById('exc-employee').value=employee;
+  document.getElementById('exc-date-display').textContent=formatDate(date);
+  document.getElementById('exc-employee-display').textContent=employee;
+  
+  // Remplir la liste des salariés
+  const select=document.getElementById('exc-employees-list');
+  select.innerHTML=uniqueMembers().map(m=>`<option value="${m}">${m}</option>`).join('');
+  
+  // Reset form
+  document.getElementById('exc-person').value='';
+  document.getElementById('exc-interim-name').value='';
+  document.getElementById('exc-debut').value='09:00';
+  document.getElementById('exc-fin').value='20:00';
+  document.getElementById('exc-pause-debut').value='';
+  document.getElementById('exc-pause-fin').value='';
+  document.getElementById('exc-type').value='remplacement';
+  document.getElementById('exc-motif').value='';
+  document.getElementById('interim-fields').style.display='none';
+  
+  document.getElementById('mo-exceptional').classList.add('open');
+}
+
+function toggleInterimFields(){
+  const person=document.getElementById('exc-person').value;
+  document.getElementById('interim-fields').style.display=person==='INTERIM'?'block':'none';
+}
+
+function saveExceptionalHours(){
+  const date=document.getElementById('exc-date').value;
+  const employee=document.getElementById('exc-employee').value;
+  const person=document.getElementById('exc-person').value;
+  const debut=document.getElementById('exc-debut').value;
+  const fin=document.getElementById('exc-fin').value;
+  const pauseDebut=document.getElementById('exc-pause-debut').value;
+  const pauseFin=document.getElementById('exc-pause-fin').value;
+  const type=document.getElementById('exc-type').value;
+  const motif=document.getElementById('exc-motif').value;
+  
+  if(!person||!debut||!fin){
+    alert('Veuillez remplir tous les champs obligatoires');
+    return;
+  }
+  
+  const isInterim=person==='INTERIM';
+  let interimName='';
+  
+  if(isInterim){
+    interimName=document.getElementById('exc-interim-name').value.trim();
+    if(!interimName){
+      alert('Veuillez saisir le nom de l\'intérimaire');
+      return;
+    }
+  }
+  
+  if(!S.exceptionalHours)S.exceptionalHours=[];
+  
+  S.exceptionalHours.push({
+    id:Date.now().toString(),
+    date,
+    employee, // Employé concerné (absent ou pas)
+    person:isInterim?'INTERIM':person, // Qui travaille réellement
+    isInterim,
+    interimName,
+    debut,
+    fin,
+    pauseDebut,
+    pauseFin,
+    type,
+    motif
+  });
+  
+  save();
+  closeMo('mo-exceptional');
+  renderHebdo();
+  alert('✅ Heures exceptionnelles enregistrées !');
+}
+
+function formatDate(dateStr){
+  const d=new Date(dateStr);
+  const days=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+  return days[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1)+'/'+d.getFullYear();
+}
+
+// ═══════════════════════════════════════════
+// AUTHENTICATION & SECURITY
+// ═══════════════════════════════════════════
+let sessionTimer=null;
+
+function handleLogin(event){
+  event.preventDefault();
+  const username=document.getElementById('login-username').value.trim();
+  const password=document.getElementById('login-password').value;
+  
+  // Vérifier les credentials
+  const user=S.auth.users.find(u=>u.username===username&&u.password===password);
+  
+  if(!user){
+    const errorDiv=document.getElementById('login-error');
+    errorDiv.textContent='❌ Nom d\'utilisateur ou mot de passe incorrect';
+    errorDiv.style.display='block';
+    return;
+  }
+  
+  // Login réussi
+  S.auth.currentUser=user;
+  S.auth.lastActivity=Date.now();
+  save();
+  
+  // Masquer écran login, afficher app
+  document.getElementById('login-screen').style.display='none';
+  document.getElementById('main-app').style.display='block';
+  
+  // Afficher infos utilisateur
+  document.getElementById('user-info').textContent='👤 '+user.nom+' ('+user.role+')';
+  
+  // Démarrer timer de session
+  startSessionTimer();
+  
+  // Reset login form
+  document.getElementById('login-username').value='';
+  document.getElementById('login-password').value='';
+  document.getElementById('login-error').style.display='none';
+}
+
+function handleLogout(){
+  if(!confirm('Voulez-vous vraiment vous déconnecter ?'))return;
+  
+  S.auth.currentUser=null;
+  S.auth.lastActivity=null;
+  save();
+  
+  clearTimeout(sessionTimer);
+  
+  // Masquer app, afficher login
+  document.getElementById('main-app').style.display='none';
+  document.getElementById('login-screen').style.display='flex';
+  
+  document.getElementById('login-username').value='';
+  document.getElementById('login-password').value='';
+}
+
+function startSessionTimer(){
+  // Reset timer à chaque activité
+  clearTimeout(sessionTimer);
+  
+  // Déconnexion automatique après 2h d'inactivité
+  sessionTimer=setTimeout(()=>{
+    alert('⏰ Session expirée pour inactivité. Veuillez vous reconnecter.');
+    handleLogout();
+  },S.auth.sessionTimeout);
+  
+  // Update last activity
+  S.auth.lastActivity=Date.now();
+}
+
+function checkSession(){
+  // Vérifier si une session existe au chargement
+  if(S.auth.currentUser){
+    const now=Date.now();
+    const elapsed=now-(S.auth.lastActivity||now);
+    
+    if(elapsed>S.auth.sessionTimeout){
+      // Session expirée
+      S.auth.currentUser=null;
+      S.auth.lastActivity=null;
+      save();
+      return false;
+    }
+    
+    // Session valide
+    document.getElementById('login-screen').style.display='none';
+    document.getElementById('main-app').style.display='block';
+    document.getElementById('user-info').textContent='👤 '+S.auth.currentUser.nom+' ('+S.auth.currentUser.role+')';
+    
+    // Afficher onglet Utilisateurs si admin
+    if(S.auth.currentUser.role==='admin'){
+      document.getElementById('tab-users').style.display='inline-block';
+    }
+    
+    startSessionTimer();
+    return true;
+  }
+  
+  return false;
+}
+
+// ═══════════════════════════════════════════
+// USER MANAGEMENT (ADMIN)
+// ═══════════════════════════════════════════
+function renderUsers(){
+  if(!S.auth.users)S.auth.users=[];
+  const tbody=document.getElementById('users-list');
+  tbody.innerHTML=S.auth.users.map((u,idx)=>`
+    <tr>
+      <td style="font-weight:700;">${u.username}</td>
+      <td>${u.nom}</td>
+      <td><span class="badge" style="background:${u.role==='admin'?'#dc2626':'#6b7280'};color:white;">${u.role}</span></td>
+      <td>
+        <button class="btn btn-outline" style="padding:4px 12px;font-size:0.8rem;" onclick="editUser(${idx})">✏️</button>
+        ${u.username!=='admin'?`<button class="btn btn-outline" style="padding:4px 12px;font-size:0.8rem;color:#dc2626;border-color:#dc2626;" onclick="deleteUser(${idx})">🗑️</button>`:''}
+      </td>
+    </tr>
+  `).join('');
+}
+
+function openAddUserModal(){
+  document.getElementById('user-modal-title').textContent='👤 Nouvel utilisateur';
+  document.getElementById('user-edit-index').value='';
+  document.getElementById('user-username').value='';
+  document.getElementById('user-fullname').value='';
+  document.getElementById('user-password').value='';
+  document.getElementById('user-role').value='user';
+  document.getElementById('mo-user').classList.add('open');
+}
+
+function editUser(idx){
+  const user=S.auth.users[idx];
+  document.getElementById('user-modal-title').textContent='✏️ Modifier '+user.username;
+  document.getElementById('user-edit-index').value=idx;
+  document.getElementById('user-username').value=user.username;
+  document.getElementById('user-fullname').value=user.nom;
+  document.getElementById('user-password').value='';
+  document.getElementById('user-role').value=user.role;
+  document.getElementById('mo-user').classList.add('open');
+}
+
+function saveUser(){
+  const idx=document.getElementById('user-edit-index').value;
+  const username=document.getElementById('user-username').value.trim();
+  const fullname=document.getElementById('user-fullname').value.trim();
+  const password=document.getElementById('user-password').value;
+  const role=document.getElementById('user-role').value;
+  
+  if(!username||!fullname){
+    alert('Le nom d\'utilisateur et le nom complet sont obligatoires');
+    return;
+  }
+  
+  // Si nouveau ou changement de mot de passe
+  if(!idx&&!password){
+    alert('Le mot de passe est obligatoire pour un nouvel utilisateur');
+    return;
+  }
+  
+  if(password&&password.length<6){
+    alert('Le mot de passe doit faire au moins 6 caractères');
+    return;
+  }
+  
+  // Vérifier si username existe déjà
+  if(!idx||S.auth.users[idx].username!==username){
+    if(S.auth.users.some(u=>u.username===username)){
+      alert('Ce nom d\'utilisateur existe déjà');
+      return;
+    }
+  }
+  
+  const userData={username,nom:fullname,role,password:password||S.auth.users[idx].password};
+  
+  if(idx){
+    // Modifier
+    S.auth.users[idx]=userData;
+  }else{
+    // Nouveau
+    S.auth.users.push(userData);
+  }
+  
+  save();
+  closeMo('mo-user');
+  renderUsers();
+  alert('✅ Utilisateur enregistré !');
+}
+
+function deleteUser(idx){
+  const user=S.auth.users[idx];
+  if(!confirm(`Supprimer l'utilisateur "${user.username}" ?`))return;
+  S.auth.users.splice(idx,1);
+  save();
+  renderUsers();
+}
+
+function openChangePasswordModal(){
+  document.getElementById('pwd-current').value='';
+  document.getElementById('pwd-new').value='';
+  document.getElementById('pwd-confirm').value='';
+  document.getElementById('pwd-error').style.display='none';
+  document.getElementById('mo-change-password').classList.add('open');
+}
+
+function savePasswordChange(){
+  const currentPwd=document.getElementById('pwd-current').value;
+  const newPwd=document.getElementById('pwd-new').value;
+  const confirmPwd=document.getElementById('pwd-confirm').value;
+  const errorDiv=document.getElementById('pwd-error');
+  
+  errorDiv.style.display='none';
+  
+  if(!currentPwd||!newPwd||!confirmPwd){
+    errorDiv.textContent='❌ Tous les champs sont obligatoires';
+    errorDiv.style.display='block';
+    return;
+  }
+  
+  // Vérifier mot de passe actuel
+  if(S.auth.currentUser.password!==currentPwd){
+    errorDiv.textContent='❌ Mot de passe actuel incorrect';
+    errorDiv.style.display='block';
+    return;
+  }
+  
+  // Vérifier longueur nouveau mot de passe
+  if(newPwd.length<6){
+    errorDiv.textContent='❌ Le nouveau mot de passe doit faire au moins 6 caractères';
+    errorDiv.style.display='block';
+    return;
+  }
+  
+  // Vérifier confirmation
+  if(newPwd!==confirmPwd){
+    errorDiv.textContent='❌ Les mots de passe ne correspondent pas';
+    errorDiv.style.display='block';
+    return;
+  }
+  
+  // Trouver l'utilisateur dans la liste et mettre à jour
+  const userIndex=S.auth.users.findIndex(u=>u.username===S.auth.currentUser.username);
+  if(userIndex!==-1){
+    S.auth.users[userIndex].password=newPwd;
+    S.auth.currentUser.password=newPwd;
+    save();
+    closeMo('mo-change-password');
+    alert('✅ Mot de passe changé avec succès !');
+  }else{
+    errorDiv.textContent='❌ Erreur : utilisateur non trouvé';
+    errorDiv.style.display='block';
+  }
+}
+
+// ═══════════════════════════════════════════
+// BACKUP & RESTORE
+// ═══════════════════════════════════════════
+function exportBackup(){
+  const dataStr=JSON.stringify(S,null,2);
+  const blob=new Blob([dataStr],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  const date=new Date();
+  const filename='planning-pharmacie-backup-'+date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+'-'+date.getHours()+'h'+date.getMinutes()+'.json';
+  a.download=filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  alert('✅ Sauvegarde créée : '+filename+'\n\nConservez ce fichier précieusement !');
+}
+
+function importBackup(){
+  const input=document.createElement('input');
+  input.type='file';
+  input.accept='.json';
+  input.onchange=e=>{
+    const file=e.target.files[0];
+    if(!file)return;
+    const reader=new FileReader();
+    reader.onload=event=>{
+      try{
+        const data=JSON.parse(event.target.result);
+        if(confirm('⚠️ ATTENTION !\n\nRestaurer cette sauvegarde va REMPLACER toutes vos données actuelles.\n\nÊtes-vous sûr ?')){
+          S=data;
+          save();
+          location.reload();
+        }
+      }catch(err){
+        alert('❌ Erreur : fichier de sauvegarde invalide');
+      }
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+}
+
+// Reset timer à chaque interaction utilisateur
+document.addEventListener('click',()=>{if(S.auth.currentUser)startSessionTimer();});
+document.addEventListener('keydown',()=>{if(S.auth.currentUser)startSessionTimer();});
+
+// ═══════════════════════════════════════════
+// START
+// ═══════════════════════════════════════════
+init();
+</script>
+</div><!-- End main-app -->
+</body>
+</html>
