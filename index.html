@@ -2,7 +2,16 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a1d2e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pharmacie Terrasses">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Pharmacie Terrasses">
+<meta name="description" content="Planning Aprium Grande Pharmacie Des Terrasses">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
 <title>Planning — Aprium Grande Pharmacie Des Terrasses</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -805,7 +814,15 @@ const FERIES=[
 
 // ═══ STATE ═══
 let S={
-  auth:{users:[{username:'admin',password:'76225041Cw@',role:'admin',nom:'Administrateur'}],currentUser:null,sessionTimeout:7200000},
+  auth:{users:[
+    {username:'admin',password:'76225041Cw@',role:'admin',nom:'Administrateur'},
+    {username:'ilham.boughrara',password:'Phar@Ilh947',role:'employee',nom:'Ilham BOUGHRARA',member:'Ilham'},
+    {username:'cathy.pichard',password:'Phar@Cat523',role:'employee',nom:'Cathy PICHARD',member:'Cathy'},
+    {username:'amena.amrani',password:'Phar@Ame861',role:'employee',nom:'Aména AMRANI',member:'Aména'},
+    {username:'celine.kambur',password:'Phar@Cel274',role:'employee',nom:'Céline KAMBUR',member:'Céline'},
+    {username:'shirley.borius',password:'Phar@Shi639',role:'employee',nom:'Shirley BORIUS',member:'Shirley'},
+    {username:'soundous.chibane',password:'Phar@Sou182',role:'employee',nom:'Soundous CHIBANE',member:'Soundous'},
+  ],currentUser:null,sessionTimeout:7200000},
   teamA:['CHIHI','Ilham','Cathy','Aména'],
   teamB:['CHIHI','Céline','Shirley','Soundous'],
   conges:[
@@ -1301,7 +1318,16 @@ function exportSalairePDF(){
   html+='<h1>ÉLÉMENTS DE SALAIRE — '+MONTHS[month].toUpperCase()+' 2026</h1><h2 style="text-align:center;font-size:11px;color:#666">PHARMACIE CHIHI · 13 ALLÉE JACQUARD · 91000 EVRY</h2>';
   html+='<table><thead><tr><th>Salariés</th><th>Fonction</th><th>Maladie</th><th>Nj</th><th>Congés</th><th>Nj</th><th>Autres</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>Primes</th><th>Acomptes</th><th>Observations</th></tr></thead><tbody>';
   allM.forEach(m=>{const sd=getSalData(m,month);const cM=getCongesForMonth(m,month);const malM=getMaladiesForMonth(m,month);html+=`<tr><td><b>${m}</b></td><td>${S.functions&&S.functions[m]||''}</td><td>${sd.maladie||malM.text||''}</td><td>${malM.days||'-'}</td><td>${sd.conges||cM.text||''}</td><td>${cM.days||'-'}</td><td>${sd.autres||''}</td><td>${sd.sem1||'-'}</td><td>${sd.sem2||'-'}</td><td>${sd.sem3||'-'}</td><td>${sd.sem4||'-'}</td><td>${sd.sem5||'-'}</td><td>${sd.primes||''}</td><td>${sd.acomptes||''}</td><td>${sd.observations||''}</td></tr>`;});
-  html+='</tbody></table><div style="margin-top:14px;text-align:right;font-size:8px;color:#999">Généré le '+new Date().toLocaleDateString('fr-FR')+'</div></body></html>';
+  html+='</tbody></table><div style="margin-top:14px;text-align:right;font-size:8px;color:#999">Généré le '+new Date().toLocaleDateString('fr-FR')+'</div><script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("sw.js")
+      .then(r=>console.log("SW registered:",r.scope))
+      .catch(e=>console.log("SW error:",e));
+  });
+}
+</script>
+</body></html>';
   const w=window.open('','_blank');w.document.write(html);w.document.close();setTimeout(()=>w.print(),500);
 }
 function sendToMarina(){
@@ -1323,7 +1349,16 @@ function renderEmailPanel(){
 function sendEmailTo(m){alert('Pour envoyer le planning :\n1. Onglet Mensuel → Imprimer\n2. Sauvegarder en PDF\n3. Envoyer par email manuellement');}
 function sendAllEmails(){alert('Pour envoyer le planning :\n1. Onglet Mensuel → Imprimer\n2. Sauvegarder en PDF\n3. Envoyer par email manuellement');}
 function showPDF(m){alert('Utilisez : Onglet Mensuel → Bouton Imprimer → Sauvegarder en PDF');}
-function printAllPDF(){const w=window.open('','_blank');const month=parseInt(document.getElementById('email-month').value);w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Planning</title></head><body><h1>✚ Aprium Grande Pharmacie Des Terrasses — Planning ${MONTHS[month]} 2026</h1><script>window.onload=()=>window.print();<\/script></body></html>`);w.document.close();}
+function printAllPDF(){const w=window.open('','_blank');const month=parseInt(document.getElementById('email-month').value);w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Planning</title></head><body><h1>✚ Aprium Grande Pharmacie Des Terrasses — Planning ${MONTHS[month]} 2026</h1><script>window.onload=()=>window.print();<\/script><script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("sw.js")
+      .then(r=>console.log("SW registered:",r.scope))
+      .catch(e=>console.log("SW error:",e));
+  });
+}
+</script>
+</body></html>`);w.document.close();}
 
 // ═══ SALARIÉS FICHES ═══
 function renderSalaries(){
@@ -1543,5 +1578,103 @@ document.addEventListener('keydown',()=>{if(S.auth.currentUser)startSessionTimer
 
 init();
 </script>
+<script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>{
+    navigator.serviceWorker.register("sw.js")
+      .then(r=>console.log("SW registered:",r.scope))
+      .catch(e=>console.log("SW error:",e));
+  });
+}
+</script>
 </body>
 </html>
+
+<script>
+// ═══ GESTION RÔLE EMPLOYÉ ═══
+// Appelée après handleLogin et checkSession pour adapter l'interface
+function applyRoleUI(user){
+  const isAdmin=user.role==='admin';
+  const isEmployee=user.role==='employee';
+
+  // Sidebar : masquer sections RH & Paie pour employés
+  const adminOnlyNavs=['nav-users'];
+  adminOnlyNavs.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.style.display=isAdmin?'flex':'none';
+  });
+
+  // Masquer éléments réservés admin dans la sidebar
+  document.querySelectorAll('.nav-admin-only').forEach(el=>{
+    el.style.display=isAdmin?'flex':'none';
+  });
+
+  // Afficher section employé dans la sidebar
+  document.querySelectorAll('.nav-employee-only').forEach(el=>{
+    el.style.display=isEmployee?'flex':'none';
+  });
+
+  if(isEmployee){
+    // Rôle badge
+    document.getElementById('sidebar-user-role').textContent='Employé · Équipe '+getEmployeeTeam(user.member);
+    // Rediriger vers vue planning perso
+    setTimeout(()=>{
+      const firstNav=document.querySelector('.nav-item[onclick*="employes"]');
+      if(firstNav)firstNav.click();
+    },100);
+  }
+}
+
+function getEmployeeTeam(member){
+  if(!member)return'';
+  if(S.teamA.includes(member)&&S.teamB.includes(member))return'A+B';
+  if(S.teamA.includes(member))return'A';
+  if(S.teamB.includes(member))return'B';
+  return'';
+}
+
+// Surcharger handleLogin pour appliquer le rôle
+const _origHandleLogin=handleLogin;
+handleLogin=function(event){
+  event.preventDefault();
+  const username=document.getElementById('login-username').value.trim(),password=document.getElementById('login-password').value;
+  const user=S.auth.users.find(u=>u.username===username&&u.password===password);
+  if(!user){const e=document.getElementById('login-error');e.textContent='❌ Identifiant ou mot de passe incorrect';e.style.display='block';return;}
+  S.auth.currentUser=user;S.auth.lastActivity=Date.now();save();
+  document.getElementById('login-screen').style.display='none';document.getElementById('main-app').style.display='block';
+  document.getElementById('sidebar-av').textContent=(user.nom||'?').substring(0,2).toUpperCase();
+  document.getElementById('sidebar-user-name').textContent=user.nom;
+  document.getElementById('sidebar-user-role').textContent=user.role==='admin'?'Administrateur':'Employé';
+  applyRoleUI(user);
+  startSessionTimer();
+  document.getElementById('login-username').value='';document.getElementById('login-password').value='';document.getElementById('login-error').style.display='none';
+};
+
+// Surcharger checkSession
+const _origCheckSession=checkSession;
+checkSession=function(){
+  if(S.auth.currentUser){
+    if(Date.now()-(S.auth.lastActivity||Date.now())>S.auth.sessionTimeout){S.auth.currentUser=null;S.auth.lastActivity=null;save();return false;}
+    document.getElementById('login-screen').style.display='none';document.getElementById('main-app').style.display='block';
+    document.getElementById('sidebar-av').textContent=(S.auth.currentUser.nom||'?').substring(0,2).toUpperCase();
+    document.getElementById('sidebar-user-name').textContent=S.auth.currentUser.nom;
+    document.getElementById('sidebar-user-role').textContent=S.auth.currentUser.role==='admin'?'Administrateur':'Employé';
+    applyRoleUI(S.auth.currentUser);
+    startSessionTimer();return true;
+  }return false;
+};
+
+// Surcharger showPage pour bloquer les pages interdites aux employés
+const _origShowPage=showPage;
+showPage=function(id,navEl){
+  const user=S.auth.currentUser;
+  if(user&&user.role==='employee'){
+    const blocked=['users','salaire','stats'];
+    if(blocked.includes(id)){
+      alert('⛔ Accès réservé à l\'administrateur.');
+      return;
+    }
+  }
+  _origShowPage(id,navEl);
+};
+</script>

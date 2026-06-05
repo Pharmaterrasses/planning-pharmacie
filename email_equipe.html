@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email équipe — Pharmacie Terrasses</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;background:#f4f5f7;padding:20px;}
+.page{max-width:860px;margin:0 auto;}
+h1{color:#1a1d2e;font-size:1.2rem;margin-bottom:4px;}
+.sub{color:#6b7280;font-size:0.82rem;margin-bottom:20px;}
+.tabs{display:flex;gap:6px;margin-bottom:20px;flex-wrap:wrap;}
+.tab{padding:7px 16px;border-radius:20px;border:1px solid #e8eaf0;background:white;cursor:pointer;font-size:0.8rem;font-weight:600;color:#6b7280;transition:all .15s;}
+.tab.active{background:#1a1d2e;color:white;border-color:#1a1d2e;}
+.panel{display:none;} .panel.active{display:block;}
+
+/* Email Preview */
+.email-preview{background:white;border:1px solid #e8eaf0;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.email-header-bar{background:#f8f9fb;border-bottom:1px solid #e8eaf0;padding:12px 18px;display:flex;align-items:center;gap:10px;}
+.email-dots span{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:4px;}
+.dot-r{background:#ff5f57;} .dot-o{background:#febc2e;} .dot-g{background:#28c840;}
+.email-fields{padding:12px 18px;border-bottom:1px solid #f0f1f5;font-size:0.8rem;color:#6b7280;display:grid;gap:4px;}
+.email-fields strong{color:#1a1d2e;}
+.email-body-wrap{padding:0;}
+
+/* Email Body */
+.eb{font-family:Arial,sans-serif;font-size:14px;color:#1f2937;line-height:1.7;}
+.eb-header{background:linear-gradient(135deg,#1a1d2e,#2d3561);padding:28px 32px;text-align:center;}
+.eb-logo{font-size:2.5rem;margin-bottom:8px;}
+.eb-title{color:white;font-size:1.1rem;font-weight:700;margin-bottom:2px;}
+.eb-sub{color:rgba(255,255,255,0.65);font-size:0.78rem;}
+.eb-body{padding:28px 32px;}
+.eb-greeting{font-size:1rem;font-weight:700;color:#1a1d2e;margin-bottom:14px;}
+.eb-text{color:#374151;font-size:0.88rem;line-height:1.8;margin-bottom:18px;}
+.eb-creds{background:#f8f9fb;border:1px solid #e8eaf0;border-left:4px solid #6c63ff;border-radius:8px;padding:16px 18px;margin-bottom:18px;}
+.eb-creds .label{font-size:0.7rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;}
+.eb-creds .val{font-family:monospace;font-size:0.95rem;font-weight:700;color:#1a1d2e;}
+.eb-btn{display:block;background:#6c63ff;color:white;text-align:center;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.92rem;margin:0 auto 22px;max-width:280px;}
+.eb-steps{margin-bottom:20px;}
+.eb-steps h3{font-size:0.82rem;font-weight:700;color:#1a1d2e;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;}
+.eb-step{display:flex;gap:12px;margin-bottom:10px;align-items:flex-start;}
+.eb-step-num{width:24px;height:24px;border-radius:50%;background:#6c63ff;color:white;font-size:0.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.eb-step-txt{font-size:0.82rem;color:#374151;line-height:1.6;}
+.eb-phones{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px;}
+.eb-phone-card{background:#f8f9fb;border:1px solid #e8eaf0;border-radius:8px;padding:14px;text-align:center;}
+.eb-phone-card .ico{font-size:1.5rem;margin-bottom:6px;}
+.eb-phone-card h4{font-size:0.78rem;font-weight:700;color:#1a1d2e;margin-bottom:6px;}
+.eb-phone-card p{font-size:0.72rem;color:#6b7280;line-height:1.6;}
+.eb-features{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px;}
+.eb-feat{background:#f0f2ff;border-radius:8px;padding:12px;text-align:center;}
+.eb-feat .ico{font-size:1.2rem;margin-bottom:4px;}
+.eb-feat p{font-size:0.72rem;color:#4338ca;font-weight:600;}
+.eb-footer{background:#f8f9fb;border-top:1px solid #e8eaf0;padding:16px 32px;text-align:center;font-size:0.72rem;color:#9ca3af;}
+.eb-footer strong{color:#6b7280;}
+
+/* Cards employés */
+.emp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:20px;}
+.emp-card{background:white;border:1px solid #e8eaf0;border-radius:10px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+.emp-card-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:white;flex-shrink:0;}
+.emp-card .name{font-weight:700;font-size:0.88rem;color:#1a1d2e;}
+.emp-card .fn{font-size:0.7rem;color:#6b7280;margin-top:1px;}
+.cred-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f3f4f6;font-size:0.78rem;}
+.cred-row:last-child{border-bottom:none;}
+.cred-row .k{color:#9ca3af;font-size:0.7rem;}
+.cred-row .v{font-family:monospace;font-weight:700;color:#1a1d2e;font-size:0.8rem;}
+.btn-send{width:100%;padding:7px;background:#6c63ff;color:white;border:none;border-radius:6px;font-size:0.76rem;font-weight:700;cursor:pointer;margin-top:10px;transition:background .15s;}
+.btn-send:hover{background:#5a52e0;}
+.btn-copy-all{padding:9px 20px;background:#1a1d2e;color:white;border:none;border-radius:8px;font-size:0.82rem;font-weight:700;cursor:pointer;margin-bottom:16px;}
+.btn-copy-all:hover{background:#2d3561;}
+.badge-A{background:rgba(231,76,60,.1);color:#c0392b;border:1px solid rgba(192,57,43,.2);padding:2px 8px;border-radius:10px;font-size:0.65rem;font-weight:700;}
+.badge-B{background:rgba(52,152,219,.1);color:#2471a3;border:1px solid rgba(52,152,219,.2);padding:2px 8px;border-radius:10px;font-size:0.65rem;font-weight:700;}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>✚ Aprium Grande Pharmacie Des Terrasses</h1>
+  <p class="sub">Outil d'envoi des accès à l'application — Équipe complète</p>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('preview')">👁️ Aperçu de l'email</div>
+    <div class="tab" onclick="showTab('comptes')">🔐 Comptes & envoi</div>
+  </div>
+
+  <!-- APERÇU EMAIL -->
+  <div class="panel active" id="panel-preview">
+    <div class="email-preview">
+      <div class="email-header-bar">
+        <div class="email-dots"><span class="dot-r"></span><span class="dot-o"></span><span class="dot-g"></span></div>
+        <span style="font-size:.78rem;color:#6b7280;font-weight:600;">Aperçu — L'email sera personnalisé pour chaque employé</span>
+      </div>
+      <div class="email-fields">
+        <div><strong>De :</strong> Aprium Grande Pharmacie Des Terrasses</div>
+        <div><strong>À :</strong> [Prénom NOM] — adresse email de l'employé</div>
+        <div><strong>Objet :</strong> 📱 Votre accès à l'application planning — Pharmacie Des Terrasses</div>
+      </div>
+      <div class="email-body-wrap">
+        <div class="eb">
+          <div class="eb-header">
+            <div class="eb-logo">✚</div>
+            <div class="eb-title">Aprium Grande Pharmacie Des Terrasses</div>
+            <div class="eb-sub">Votre application planning est prête !</div>
+          </div>
+          <div class="eb-body">
+            <div class="eb-greeting">Bonjour Ilham,</div>
+            <div class="eb-text">Votre accès à l'application de planning de la Pharmacie Des Terrasses est maintenant disponible. Consultez votre planning, vos horaires et demandez vos congés directement depuis votre téléphone.</div>
+
+            <div class="eb-creds">
+              <div class="label">🔐 Vos identifiants de connexion</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+                <div><div class="label">Identifiant</div><div class="val">ilham.boughrara</div></div>
+                <div><div class="label">Mot de passe</div><div class="val">Phar@Ilh947</div></div>
+              </div>
+            </div>
+
+            <a href="https://pharmaterrasses.github.io/planning-pharmacie/" class="eb-btn">📱 Accéder à l'application</a>
+
+            <div class="eb-features">
+              <div class="eb-feat"><div class="ico">📅</div><p>Voir mon planning</p></div>
+              <div class="eb-feat"><div class="ico">👥</div><p>Planning équipe</p></div>
+              <div class="eb-feat"><div class="ico">🏖️</div><p>Demander congés</p></div>
+            </div>
+
+            <div class="eb-steps">
+              <h3>📱 Installer l'app sur votre téléphone</h3>
+              <div class="eb-phone-card" style="margin-bottom:12px;background:#fff;border:1px solid #e8eaf0;border-radius:8px;padding:14px;text-align:left;">
+                <div class="eb-step"><div class="eb-step-num">1</div><div class="eb-step-txt">Ouvrez le lien ci-dessus dans <strong>Safari</strong> (iPhone) ou <strong>Chrome</strong> (Android)</div></div>
+                <div class="eb-step"><div class="eb-step-num">2</div><div class="eb-step-txt"><strong>iPhone :</strong> Touchez le bouton partage <strong>⎙</strong> en bas → "Sur l'écran d'accueil"</div></div>
+                <div class="eb-step"><div class="eb-step-num">3</div><div class="eb-step-txt"><strong>Android :</strong> Touchez les 3 points <strong>⋮</strong> en haut → "Ajouter à l'écran d'accueil"</div></div>
+                <div class="eb-step"><div class="eb-step-num">4</div><div class="eb-step-txt">L'icône de l'app apparaît sur votre écran, comme une vraie application !</div></div>
+              </div>
+            </div>
+
+            <div class="eb-text" style="background:#fef9c3;border:1px solid #fde047;border-radius:8px;padding:12px;font-size:0.82rem;">
+              🔑 <strong>Sécurité :</strong> Changez votre mot de passe à la première connexion via le menu en haut à gauche → "Mon Compte" → "Mot de passe"
+            </div>
+          </div>
+          <div class="eb-footer">
+            <strong>Aprium Grande Pharmacie Des Terrasses</strong><br>
+            13 Allée Jacquard — 91000 Évry<br>
+            En cas de problème, contactez le Dr. CHIHI
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPTES & ENVOI -->
+  <div class="panel" id="panel-comptes">
+    <button class="btn-copy-all" onclick="copyAllCreds()">📋 Copier tous les identifiants</button>
+    <div class="emp-grid" id="emp-grid"></div>
+  </div>
+</div>
+
+<script>
+const SITE = 'https://pharmaterrasses.github.io/planning-pharmacie/';
+const employes = [
+  {nom:'Ilham BOUGHRARA',   prenom:'Ilham',    username:'ilham.boughrara',   password:'Phar@Ilh947', equipe:'A', poste:'Préparatrice',  color:'linear-gradient(135deg,#e74c3c,#c0392b)'},
+  {nom:'Cathy PICHARD',     prenom:'Cathy',    username:'cathy.pichard',     password:'Phar@Cat523', equipe:'A', poste:'Préparatrice',  color:'linear-gradient(135deg,#7c3aed,#6d28d9)'},
+  {nom:'Aména AMRANI',      prenom:'Aména',    username:'amena.amrani',      password:'Phar@Ame861', equipe:'A', poste:'Préparatrice',  color:'linear-gradient(135deg,#0d9488,#0f766e)'},
+  {nom:'Céline KAMBUR',     prenom:'Céline',   username:'celine.kambur',     password:'Phar@Cel274', equipe:'B', poste:'Préparatrice',  color:'linear-gradient(135deg,#3498db,#2980b9)'},
+  {nom:'Shirley BORIUS',    prenom:'Shirley',  username:'shirley.borius',    password:'Phar@Shi639', equipe:'B', poste:'Préparatrice',  color:'linear-gradient(135deg,#27ae60,#219a52)'},
+  {nom:'Soundous CHIBANE',  prenom:'Soundous', username:'soundous.chibane',  password:'Phar@Sou182', equipe:'B', poste:'Apprentie',     color:'linear-gradient(135deg,#f39c12,#e67e22)'},
+];
+
+function buildMailBody(emp){
+  return `Bonjour ${emp.prenom},
+
+Votre accès à l'application de planning de la Pharmacie Des Terrasses est maintenant disponible !
+
+📱 LIEN D'ACCÈS
+${SITE}
+
+🔐 VOS IDENTIFIANTS
+Identifiant : ${emp.username}
+Mot de passe : ${emp.password}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📲 INSTALLER L'APPLICATION SUR VOTRE TÉLÉPHONE
+
+L'application fonctionne directement depuis votre navigateur et s'installe en 3 secondes :
+
+▶ Sur iPhone (Safari) :
+1. Ouvrez le lien ci-dessus dans Safari
+2. Touchez le bouton partage ⎙ en bas de l'écran
+3. Appuyez sur "Sur l'écran d'accueil"
+4. L'icône apparaît sur votre téléphone !
+
+▶ Sur Android (Chrome) :
+1. Ouvrez le lien dans Chrome
+2. Touchez les 3 points ⋮ en haut à droite
+3. Appuyez sur "Ajouter à l'écran d'accueil"
+4. L'icône apparaît sur votre téléphone !
+
+━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ CE QUE VOUS POUVEZ FAIRE
+• Consulter votre planning de la semaine, du mois ou de l'année
+• Voir les horaires de toute l'équipe
+• Demander vos congés directement depuis l'application
+
+🔑 SÉCURITÉ
+Changez votre mot de passe à la première connexion :
+→ Cliquez sur votre nom en haut à gauche → "Mon Compte" → "Mot de passe"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━
+
+En cas de problème de connexion, contactez le Dr. CHIHI.
+
+Cordialement,
+Aprium Grande Pharmacie Des Terrasses
+13 Allée Jacquard — 91000 Évry`;
+}
+
+function showTab(id){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function renderEmpGrid(){
+  const grid = document.getElementById('emp-grid');
+  grid.innerHTML = employes.map((emp,i) => {
+    const initials = emp.prenom.substring(0,1)+(emp.nom.split(' ')[0]||'').substring(0,1);
+    const subject = encodeURIComponent('📱 Votre accès à l\'application planning — Pharmacie Des Terrasses');
+    const body = encodeURIComponent(buildMailBody(emp));
+    return `<div class="emp-card">
+      <div class="emp-card-hdr">
+        <div class="av" style="background:${emp.color}">${initials}</div>
+        <div>
+          <div class="name">${emp.nom}</div>
+          <div class="fn">${emp.poste} · <span class="badge-${emp.equipe}">Éq. ${emp.equipe}</span></div>
+        </div>
+      </div>
+      <div class="cred-row"><span class="k">Identifiant</span><span class="v">${emp.username}</span></div>
+      <div class="cred-row"><span class="k">Mot de passe</span><span class="v">${emp.password}</span></div>
+      <button class="btn-send" onclick="sendMail(${i})">📧 Envoyer par email</button>
+    </div>`;
+  }).join('');
+}
+
+function sendMail(idx){
+  const emp = employes[idx];
+  const subject = encodeURIComponent('📱 Votre accès à l\'application planning — Pharmacie Des Terrasses');
+  const body = encodeURIComponent(buildMailBody(emp));
+  window.open(`https://mail.google.com/mail/?view=cm&su=${subject}&body=${body}`, '_blank');
+}
+
+function copyAllCreds(){
+  const text = employes.map(e=>`${e.nom}\n  Identifiant: ${e.username}\n  Mot de passe: ${e.password}`).join('\n\n');
+  navigator.clipboard.writeText(text).then(()=>alert('✅ Tous les identifiants copiés !'));
+}
+
+renderEmpGrid();
+</script>
+</body>
+</html>
